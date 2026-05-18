@@ -1,0 +1,177 @@
+/* =============================================================================
+   Design tokens — Platforma za roditelje
+   -----------------------------------------------------------------------------
+   Source of truth: extracted from inspiration/website.html
+   (Elementor "kit-9" global styles, <style id="global-styles-inline-css">).
+   The inspiration site is https://www.schoolavoidance.org — a calm, content-
+   focused parent-support site built with WordPress + Elementor.
+
+   Naming convention:
+   - Project tokens: --color-*, --font-size-*, --space-*, --radius-*, --shadow-*
+   - Bootstrap overrides (--bs-*) are mapped from project tokens at the bottom
+     of each section so importing bootstrap.css later cascades cleanly.
+
+   Webfont: Montserrat is the only family actively assigned in the inspiration
+   kit. The OMGF plugin on the live site also self-hosts Roboto / Work Sans /
+   Catamaran, but they aren't bound to any element. We load Montserrat from
+   Google Fonts here; swap to self-hosted later if performance demands it.
+============================================================================ */
+
+/* Source: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* Optional alternative body face — uncomment the @import + the --font-family-base
+   override below to switch body copy to Work Sans (heading stays Montserrat). */
+/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap'); */
+
+:root {
+  /* ---------------------------------------------------------------------------
+     COLOR — Brand
+     Verbatim from --e-global-color-* in the kit.
+  --------------------------------------------------------------------------- */
+  --color-primary:    #244F95;  /* deep blue   — kit --e-global-color-primary   */
+  --color-secondary:  #1D1D1D;  /* near black  — kit --e-global-color-secondary */
+  --color-accent:     #DDB33D;  /* warm gold   — kit --e-global-color-accent    */
+  --color-info:       #037F8C;  /* teal        — kit --e-global-color-b3ffe9d   */
+  --color-warm:       #D9AE89;  /* taupe       — kit --e-global-color-bc7bb0a   */
+  --color-danger:     #C5260E;  /* deep red    — kit --e-global-color-f48f6b3   */
+  --color-navy:       #0D1C46;  /* dark navy   — kit --e-global-color-c2fc663   */
+
+  /* Primary tint (kit had #244F9512 — primary with ~7% alpha) */
+  --color-primary-tint: rgba(36, 79, 149, 0.08);
+
+  /* ---------------------------------------------------------------------------
+     COLOR — Neutrals (0 = white, 900 = near black)
+  --------------------------------------------------------------------------- */
+  --color-neutral-0:   #FFFFFF;
+  --color-neutral-50:  #FAF9FB;  /* off-white   — kit --e-global-color-bb8eed6 */
+  --color-neutral-100: #F6F6F6;  /* very light  — inline style frequency hit  */
+  --color-neutral-200: #E6E6E6;  /* light gray  — kit --e-global-color-8f06ea4 */
+  --color-neutral-400: #8E8E8E;  /* medium      — kit --e-global-color-32ca078 */
+  --color-neutral-500: #696969;  /* slate       — kit --e-global-color-06d1405 */
+  --color-neutral-700: #424242;  /* body text   — kit --e-global-color-text    */
+  --color-neutral-800: #353535;  /* charcoal    — kit --e-global-color-5301a31 */
+  --color-neutral-900: #1D1D1D;  /* near black  — kit --e-global-color-secondary */
+
+  /* ---------------------------------------------------------------------------
+     COLOR — Semantic (surface, text, border)
+     Defined by reference so changing a neutral updates downstream tokens.
+  --------------------------------------------------------------------------- */
+  --color-bg:         var(--color-neutral-0);
+  --color-bg-subtle:  var(--color-neutral-50);
+  --color-surface:    var(--color-neutral-100);
+  --color-text:       var(--color-neutral-700);
+  --color-text-muted: var(--color-neutral-500);
+  --color-text-on-primary: var(--color-neutral-0);
+  --color-border:     var(--color-neutral-200);
+  --color-link:       var(--color-primary);
+  --color-link-hover: var(--color-navy);
+
+  /* ---------------------------------------------------------------------------
+     BOOTSTRAP overrides — keep --bs-* aligned to project tokens.
+  --------------------------------------------------------------------------- */
+  --bs-primary:   var(--color-primary);
+  --bs-secondary: var(--color-secondary);
+  --bs-success:   var(--color-info);
+  --bs-info:      var(--color-info);
+  --bs-warning:   var(--color-accent);
+  --bs-danger:    var(--color-danger);
+  --bs-light:     var(--color-neutral-50);
+  --bs-dark:      var(--color-neutral-900);
+  --bs-body-bg:    var(--color-bg);
+  --bs-body-color: var(--color-text);
+  --bs-border-color: var(--color-border);
+  --bs-link-color: var(--color-link);
+  --bs-link-hover-color: var(--color-link-hover);
+
+  /* ---------------------------------------------------------------------------
+     TYPOGRAPHY — Families
+  --------------------------------------------------------------------------- */
+  --font-family-sans: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont,
+                      'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-base:    var(--font-family-sans);
+  --font-family-heading: var(--font-family-sans);
+  --font-family-mono:    ui-monospace, SFMono-Regular, 'SF Mono', Menlo,
+                         Consolas, 'Liberation Mono', monospace;
+
+  /* Alternative body face — uncomment with the @import at top of file. */
+  /* --font-family-base: 'Work Sans', system-ui, sans-serif; */
+
+  /* ---------------------------------------------------------------------------
+     TYPOGRAPHY — Weights (kit uses 400, 500, 600, 700, 800)
+  --------------------------------------------------------------------------- */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+  --font-weight-black:    800;
+
+  /* ---------------------------------------------------------------------------
+     TYPOGRAPHY — Sizes
+     Scale derived from kit values (Display 3.8rem, Hero 3.2rem, Heading 1.8rem,
+     Subheading 1.2rem, Primary 1.1rem, Body 0.9rem).
+  --------------------------------------------------------------------------- */
+  --font-size-xs:   0.75rem;   /* 12px — captions / fine print          */
+  --font-size-sm:   0.875rem;  /* 14px — small text                     */
+  --font-size-base: 1rem;      /* 16px — body default                   */
+  --font-size-md:   1.1rem;    /* 17.6px — kit "primary" 1.1rem         */
+  --font-size-lg:   1.25rem;   /* 20px — large body / lead              */
+  --font-size-xl:   1.5rem;    /* 24px — h4                             */
+  --font-size-2xl:  1.8rem;    /* 28.8px — kit "heading" 1.8rem         */
+  --font-size-3xl:  2.25rem;   /* 36px — h2                             */
+  --font-size-4xl:  3.2rem;    /* 51.2px — kit "hero" 3.2rem            */
+  --font-size-5xl:  3.8rem;    /* 60.8px — kit "display" 3.8rem         */
+
+  /* ---------------------------------------------------------------------------
+     TYPOGRAPHY — Line heights & letter spacing
+  --------------------------------------------------------------------------- */
+  --line-height-tight:   1.1;   /* kit display / hero / heading        */
+  --line-height-snug:    1.2;   /* kit primary                         */
+  --line-height-normal:  1.4;
+  --line-height-relaxed: 1.6;   /* body copy default                   */
+
+  --letter-spacing-tight:  -0.5px;  /* kit hero                        */
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide:   0.2px;   /* kit subheading                  */
+
+  /* Bootstrap typography overrides */
+  --bs-body-font-family: var(--font-family-base);
+  --bs-body-font-size:   var(--font-size-base);
+  --bs-body-font-weight: var(--font-weight-regular);
+  --bs-body-line-height: var(--line-height-relaxed);
+
+  /* ---------------------------------------------------------------------------
+     SPACING — 4px base, 8 steps
+  --------------------------------------------------------------------------- */
+  --space-1: 0.25rem;  /*  4px */
+  --space-2: 0.5rem;   /*  8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+
+  /* ---------------------------------------------------------------------------
+     RADII
+  --------------------------------------------------------------------------- */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+  --radius-full: 9999px;
+
+  --bs-border-radius:    var(--radius-md);
+  --bs-border-radius-sm: var(--radius-sm);
+  --bs-border-radius-lg: var(--radius-lg);
+
+  /* ---------------------------------------------------------------------------
+     SHADOWS — soft, calm aesthetic
+  --------------------------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(13, 28, 70, 0.06);
+  --shadow-md: 0 4px 12px rgba(13, 28, 70, 0.08);
+  --shadow-lg: 0 12px 32px rgba(13, 28, 70, 0.12);
+
+  --bs-box-shadow-sm: var(--shadow-sm);
+  --bs-box-shadow:    var(--shadow-md);
+  --bs-box-shadow-lg: var(--shadow-lg);
+}

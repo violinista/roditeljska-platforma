@@ -1,0 +1,15 @@
+# Eleventy build output
+_site/
+
+# macOS
+.DS_Store
+
+# Editor / OS
+*.swp
+*~
+.vscode/
+.idea/
+
+# Node (in case package.json is added later)
+node_modules/
+npm-debug.log*
