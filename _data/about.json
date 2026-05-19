@@ -1,0 +1,12 @@
+{
+  "leaders": [
+    { "name": "Dr. Robert Williams", "role": "Principal", "photo": "/assets/img/person-m-8.webp" },
+    { "name": "Dr. Maria Chen", "role": "Academic Dean", "photo": "/assets/img/person-f-6.webp" },
+    { "name": "Prof. David Lee", "role": "Director of Research", "photo": "/assets/img/person-m-10.webp" },
+    { "name": "Dr. Sarah Johnson", "role": "Head of Faculty", "photo": "/assets/img/person-f-10.webp" },
+    { "name": "James Martinez", "role": "Operations Director", "photo": "/assets/img/person-m-12.webp" },
+    { "name": "Lisa Anderson", "role": "Student Affairs", "photo": "/assets/img/person-f-12.webp" },
+    { "name": "Prof. Michael Brown", "role": "Innovation Lead", "photo": "/assets/img/person-m-8.webp" },
+    { "name": "Dr. Emily Davis", "role": "Wellness Director", "photo": "/assets/img/person-f-13.webp" }
+  ]
+}

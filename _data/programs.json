@@ -1,0 +1,35 @@
+{
+  "featured": {
+    "badge": "Glavni vodič",
+    "title": "Ocenjivanje u školi",
+    "summary": "Sveobuhvatan vodič za roditelje o tome kako funkcioniše ocenjivanje, kako razgovarati sa školom i kako podržati dete kada dobije ocenu ispod očekivanja.",
+    "stats": [
+      { "value": "7", "label": "Poglavlja" },
+      { "value": "30 min", "label": "Vreme čitanja" }
+    ],
+    "cta": { "label": "Otvori vodič", "url": "/ocenjivanje-u-skoli/" },
+    "image": "/assets/img/education-4.webp"
+  },
+  "grid": [
+    {
+      "title": "Šta treba da znamo o ocenjivanju",
+      "summary": "Pravila, kriterijumi i procedure koje propisuju ocenjivanje u školi.",
+      "url": "/sta-treba-da-znamo-o-ocenjivanju/"
+    },
+    {
+      "title": "Zaključna ocena",
+      "summary": "Kako se formira zaključna ocena i šta roditelj može da uradi.",
+      "url": "/zakljucna-ocena/"
+    },
+    {
+      "title": "Osnaživanje mladih",
+      "summary": "Programi koji jačaju rezilijentnost i samopouzdanje dece i tinejdžera.",
+      "url": "#"
+    },
+    {
+      "title": "Zapošljivost mladih",
+      "summary": "Kako pomoći mladima da naprave informisan izbor karijernog puta.",
+      "url": "#"
+    }
+  ]
+}

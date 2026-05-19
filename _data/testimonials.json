@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Jelena P.",
+    "role": "Roditelj, Beograd",
+    "rating": 5,
+    "body": "Razgovor sa savetnicom pomogao mi je da drugačije pristupim ćerkinom strahu od ispitivanja. Konkretni saveti, bez prosipanja teorije.",
+    "photo": "/assets/img/person-f-6.webp"
+  },
+  {
+    "name": "Marko S.",
+    "role": "Otac dvoje dece",
+    "rating": 5,
+    "body": "Vodič o ocenjivanju mi je razjasnio dosta stvari koje sam pogrešno razumeo. Sada lakše razgovaram sa nastavnicima.",
+    "photo": "/assets/img/person-m-8.webp"
+  },
+  {
+    "name": "Ana K.",
+    "role": "Pedagog",
+    "rating": 5,
+    "body": "Materijali su odlični i za stručnjake — koristim ih u radu sa roditeljima u školi u kojoj radim.",
+    "photo": "/assets/img/person-f-10.webp"
+  },
+  {
+    "name": "Nenad D.",
+    "role": "Roditelj, Novi Sad",
+    "rating": 5,
+    "body": "Bili smo u krizi oko zaključne ocene. Savetovanje nam je dalo plan i mir. Hvala timu!",
+    "photo": "/assets/img/person-m-10.webp"
+  },
+  {
+    "name": "Tanja M.",
+    "role": "Učiteljica",
+    "rating": 5,
+    "body": "Konačno resurs koji pomaže i nastavnicima i roditeljima da budu na istoj strani.",
+    "photo": "/assets/img/person-f-12.webp"
+  }
+]

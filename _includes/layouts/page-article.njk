@@ -1,0 +1,101 @@
+{% extends "layouts/base.njk" %}
+
+{% set bodyClass = "article-page" %}
+
+{% block content %}
+  {% include "partials/sections/page-title.njk" %}
+
+  <section id="blog-details" class="blog-details section">
+    <div class="container">
+      <article class="article">
+
+        <div class="article-header">
+          {% if categories %}
+            <div class="meta-categories">
+              {% for c in categories %}<a href="#" class="category">{{ c }}</a>{% endfor %}
+            </div>
+          {% endif %}
+
+          <h1 class="title">{{ title }}</h1>
+
+          {% if author or date or readTime %}
+            <div class="article-meta">
+              {% if author %}
+                <div class="author">
+                  {% if author.photo %}<img src="{{ author.photo }}" alt="{{ author.name }}" class="author-img">{% endif %}
+                  <div class="author-info">
+                    <h4>{{ author.name }}</h4>
+                    {% if author.role %}<span>{{ author.role }}</span>{% endif %}
+                  </div>
+                </div>
+              {% endif %}
+              <div class="post-info">
+                {% if date %}<span><i class="bi bi-calendar4-week"></i> {{ date | dateSr }}</span>{% endif %}
+                {% if readTime %}<span><i class="bi bi-clock"></i> {{ readTime }}</span>{% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        {% if heroImage %}
+          <div class="article-featured-image">
+            <img src="{{ heroImage }}" alt="{{ title }}" class="img-fluid">
+          </div>
+        {% endif %}
+
+        {% set autoToc = content | extractToc %}
+        {% set tocItems = toc or autoToc %}
+        <div class="article-wrapper {% if not (tocItems and tocItems.length > 0) %}no-toc{% endif %}">
+          {% if tocItems and tocItems.length > 0 %}
+            <aside class="table-of-contents">
+              <h3>Sadržaj</h3>
+              <nav>
+                <ul>
+                  {% for item in tocItems %}
+                    <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+                  {% endfor %}
+                </ul>
+              </nav>
+            </aside>
+          {% endif %}
+
+          <div class="article-content">
+            {{ content | safe }}
+
+            {% if cta %}
+              <aside class="article-cta">
+                <div class="cta-icon"><i class="bi bi-chat-heart"></i></div>
+                <div class="cta-body">
+                  <h3>Potrebna vam je dodatna podrška?</h3>
+                  <p>Naš tim stručnjaka — psihologa i pedagoga — pomaže roditeljima da pronađu najbolji odgovor na izazove sa kojima se njihova deca suočavaju u školi. Zakažite individualno savetovanje i razgovarajte sa nekim ko razume šta vam je potrebno.</p>
+                  <a href="/savetovanje/" class="cta-button">Zakaži savetovanje <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </aside>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="article-footer">
+          <div class="share-article">
+            <h4>Podelite članak</h4>
+            <div class="share-buttons">
+              <a href="#" class="share-button twitter"><i class="bi bi-twitter-x"></i><span>Podeli na X</span></a>
+              <a href="#" class="share-button facebook"><i class="bi bi-facebook"></i><span>Podeli na Facebook-u</span></a>
+              <a href="#" class="share-button linkedin"><i class="bi bi-linkedin"></i><span>Podeli na LinkedIn-u</span></a>
+            </div>
+          </div>
+
+          {% if tags %}
+            <div class="article-tags">
+              <h4>Srodne teme</h4>
+              <div class="tags">
+                {% for t in tags %}<a href="#" class="tag">{{ t }}</a>{% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+      </article>
+    </div>
+  </section>
+{% endblock %}

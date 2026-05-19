@@ -1,3 +1,12 @@
+---
+layout: layouts/page-article.njk
+title: Šta sve treba da znamo o ocenjivanju u školi
+categories: [Vodič, Ocenjivanje]
+date: 2026-03-05
+readTime: 25 min čitanja
+tags: [Ocenjivanje, Pravila, Procedure]
+cta: true
+---
 ## **Šta sve treba da znamo o ocenjivanju u školi?**
 
 ### Čemu služi ocenjivanje i zašto su ocene važne za vaše dete

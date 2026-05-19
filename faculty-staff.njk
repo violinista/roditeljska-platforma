@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+title: Faculty Staff
+bodyClass: faculty-staff-page
+---
+
+<div class="page-title light-background">
+  <div class="container d-lg-flex justify-content-between align-items-center">
+    <h1 class="mb-2 mb-lg-0">Faculty Staff</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="/">Početna</a></li>
+        <li class="current">Faculty Staff</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section id="faculty--staff" class="faculty--staff section">
+  <div class="container">
+
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto">
+        <div class="faculty-search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search faculty by name, department or research area...">
+            <button class="search-btn" type="button"><i class="bi bi-search"></i></button>
+          </div>
+          <div class="search-filters mt-3 d-flex flex-wrap">
+            <div class="filter-item active">All</div>
+            <div class="filter-item">Professors</div>
+            <div class="filter-item">Associate Professors</div>
+            <div class="filter-item">Assistant Professors</div>
+            <div class="filter-item">Staff</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faculty-grid">
+      <div class="row g-4">
+        {% for f in faculty.members %}
+          <div class="col-lg-4 col-md-6">
+            <div class="faculty-card">
+              <div class="faculty-image">
+                <img src="{{ f.photo }}" class="img-fluid" alt="{{ f.name }}">
+                <div class="social-links">
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-envelope"></i></a>
+                </div>
+              </div>
+              <div class="faculty-info">
+                <h3>{{ f.name }}</h3>
+                <p class="position">{{ f.position }}</p>
+                <div class="department">{{ f.dept }}</div>
+                <div class="research-tags">
+                  {% for t in f.tags %}<span>{{ t }}</span>{% endfor %}
+                </div>
+                <a href="#" class="profile-link">View Profile</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="pagination-container mt-5 d-flex justify-content-center">
+      <nav aria-label="Faculty pagination">
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><i class="bi bi-chevron-left"></i></a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#" aria-label="Next"><i class="bi bi-chevron-right"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,38 @@
+[
+  {
+    "category": "Vodič",
+    "title": "Ocenjivanje u školi — vodič za roditelje",
+    "excerpt": "Kako razumeti ocene, šta uraditi kada dete dobije lošiju ocenu od očekivane i kako pripremiti razgovor sa nastavnikom.",
+    "author": "Tim platforme",
+    "date": "2026-03-12",
+    "image": "/assets/img/blog-post-1.webp",
+    "url": "/ocenjivanje-u-skoli/"
+  },
+  {
+    "category": "Vodič",
+    "title": "Šta treba da znamo o ocenjivanju",
+    "excerpt": "Pravila, kriterijumi i procedure koje propisuju ocenjivanje u osnovnoj i srednjoj školi.",
+    "author": "Tim platforme",
+    "date": "2026-03-05",
+    "image": "/assets/img/blog-post-2.webp",
+    "url": "/sta-treba-da-znamo-o-ocenjivanju/"
+  },
+  {
+    "category": "Tema",
+    "title": "Zaključna ocena — kako se formira",
+    "excerpt": "Razjašnjavamo kako nastaje zaključna ocena i šta roditelj može da uradi ako se ne slaže sa rezultatom.",
+    "author": "Tim platforme",
+    "date": "2026-02-20",
+    "image": "/assets/img/blog-post-3.webp",
+    "url": "/zakljucna-ocena/"
+  },
+  {
+    "category": "Savet",
+    "title": "Kako razgovarati sa detetom o lošoj oceni",
+    "excerpt": "Praktični saveti za roditelje — bez pritiska, ali sa jasnim očekivanjima i podrškom.",
+    "author": "Tim platforme",
+    "date": "2026-02-10",
+    "image": "/assets/img/blog-post-4.webp",
+    "url": "#"
+  }
+]

@@ -1,0 +1,52 @@
+<section id="hero" class="hero section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6 hero-content">
+        <h1>{{ hero.headline }}</h1>
+        <p class="lead">{{ hero.lede }}</p>
+
+        <div class="stats-row d-flex flex-wrap gap-4 my-4">
+          {% for stat in hero.stats %}
+            <div class="stat-item">
+              <span class="stat-number d-block">{{ stat.value }}</span>
+              <span class="stat-label">{{ stat.label }}</span>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="action-buttons d-flex flex-wrap gap-3">
+          <a href="{{ hero.ctaPrimary.url }}" class="btn-primary">{{ hero.ctaPrimary.label }}</a>
+          <a href="{{ hero.ctaSecondary.url }}" class="btn-secondary">{{ hero.ctaSecondary.label }}</a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 hero-media position-relative">
+        <img src="{{ hero.image }}" alt="{{ hero.imageAlt }}" class="img-fluid main-image rounded">
+        <div class="image-overlay">
+          <div class="badge-accredited">
+            <i class="bi {{ hero.badge.icon }}"></i>
+            <span>{{ hero.badge.label }}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="feature-cards-wrapper">
+    <div class="container">
+      <div class="row g-4">
+        {% for card in hero.featureCards %}
+          <div class="col-lg-4">
+            <div class="feature-card {% if card.active %}active{% endif %}">
+              <div class="feature-icon"><i class="bi {{ card.icon }}"></i></div>
+              <h3>{{ card.title }}</h3>
+              <p>{{ card.body }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

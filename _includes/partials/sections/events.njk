@@ -1,0 +1,43 @@
+<section id="events" class="events section">
+  <div class="container">
+
+    <div class="section-title text-center mb-5">
+      <h2>Predstojeći događaji</h2>
+      <p>Pridružite nam se na radionicama i webinarima</p>
+    </div>
+
+    <ul class="filter-tabs d-flex flex-wrap justify-content-center gap-2 mb-4 list-unstyled">
+      {% for f in events.filters %}
+        <li><button type="button" class="filter-tab {% if f.active %}filter-active{% endif %}" data-filter="{{ f.filter }}">{{ f.label }}</button></li>
+      {% endfor %}
+    </ul>
+
+    <div class="row g-4">
+      {% for e in events.items %}
+        <div class="col-lg-4 col-md-6">
+          <article class="event-item h-100 d-flex flex-column">
+            <div class="event-image position-relative">
+              <img src="{{ e.image }}" alt="{{ e.title }}" class="img-fluid rounded-top w-100">
+              <div class="event-date-overlay">
+                <span class="day d-block">{{ e.date | day }}</span>
+                <span class="month d-block">{{ e.date | monthShortSr }}</span>
+              </div>
+            </div>
+            <div class="event-content p-3 d-flex flex-column flex-grow-1">
+              <div class="event-category mb-2"><span class="badge">{{ e.category }}</span></div>
+              <h3 class="mb-3">{{ e.title }}</h3>
+              <div class="event-info d-flex flex-column gap-1 mb-3">
+                <span class="info-row"><i class="bi bi-clock me-2"></i>{{ e.time }}</span>
+                <span class="info-row"><i class="bi bi-geo-alt me-2"></i>{{ e.location }}</span>
+              </div>
+              <div class="event-footer mt-auto">
+                <a href="/savetovanje/" class="register-btn">Prijavi se <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

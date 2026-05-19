@@ -1,0 +1,21 @@
+{
+  "intro": "Naš cilj je da omogućimo roditeljima prijavu na različite programe i usluge koje sprovode naši partneri. Već imamo nekoliko partnera i postojećih programa, a ponuda se vremenom širi.",
+  "programs": [
+    {
+      "id": "podrska-skolovanje",
+      "label": "Podrška deci i roditeljima tokom školovanja u osnovnim i srednjim školama"
+    },
+    {
+      "id": "karijerno-savetovanje",
+      "label": "Karijerno informisanje i savetovanje"
+    },
+    {
+      "id": "zaposljivost",
+      "label": "Zapošljivost — prilagođavanje radnom okruženju (prvi posao) i planiranje razvoja karijere"
+    },
+    {
+      "id": "tinejdzeri",
+      "label": "Program podrške za osnaživanje i lični razvoj tinejdžera"
+    }
+  ]
+}

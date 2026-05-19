@@ -1,0 +1,87 @@
+{
+  "lang": "sr-Latn",
+  "brand": {
+    "name": "Platforma za roditelje",
+    "shortName": "Platforma"
+  },
+  "nav": [
+    {
+      "label": "Ocenjivanje",
+      "url": "#",
+      "children": [
+        { "label": "Ocenjivanje u školi", "url": "/ocenjivanje-u-skoli/" },
+        { "label": "Šta treba da znamo o ocenjivanju", "url": "/sta-treba-da-znamo-o-ocenjivanju/" },
+        { "label": "Zaključna ocena", "url": "/zakljucna-ocena/" },
+        { "label": "Reagovanje na ocenu", "url": "/koraci-za-reagovanje-o-oceni/" },
+        { "label": "Praćenje napredovanja", "url": "/pracenje-napredovanja-deteta/" },
+        { "label": "Veštine koje se stiču u školi", "url": "/vestine-koje-se-sticu-u-skoli/" },
+        { "label": "Sažetak odredbi ZOSOV-a", "url": "/sazetak-odredbi-zosov-a/" }
+      ]
+    },
+    {
+      "label": "Bezbednost dece",
+      "url": "#",
+      "children": [
+        { "label": "Bezbednost dece", "url": "/bezbednost-dece/" }
+      ]
+    },
+    {
+      "label": "Roditelji i škola",
+      "url": "#",
+      "children": [
+        { "label": "Roditelji i škola", "url": "/roditelji-i-skola/" }
+      ]
+    },
+    {
+      "label": "Tranzicija u obrazovanju",
+      "url": "#",
+      "children": [
+        { "label": "Tranzicija u obrazovanju", "url": "/tranzicija-u-obrazovanju/" }
+      ]
+    },
+    { "label": "Savetovanje", "url": "/savetovanje/" },
+    {
+      "label": "O nama",
+      "url": "#",
+      "children": [
+        { "label": "Naš tim", "url": "/nas-tim/" },
+        { "label": "Pitanja i odgovori", "url": "/pitanja-i-odgovori/" },
+        { "label": "Kontakt", "url": "/kontakt/" }
+      ]
+    }
+  ],
+  "footer": {
+    "tagline": "Podrška roditeljima u obrazovanju dece — informisano, povezano, zajedno.",
+    "address": "Beograd, Srbija",
+    "phone": "",
+    "email": "kontakt@platformazaroditelje.rs",
+    "columns": [
+      {
+        "title": "Ocenjivanje",
+        "links": [
+          { "label": "Ocenjivanje u školi", "url": "/ocenjivanje-u-skoli/" },
+          { "label": "Šta treba da znamo o ocenjivanju", "url": "/sta-treba-da-znamo-o-ocenjivanju/" },
+          { "label": "Zaključna ocena", "url": "/zakljucna-ocena/" },
+          { "label": "Reagovanje na ocenu", "url": "/koraci-za-reagovanje-o-oceni/" },
+          { "label": "Praćenje napredovanja", "url": "/pracenje-napredovanja-deteta/" },
+          { "label": "Veštine koje se stiču u školi", "url": "/vestine-koje-se-sticu-u-skoli/" },
+          { "label": "Sažetak odredbi ZOSOV-a", "url": "/sazetak-odredbi-zosov-a/" }
+        ]
+      },
+      {
+        "title": "Platforma",
+        "links": [
+          { "label": "Savetovanje", "url": "/savetovanje/" },
+          { "label": "Naš tim", "url": "/nas-tim/" },
+          { "label": "Pitanja i odgovori", "url": "/pitanja-i-odgovori/" },
+          { "label": "Kontakt", "url": "/kontakt/" }
+        ]
+      }
+    ],
+    "social": [
+      { "icon": "bi-facebook", "url": "#", "label": "Facebook" },
+      { "icon": "bi-instagram", "url": "#", "label": "Instagram" },
+      { "icon": "bi-linkedin", "url": "#", "label": "LinkedIn" }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+<aside class="blog-sidebar">
+  <div class="sidebar-item search-form">
+    <h4>Pretraga</h4>
+    <form action="#">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Pretraži...">
+        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="sidebar-item categories">
+    <h4>Kategorije</h4>
+    <ul class="list-unstyled">
+      {% for c in (categories or [{label:'Vodiči', count:6},{label:'Saveti', count:8},{label:'Vesti', count:4}]) %}
+        <li><a href="#">{{ c.label }} <span>({{ c.count }})</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% if recentPosts %}
+    <div class="sidebar-item recent-posts">
+      <h4>Nedavno objavljeno</h4>
+      {% for p in recentPosts %}
+        <div class="post-item">
+          <img src="{{ p.image }}" alt="{{ p.title }}" class="img-fluid">
+          <div>
+            <h5><a href="{{ p.url }}">{{ p.title }}</a></h5>
+            <time>{{ p.date | dateSr }}</time>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</aside>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="{{ robots or 'noindex, nofollow, noarchive, nosnippet, noimageindex' }}">
+  <meta name="googlebot" content="{{ robots or 'noindex, nofollow, noarchive, nosnippet, noimageindex' }}">
+  <title>{% if title %}{{ title }} — {{ site.brand.name }}{% else %}{{ site.brand.name }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.footer.tagline }}">
+
+  <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/vendor/bootstrap-icons.css">
+  <link rel="stylesheet" href="/assets/css/vendor/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/assets/css/vendor/glightbox.min.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="{{ bodyClass or 'page' }}">
+
+  {% include "partials/header.njk" %}
+
+  <main class="main">
+    {% block content %}{{ content | safe }}{% endblock %}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  {% include "partials/scripts.njk" %}
+</body>
+</html>

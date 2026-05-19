@@ -1,0 +1,8 @@
+{
+  "highlights": [
+    { "title": "Central Library", "tag": "Academic", "img": "/assets/img/education-4.webp", "stat1Icon": "bi-book", "stat1Label": "500K+ Books", "stat2Icon": "bi-wifi", "stat2Label": "High-Speed WiFi" },
+    { "title": "Innovation Hub", "tag": "Research", "img": "/assets/img/education-8.webp", "stat1Icon": "bi-cpu", "stat1Label": "AI Labs", "stat2Icon": "bi-gear", "stat2Label": "Maker Space" },
+    { "title": "Student Center", "tag": "Community", "img": "/assets/img/campus-3.webp", "stat1Icon": "bi-cup-hot", "stat1Label": "Food Court", "stat2Icon": "bi-controller", "stat2Label": "Game Lounge" },
+    { "title": "Wellness Center", "tag": "Wellness", "img": "/assets/img/students-5.webp", "stat1Icon": "bi-heart-pulse", "stat1Label": "Health Services", "stat2Icon": "bi-activity", "stat2Label": "Fitness Classes" }
+  ]
+}

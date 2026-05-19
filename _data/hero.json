@@ -1,0 +1,34 @@
+{
+  "headline": "Podrška roditeljima u obrazovanju dece",
+  "lede": "Praktičan vodič i zajednica koja pomaže roditeljima da informisano učestvuju u školovanju svoje dece — od ocenjivanja, preko savetovanja, do svakodnevnih izazova odrastanja.",
+  "stats": [
+    { "value": "10+", "label": "Godina iskustva" },
+    { "value": "3", "label": "Stručnjaka u timu" },
+    { "value": "100%", "label": "Posvećenost roditeljima" }
+  ],
+  "ctaPrimary": { "label": "Zakaži savetovanje", "url": "/savetovanje/" },
+  "ctaSecondary": { "label": "Pročitaj vodič", "url": "/ocenjivanje-u-skoli/" },
+  "image": "/assets/img/showcase-6.webp",
+  "imageAlt": "Roditelj i dete u razgovoru",
+  "badge": { "icon": "bi-patch-check-fill", "label": "Stručna podrška" },
+  "featureCards": [
+    {
+      "icon": "bi-mortarboard",
+      "title": "Razumevanje ocenjivanja",
+      "body": "Kako sistem ocenjivanja funkcioniše i šta to znači za vaše dete.",
+      "active": true
+    },
+    {
+      "icon": "bi-people",
+      "title": "Komunikacija sa školom",
+      "body": "Kako pripremiti razgovor sa nastavnikom i konstruktivno rešiti situacije.",
+      "active": false
+    },
+    {
+      "icon": "bi-lightbulb",
+      "title": "Osnaživanje deteta",
+      "body": "Kako podržati dete da gradi rezilijentnost i samopouzdanje.",
+      "active": false
+    }
+  ]
+}

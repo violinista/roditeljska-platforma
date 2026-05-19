@@ -1,3 +1,12 @@
+---
+layout: layouts/page-article.njk
+title: Zaključna ocena
+categories: [Vodič, Ocenjivanje]
+date: 2026-02-20
+readTime: 15 min čitanja
+tags: [Zaključna ocena, Roditelji]
+cta: true
+---
 <table>
 <colgroup>
 <col style="width: 100%" />

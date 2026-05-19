@@ -1,0 +1,109 @@
+---
+layout: layouts/base.njk
+title: Academics
+bodyClass: academics-page
+---
+
+<div class="page-title light-background">
+  <div class="container d-lg-flex justify-content-between align-items-center">
+    <h1 class="mb-2 mb-lg-0">Academics</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="/">Početna</a></li>
+        <li class="current">Academics</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section id="academics" class="academics section">
+  <div class="container">
+
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="section-intro pe-lg-5">
+          <h3 class="section-heading">Discover Our Educational Excellence</h3>
+          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, possimus quidem. Necessitatibus cum neque deserunt ab porro!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, fugiat labore. Veritatis et omnis consequatur.</p>
+          <div class="cta-buttons mt-4">
+            <a href="#" class="btn btn-primary me-3">Explore Programs</a>
+            <a href="#" class="btn btn-outline">Request Information</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="row key-metrics g-4">
+          <div class="col-6"><div class="metric-card"><h2>45+</h2><p>Undergraduate Programs</p></div></div>
+          <div class="col-6"><div class="metric-card"><h2>28</h2><p>Graduate Degrees</p></div></div>
+          <div class="col-6"><div class="metric-card"><h2>92%</h2><p>Graduation Rate</p></div></div>
+          <div class="col-6"><div class="metric-card"><h2>15:1</h2><p>Student-Faculty Ratio</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="programs-section mb-5">
+      <div class="section-header text-center mb-5">
+        <h3>Our Academic Programs</h3>
+        <p>Explore our diverse range of undergraduate and graduate programs</p>
+      </div>
+
+      <div class="programs-filters-wrapper">
+        <ul class="programs-filters">
+          <li data-filter="*" class="filter-active">All Programs</li>
+          <li data-filter=".filter-undergraduate">Undergraduate</li>
+          <li data-filter=".filter-graduate">Graduate</li>
+          <li data-filter=".filter-certificate">Certificates</li>
+        </ul>
+
+        <div class="row gy-4">
+          {% for p in academics.programs %}
+            <div class="col-lg-4 col-md-6 program-item {{ p.filter }}">
+              <div class="program-card">
+                <div class="program-img">
+                  <img src="{{ p.image }}" alt="{{ p.title }}" class="img-fluid">
+                  <div class="program-tag">{{ p.tag }}</div>
+                </div>
+                <div class="program-content">
+                  <h4>{{ p.title }}</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere maiores ratione qui commodi accusamus.</p>
+                  <div class="program-meta">
+                    <div class="meta-item"><i class="bi bi-clock"></i><span>{{ p.duration }}</span></div>
+                    <div class="meta-item"><i class="bi bi-mortarboard"></i><span>{{ p.credits }}</span></div>
+                  </div>
+                  <a href="#" class="program-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="faculty-section">
+      <div class="section-header text-center mb-5">
+        <h3>Meet Our Faculty</h3>
+        <p>Learn from experienced educators and industry leaders</p>
+      </div>
+
+      <div class="row g-4">
+        {% for f in academics.facultyShort %}
+          <div class="col-lg-3 col-md-6">
+            <div class="faculty-card">
+              <div class="faculty-img"><img src="{{ f.photo }}" alt="{{ f.name }}" class="img-fluid"></div>
+              <div class="faculty-content">
+                <h4>{{ f.name }}</h4>
+                <p class="faculty-position">{{ f.role }}</p>
+                <div class="faculty-social">
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,39 @@
+<section id="students-life" class="students-life-block section">
+  <div class="container">
+
+    <div class="section-title text-center mb-5">
+      <span class="section-badge">{{ activities.sectionBadge }}</span>
+      <h2>{{ activities.sectionTitle }}</h2>
+      <p>{{ activities.sectionLede }}</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-7">
+        <div class="featured-activity position-relative h-100">
+          <img src="{{ activities.featured.image }}" alt="{{ activities.featured.title }}" class="img-fluid rounded w-100">
+          <div class="activity-overlay">
+            <h3>{{ activities.featured.title }}</h3>
+            <p>{{ activities.featured.body }}</p>
+            <a href="{{ activities.featured.cta.url }}" class="btn-secondary">{{ activities.featured.cta.label }}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="d-flex flex-column gap-3 h-100">
+          {% for a in activities.items %}
+            <div class="activity-item d-flex gap-3">
+              <div class="activity-icon flex-shrink-0"><i class="bi {{ a.icon }}"></i></div>
+              <div>
+                <h4 class="mb-1">{{ a.title }}</h4>
+                <p class="mb-0">{{ a.body }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+{
+  "title": "Zajedno gradimo zajednicu roditelja",
+  "lede": "Naš pristup spaja stručnost, iskustvo iz prakse i podršku zajednice. Verujemo da informisani roditelji prave razliku u obrazovanju svoje dece.",
+  "features": [
+    { "icon": "bi-check2-circle", "title": "Stručan tim", "body": "Psiholozi i pedagozi sa dugogodišnjim iskustvom u radu sa porodicama." },
+    { "icon": "bi-check2-circle", "title": "Praktičan pristup", "body": "Konkretni saveti za situacije sa kojima se roditelji svakodnevno suočavaju." },
+    { "icon": "bi-check2-circle", "title": "Diskretnost", "body": "Sve razgovore vodimo poverljivo i sa poštovanjem prema vašoj porodici." }
+  ],
+  "gallery": [
+    { "image": "/assets/img/campus-3.webp", "alt": "Radionica u školi", "size": "large" },
+    { "image": "/assets/img/students-5.webp", "alt": "Učenici u učionici", "size": "small" },
+    { "image": "/assets/img/education-8.webp", "alt": "Savetovanje", "size": "small" }
+  ]
+}

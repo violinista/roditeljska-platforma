@@ -1,0 +1,45 @@
+<section id="testimonials" class="testimonials section">
+  <div class="container">
+
+    <div class="section-title text-center mb-5">
+      <h2>Iskustva roditelja</h2>
+      <p>Šta govore oni koji su koristili našu podršku</p>
+    </div>
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "slidesPerView": "auto",
+          "spaceBetween": 24,
+          "breakpoints": {
+            "320":  { "slidesPerView": 1, "spaceBetween": 16 },
+            "768":  { "slidesPerView": 2, "spaceBetween": 24 },
+            "1200": { "slidesPerView": 3, "spaceBetween": 24 }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper">
+        {% for t in testimonials %}
+          <div class="swiper-slide">
+            <div class="testimonial-item h-100">
+              <div class="testimonial-header d-flex align-items-center gap-3 mb-3">
+                <img src="{{ t.photo }}" alt="{{ t.name }}" class="rounded-circle" width="56" height="56">
+                <div>
+                  <h4 class="mb-0">{{ t.name }}</h4>
+                  <span>{{ t.role }}</span>
+                </div>
+              </div>
+              <div class="rating mb-3">
+                {% for i in range(0, t.rating) %}<i class="bi bi-star-fill"></i>{% endfor %}
+              </div>
+              <p class="testimonial-body mb-0">{{ t.body }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>

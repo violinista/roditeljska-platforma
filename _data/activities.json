@@ -1,0 +1,31 @@
+{
+  "sectionBadge": "Naš rad",
+  "sectionTitle": "Aktivnosti i programi",
+  "sectionLede": "Kombinujemo individualno savetovanje, radionice i online materijale kako bismo pružili podršku tamo gde je najpotrebnija.",
+  "featured": {
+    "title": "Individualno savetovanje",
+    "body": "Direktan razgovor sa stručnjakom — psihologom ili pedagogom — prilagođen vašoj situaciji.",
+    "image": "/assets/img/activities-1.webp",
+    "cta": { "label": "Zakaži termin", "url": "/savetovanje/" }
+  },
+  "items": [
+    {
+      "icon": "bi-book",
+      "title": "Vodiči za roditelje",
+      "body": "Tekstovi koji pomažu roditeljima da razumeju ključne teme u obrazovanju.",
+      "image": "/assets/img/activities-2.webp"
+    },
+    {
+      "icon": "bi-chat-dots",
+      "title": "Radionice",
+      "body": "Grupne sesije u školama i online, namenjene roditeljima i nastavnicima.",
+      "image": "/assets/img/activities-4.webp"
+    },
+    {
+      "icon": "bi-question-circle",
+      "title": "Pitanja i odgovori",
+      "body": "Baza najčešćih pitanja roditelja sa odgovorima našeg tima.",
+      "image": "/assets/img/activities-6.webp"
+    }
+  ]
+}

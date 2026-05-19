@@ -1,0 +1,136 @@
+---
+layout: layouts/base.njk
+title: News
+bodyClass: news-page
+---
+
+<div class="page-title light-background">
+  <div class="container d-lg-flex justify-content-between align-items-center">
+    <h1 class="mb-2 mb-lg-0">News</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="/">Početna</a></li>
+        <li class="current">News</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section id="news-hero" class="news-hero section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-8">
+        <article class="featured-post position-relative mb-4">
+          <img src="/assets/img/blog-post-1.webp" alt="Featured post" class="img-fluid">
+          <div class="post-overlay">
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="category">Politics</span>
+                <span class="date">02/15/2024</span>
+              </div>
+              <h2 class="post-title"><a href="/news-details/">Optimizing Strategic Initiatives Through Cross-Functional Collaboration</a></h2>
+              <p class="post-excerpt">Leveraging core competencies to drive sustainable growth and maximize stakeholder value through innovative solutions and market-driven approaches.</p>
+              <div class="post-author"><span>by</span><a href="#">Jennifer Mitchell</a></div>
+            </div>
+          </div>
+        </article>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="secondary-post">
+              <div class="post-image"><img src="/assets/img/blog-post-2.webp" alt="Post" class="img-fluid"></div>
+              <div class="post-content">
+                <div class="post-meta"><span class="category">Politics</span><span class="date">03/21/2024</span></div>
+                <h3 class="post-title"><a href="/news-details/">Implementing Agile Methodologies for Enhanced Business Performance</a></h3>
+                <div class="post-author"><span>by</span><a href="#">Robert Anderson</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="secondary-post">
+              <div class="post-image"><img src="/assets/img/blog-post-3.webp" alt="Post" class="img-fluid"></div>
+              <div class="post-content">
+                <div class="post-meta"><span class="category">Business</span><span class="date">01/30/2024</span></div>
+                <h3 class="post-title"><a href="/news-details/">Streamlining Operations Through Digital Transformation Solutions</a></h3>
+                <div class="post-author"><span>by</span><a href="#">Sarah Thompson</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="news-tabs">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#top-stories" type="button">Top stories</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#trending" type="button">Trending News</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#latest" type="button">Latest News</button></li>
+          </ul>
+
+          <div class="tab-content">
+            {% for t in newsExt.tabs %}
+              <div class="tab-pane fade {% if t.active %}show active{% endif %}" id="{{ t.id }}">
+                {% for p in t.posts %}
+                  <article class="tab-post">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4"><img src="{{ p.img }}" alt="Post" class="img-fluid"></div>
+                      <div class="col-8">
+                        <div class="post-content">
+                          <span class="category">{{ p.category }}</span>
+                          <h4 class="post-title"><a href="/news-details/">{{ p.title }}</a></h4>
+                          <div class="post-author">by <a href="#">{{ p.author }}</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news-posts" class="news-posts section">
+  <div class="container">
+    <div class="row gy-4">
+      {% for g in newsExt.grid %}
+        <div class="col-xl-4 col-md-6">
+          <article>
+            <div class="post-img"><img src="{{ g.img }}" alt="" class="img-fluid"></div>
+            <p class="post-category">{{ g.category }}</p>
+            <h2 class="title"><a href="/news-details/">{{ g.title }}</a></h2>
+            <div class="d-flex align-items-center">
+              <img src="{{ g.authorImg }}" alt="" class="img-fluid post-author-img flex-shrink-0">
+              <div class="post-meta">
+                <p class="post-author">{{ g.author }}</p>
+                <p class="post-date"><time datetime="{{ g.date }}">{{ g.dateLabel }}</time></p>
+              </div>
+            </div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="pagination-2" class="pagination-2 section">
+  <div class="container">
+    <nav class="d-flex justify-content-center" aria-label="Page navigation">
+      <ul>
+        <li><a href="#" aria-label="Previous page"><i class="bi bi-arrow-left"></i><span class="d-none d-sm-inline">Previous</span></a></li>
+        <li><a href="#" class="active">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li class="ellipsis">...</li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li><a href="#" aria-label="Next page"><span class="d-none d-sm-inline">Next</span><i class="bi bi-arrow-right"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+</section>

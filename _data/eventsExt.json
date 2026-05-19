@@ -1,0 +1,21 @@
+{
+  "extEvents": [
+    { "day": "15", "month": "May", "title": "Annual Science Exhibition", "time": "09:00 AM - 04:00 PM", "loc": "Main Campus Auditorium", "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco." },
+    { "day": "22", "month": "May", "title": "Parent-Teacher Conference", "time": "02:00 PM - 06:00 PM", "loc": "School Conference Center", "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia." },
+    { "day": "05", "month": "Jun", "title": "Annual Sports Tournament", "time": "10:00 AM - 05:00 PM", "loc": "Campus Sports Ground", "desc": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse." },
+    { "day": "12", "month": "Jun", "title": "Graduation Ceremony 2023", "time": "04:00 PM - 07:00 PM", "loc": "University Grand Hall", "desc": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi." },
+    { "day": "20", "month": "Jun", "title": "Summer Arts Festival", "time": "11:00 AM - 08:00 PM", "loc": "Arts Center", "desc": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam." }
+  ],
+  "schedule": [
+    { "time": "3:00 PM - 3:30 PM", "title": "Opening Ceremony", "body": "Welcome address by Principal and introduction to the event" },
+    { "time": "3:30 PM - 4:30 PM", "title": "Student Project Presentations", "body": "Selected students showcase their scientific innovations" },
+    { "time": "4:30 PM - 5:15 PM", "title": "Guest Lecture", "body": "Special lecture on \"Future of Quantum Computing\" by Dr. Robert Jenkins" },
+    { "time": "5:15 PM - 5:45 PM", "title": "Robotics Demonstration", "body": "Live demonstration of student-built robots and automation projects" },
+    { "time": "5:45 PM - 6:00 PM", "title": "Award Ceremony & Closing", "body": "Distribution of certificates and recognition of outstanding projects" }
+  ],
+  "related": [
+    { "day": "15", "month": "Nov", "title": "Mathematics Olympiad", "loc": "Room 203, East Wing" },
+    { "day": "05", "month": "Dec", "title": "Literature Festival", "loc": "Central Library" },
+    { "day": "18", "month": "Dec", "title": "Annual Sports Meet", "loc": "School Ground" }
+  ]
+}

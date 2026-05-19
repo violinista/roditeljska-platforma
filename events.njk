@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+title: Events
+bodyClass: events-page
+---
+
+<div class="page-title light-background">
+  <div class="container d-lg-flex justify-content-between align-items-center">
+    <h1 class="mb-2 mb-lg-0">Events</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="/">Početna</a></li>
+        <li class="current">Events</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section id="events-extended" class="events-extended section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8">
+        <div class="events-list">
+          {% for e in eventsExt.extEvents %}
+            <div class="event-item">
+              <div class="event-date">
+                <span class="day">{{ e.day }}</span>
+                <span class="month">{{ e.month }}</span>
+              </div>
+              <div class="event-content">
+                <h3 class="event-title">{{ e.title }}</h3>
+                <div class="event-meta">
+                  <span><i class="bi bi-clock"></i> {{ e.time }}</span>
+                  <span><i class="bi bi-geo-alt"></i> {{ e.loc }}</span>
+                </div>
+                <p class="event-description">{{ e.desc }}</p>
+                <a href="/event-details/" class="btn-event-details">Learn More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          {% endfor %}
+
+          <div class="events-pagination">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-arrow-left"></i></a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#"><i class="bi bi-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        {% include "partials/sections/sidebar-events.njk" %}
+      </div>
+    </div>
+  </div>
+</section>

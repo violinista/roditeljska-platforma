@@ -1,0 +1,42 @@
+{
+  "tabs": [
+    {
+      "id": "top-stories",
+      "active": true,
+      "posts": [
+        { "img": "/assets/img/blog-post-1.webp", "category": "Science", "title": "Maximizing ROI Through Strategic Resource Allocation", "author": "Michael Davidson" },
+        { "img": "/assets/img/blog-post-2.webp", "category": "Travel", "title": "Leveraging Big Data Analytics for Market Intelligence", "author": "Emily Richardson" },
+        { "img": "/assets/img/blog-post-3.webp", "category": "Politics", "title": "Enhancing Customer Experience Through Digital Innovation", "author": "Daniel Cooper" },
+        { "img": "/assets/img/blog-post-4.webp", "category": "Technology", "title": "Transforming Business Models Through Digital Innovation", "author": "Rachel Stevens" },
+        { "img": "/assets/img/blog-post-1.webp", "category": "Finance", "title": "Strategic Investment Planning for Sustainable Growth", "author": "Andrew Phillips" }
+      ]
+    },
+    {
+      "id": "trending",
+      "active": false,
+      "posts": [
+        { "img": "/assets/img/blog-post-4.webp", "category": "Science", "title": "Implementing Sustainable Business Practices for Long-term Growth", "author": "Alexandra Foster" },
+        { "img": "/assets/img/blog-post-1.webp", "category": "Style", "title": "Optimizing Supply Chain Management Through Technology Integration", "author": "Christopher Wells" },
+        { "img": "/assets/img/blog-post-2.webp", "category": "Politics", "title": "Developing Strategic Partnerships for Market Expansion", "author": "Victoria Palmer" },
+        { "img": "/assets/img/blog-post-3.webp", "category": "Marketing", "title": "Enhancing Brand Value Through Customer-Centric Strategies", "author": "Sophia Rodriguez" },
+        { "img": "/assets/img/blog-post-4.webp", "category": "Leadership", "title": "Building High-Performance Teams in Dynamic Environments", "author": "Nathan Brooks" }
+      ]
+    },
+    {
+      "id": "latest",
+      "active": false,
+      "posts": [
+        { "img": "/assets/img/blog-post-1.webp", "category": "Health", "title": "Accelerating Innovation Through Cross-functional Collaboration", "author": "Benjamin Carter" },
+        { "img": "/assets/img/blog-post-2.webp", "category": "Business", "title": "Driving Business Growth Through Strategic Digital Initiatives", "author": "Olivia Martinez" },
+        { "img": "/assets/img/blog-post-3.webp", "category": "Sports", "title": "Maximizing Operational Efficiency Through Process Optimization", "author": "William Turner" },
+        { "img": "/assets/img/blog-post-4.webp", "category": "Innovation", "title": "Leveraging AI Solutions for Business Process Automation", "author": "Isabella Clark" },
+        { "img": "/assets/img/blog-post-1.webp", "category": "Strategy", "title": "Implementing Agile Framework for Project Management Excellence", "author": "Marcus Henderson" }
+      ]
+    }
+  ],
+  "grid": [
+    { "img": "/assets/img/blog-post-1.webp", "category": "Politics", "title": "Dolorum optio tempore voluptas dignissimos", "author": "Maria Doe", "authorImg": "/assets/img/person-f-12.webp", "date": "2022-01-01", "dateLabel": "Jan 1, 2022" },
+    { "img": "/assets/img/blog-post-2.webp", "category": "Sports", "title": "Nisi magni odit consequatur autem nulla dolorem", "author": "Allisa Mayer", "authorImg": "/assets/img/person-f-13.webp", "date": "2022-06-05", "dateLabel": "Jun 5, 2022" },
+    { "img": "/assets/img/blog-post-3.webp", "category": "Entertainment", "title": "Possimus soluta ut id suscipit ea ut in quo quia et soluta", "author": "Mark Dower", "authorImg": "/assets/img/person-m-10.webp", "date": "2022-06-22", "dateLabel": "Jun 22, 2022" }
+  ]
+}

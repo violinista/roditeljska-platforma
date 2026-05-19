@@ -1,0 +1,11 @@
+<div class="contact-cards-container">
+  {% for c in contact.cards %}
+    <div class="contact-card">
+      <div class="icon-box"><i class="bi {{ c.icon }}"></i></div>
+      <div class="contact-text">
+        <h4>{{ c.title }}</h4>
+        <p>{{ c.body | safe }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>

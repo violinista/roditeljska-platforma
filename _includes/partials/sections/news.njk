@@ -1,0 +1,31 @@
+<section id="recent-news" class="recent-news section">
+  <div class="container">
+
+    <div class="section-title text-center mb-5">
+      <h2>Najnoviji tekstovi</h2>
+      <p>Aktuelni vodiči i saveti našeg tima</p>
+    </div>
+
+    <div class="row g-4">
+      {% for post in news %}
+        <div class="col-xl-6">
+          <a href="{{ post.url }}" class="post-item d-flex flex-column flex-md-row gap-3 text-decoration-none h-100">
+            <div class="post-img flex-shrink-0">
+              <img src="{{ post.image }}" alt="{{ post.title }}" class="img-fluid rounded">
+            </div>
+            <div class="post-content d-flex flex-column">
+              <span class="category">{{ post.category }}</span>
+              <h3 class="mt-2 mb-2">{{ post.title }}</h3>
+              <p class="mb-3">{{ post.excerpt }}</p>
+              <div class="post-meta mt-auto d-flex gap-3">
+                <span><i class="bi bi-person me-1"></i>{{ post.author }}</span>
+                <span><i class="bi bi-calendar3 me-1"></i>{{ post.date | dateSr }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

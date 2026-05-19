@@ -1,3 +1,12 @@
+---
+layout: layouts/page-article.njk
+title: Ocenjivanje u školi
+categories: [Vodič, Ocenjivanje]
+date: 2026-03-12
+readTime: 30 min čitanja
+tags: [Ocenjivanje, Roditelji, Škola, Komunikacija]
+cta: true
+---
 # **Ocenjivanje u školi**
 
 ***Nastavnica mi je dala 3, a sve sam znala/o.***

@@ -1,0 +1,14 @@
+{% extends "layouts/base.njk" %}
+
+{% set bodyClass = "index-page" %}
+
+{% block content %}
+  {% include "partials/sections/hero.njk" %}
+  {% include "partials/sections/about.njk" %}
+  {% include "partials/sections/programs.njk" %}
+  {% include "partials/sections/students-life.njk" %}
+  {% include "partials/sections/testimonials.njk" %}
+  {% include "partials/sections/stats.njk" %}
+  {% include "partials/sections/news.njk" %}
+  {% include "partials/sections/events.njk" %}
+{% endblock %}

@@ -1,0 +1,39 @@
+<footer id="footer" class="footer light-background">
+  <div class="container py-5">
+    <div class="row g-4">
+
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="/" class="logo d-flex align-items-center text-decoration-none mb-3">
+          <span class="sitename fw-bold">{{ site.brand.name }}</span>
+        </a>
+        <p class="mb-3">{{ site.footer.tagline }}</p>
+        {% if site.footer.address %}<p class="mb-1"><i class="bi bi-geo-alt me-2"></i>{{ site.footer.address }}</p>{% endif %}
+        {% if site.footer.email %}<p class="mb-1"><i class="bi bi-envelope me-2"></i><a href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a></p>{% endif %}
+
+        <div class="social-links d-flex gap-2 mt-3">
+          {% for s in site.footer.social %}
+            <a href="{{ s.url }}" aria-label="{{ s.label }}"><i class="bi {{ s.icon }}"></i></a>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% for col in site.footer.columns %}
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>{{ col.title }}</h4>
+          <ul class="list-unstyled">
+            {% for link in col.links %}
+              <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+  <div class="copyright">
+    <div class="container py-3 text-center">
+      <p class="mb-0">&copy; {{ "2026" }} {{ site.brand.name }}. Sva prava zadržana.</p>
+    </div>
+  </div>
+</footer>

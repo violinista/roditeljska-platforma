@@ -1,0 +1,45 @@
+<section id="about" class="about section">
+  <div class="container">
+
+    <div class="section-title text-center mb-5">
+      <h2>O nama</h2>
+      <p>Naš put i vrednosti koje nas vode</p>
+    </div>
+
+    <div class="row g-5 align-items-start mb-5">
+      <div class="col-lg-6">
+        <h3 class="mb-4">Naša priča</h3>
+        <ul class="timeline list-unstyled">
+          {% for item in timeline %}
+            <li class="timeline-item d-flex gap-3 mb-4">
+              <span class="timeline-dot flex-shrink-0"></span>
+              <div>
+                <strong class="d-block">{{ item.year }} — {{ item.title }}</strong>
+                <p class="mb-0">{{ item.body }}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="col-lg-6">
+        <h3 class="mb-4">Misija i vizija</h3>
+        <p>Naša misija je da podržimo roditelje da informisano i aktivno učestvuju u obrazovanju svoje dece, povezujući stručnost, iskustvo iz prakse i snagu zajednice.</p>
+        <p>Verujemo da kvalitetan dijalog između roditelja, dece i škole stvara uslove za odrastanje samopouzdanih i otpornih osoba.</p>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      {% for value in coreValues %}
+        <div class="col">
+          <div class="value-card h-100">
+            <div class="value-icon mb-3"><i class="bi {{ value.icon }}"></i></div>
+            <h4>{{ value.title }}</h4>
+            <p class="mb-0">{{ value.body }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

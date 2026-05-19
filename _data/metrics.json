@@ -1,0 +1,6 @@
+[
+  { "icon": "bi-people", "value": 500, "suffix": "+", "label": "Roditelja kojima smo pomogli" },
+  { "icon": "bi-mortarboard", "value": 30, "suffix": "+", "label": "Održanih radionica" },
+  { "icon": "bi-journal-text", "value": 12, "suffix": "", "label": "Detaljnih vodiča" },
+  { "icon": "bi-stars", "value": 10, "suffix": "+", "label": "Godina iskustva" }
+]

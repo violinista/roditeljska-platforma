@@ -1,0 +1,63 @@
+<div class="events-sidebar">
+  <div class="sidebar-item search-form">
+    <h4>Pretraga događaja</h4>
+    <form action="#">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Pretraži događaje...">
+        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="sidebar-item categories">
+    <h4>Kategorije</h4>
+    <ul class="list-unstyled">
+      {% for c in events.categories %}
+        <li><a href="#">{{ c.label }} <span>({{ c.count }})</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% if events.featured %}
+    <div class="sidebar-item upcoming-events">
+      <h4>Izdvojeni događaj</h4>
+      <div class="featured-event">
+        <img src="{{ events.featured.image }}" alt="{{ events.featured.title }}" class="img-fluid">
+        <div class="featured-event-details">
+          <h5>{{ events.featured.title }}</h5>
+          <span class="event-date"><i class="bi bi-calendar"></i> {{ events.featured.date }}</span>
+          <a href="#" class="btn-sm btn-register">Prijavi se</a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="sidebar-item event-calendar">
+    <h4>Kalendar</h4>
+    <div class="calendar-widget">
+      <div class="calendar-header">
+        <h5>{{ events.calendar.label }}</h5>
+        <div class="calendar-nav">
+          <a href="#" class="prev-month"><i class="bi bi-chevron-left"></i></a>
+          <a href="#" class="next-month"><i class="bi bi-chevron-right"></i></a>
+        </div>
+      </div>
+      <table class="calendar-table">
+        <thead>
+          <tr><th>P</th><th>U</th><th>S</th><th>Č</th><th>P</th><th>S</th><th>N</th></tr>
+        </thead>
+        <tbody>
+          {% for week in events.calendar.weeks %}
+            <tr>
+              {% for d in week %}
+                {% if d == 0 %}<td></td>
+                {% elif d in events.calendar.marks %}<td class="has-event">{{ d }}</td>
+                {% else %}<td>{{ d }}</td>{% endif %}
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

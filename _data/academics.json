@@ -1,0 +1,16 @@
+{
+  "programs": [
+    { "tag": "Undergraduate", "filter": "filter-undergraduate", "title": "Bachelor of Science in Computer Science", "duration": "4 Years", "credits": "120 Credits", "image": "/assets/img/education-4.webp" },
+    { "tag": "Undergraduate", "filter": "filter-undergraduate", "title": "Bachelor of Arts in Psychology", "duration": "4 Years", "credits": "120 Credits", "image": "/assets/img/education-6.webp" },
+    { "tag": "Graduate", "filter": "filter-graduate", "title": "Master of Business Administration", "duration": "2 Years", "credits": "60 Credits", "image": "/assets/img/education-8.webp" },
+    { "tag": "Graduate", "filter": "filter-graduate", "title": "Master of Education", "duration": "2 Years", "credits": "48 Credits", "image": "/assets/img/education-10.webp" },
+    { "tag": "Certificate", "filter": "filter-certificate", "title": "Data Science Certificate", "duration": "6 Months", "credits": "15 Credits", "image": "/assets/img/education-4.webp" },
+    { "tag": "Certificate", "filter": "filter-certificate", "title": "Digital Marketing Certificate", "duration": "4 Months", "credits": "12 Credits", "image": "/assets/img/education-6.webp" }
+  ],
+  "facultyShort": [
+    { "name": "Dr. Michael Reynolds", "role": "Computer Science", "photo": "/assets/img/person-m-8.webp" },
+    { "name": "Dr. Sarah Johnson", "role": "Psychology", "photo": "/assets/img/person-f-6.webp" },
+    { "name": "Dr. Robert Chen", "role": "Business Administration", "photo": "/assets/img/person-m-10.webp" },
+    { "name": "Dr. Emily Davis", "role": "Education", "photo": "/assets/img/person-f-10.webp" }
+  ]
+}

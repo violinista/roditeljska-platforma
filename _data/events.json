@@ -1,0 +1,82 @@
+{
+  "filters": [
+    { "label": "Sve", "filter": "*", "active": true },
+    { "label": "Radionice", "filter": "radionice", "active": false },
+    { "label": "Webinari", "filter": "webinari", "active": false },
+    { "label": "Savetovanja", "filter": "savetovanja", "active": false }
+  ],
+  "items": [
+    {
+      "category": "Radionica",
+      "title": "Razumevanje ocenjivanja — radionica za roditelje",
+      "date": "2026-06-08",
+      "time": "18:00",
+      "location": "Online",
+      "image": "/assets/img/events-2.webp"
+    },
+    {
+      "category": "Webinar",
+      "title": "Komunikacija sa školom — kako pripremiti razgovor",
+      "date": "2026-06-15",
+      "time": "19:00",
+      "location": "Online",
+      "image": "/assets/img/events-3.webp"
+    },
+    {
+      "category": "Savetovanje",
+      "title": "Otvorena vrata — individualna savetovanja",
+      "date": "2026-06-22",
+      "time": "10:00",
+      "location": "Beograd",
+      "image": "/assets/img/events-5.webp"
+    },
+    {
+      "category": "Radionica",
+      "title": "Rezilijentnost i učenje — kako podržati dete",
+      "date": "2026-06-29",
+      "time": "18:00",
+      "location": "Online",
+      "image": "/assets/img/events-6.webp"
+    },
+    {
+      "category": "Webinar",
+      "title": "Zaključna ocena — pitanja i odgovori",
+      "date": "2026-07-06",
+      "time": "19:00",
+      "location": "Online",
+      "image": "/assets/img/events-7.webp"
+    },
+    {
+      "category": "Radionica",
+      "title": "Roditelji i tinejdžeri — izazovi srednje škole",
+      "date": "2026-07-13",
+      "time": "18:00",
+      "location": "Online",
+      "image": "/assets/img/events-8.webp"
+    }
+  ],
+  "categories": [
+    { "label": "Academic", "count": 12 },
+    { "label": "Sports", "count": 7 },
+    { "label": "Arts & Culture", "count": 9 },
+    { "label": "Workshops", "count": 5 },
+    { "label": "Seminars", "count": 8 },
+    { "label": "Competitions", "count": 6 }
+  ],
+  "featured": {
+    "title": "Summer Leadership Camp",
+    "date": "July 10-15, 2023",
+    "image": "/assets/img/events-5.webp"
+  },
+  "calendar": {
+    "label": "May 2023",
+    "weeks": [
+      [0, 1, 2, 3, 4, 5, 6],
+      [7, 8, 9, 10, 11, 12, 13],
+      [14, 15, 16, 17, 18, 19, 20],
+      [21, 22, 23, 24, 25, 26, 27],
+      [28, 29, 30, 31, 0, 0, 0]
+    ],
+    "marks": [15, 22]
+  }
+}

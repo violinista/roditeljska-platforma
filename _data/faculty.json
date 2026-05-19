@@ -1,0 +1,10 @@
+{
+  "members": [
+    { "name": "Dr. Thomas Reynolds", "position": "Professor of Computer Science", "dept": "School of Computing", "tags": ["Artificial Intelligence", "Machine Learning", "Neural Networks"], "photo": "/assets/img/person-m-8.webp" },
+    { "name": "Dr. Sarah Johnson", "position": "Associate Professor of Biology", "dept": "Department of Life Sciences", "tags": ["Molecular Biology", "Genetics", "Biotechnology"], "photo": "/assets/img/person-f-6.webp" },
+    { "name": "Dr. Michael Chen", "position": "Assistant Professor of Physics", "dept": "Department of Physical Sciences", "tags": ["Quantum Mechanics", "Particle Physics", "Astrophysics"], "photo": "/assets/img/person-m-10.webp" },
+    { "name": "Dr. Elizabeth Parker", "position": "Professor of Literature", "dept": "College of Humanities", "tags": ["Modern Literature", "Critical Theory", "Creative Writing"], "photo": "/assets/img/person-f-10.webp" },
+    { "name": "Dr. Robert Williams", "position": "Associate Professor of Economics", "dept": "Business School", "tags": ["Macroeconomics", "International Trade", "Economic Policy"], "photo": "/assets/img/person-m-12.webp" },
+    { "name": "Dr. Jennifer Lopez", "position": "Assistant Professor of Psychology", "dept": "Department of Behavioral Sciences", "tags": ["Cognitive Psychology", "Child Development", "Behavioral Studies"], "photo": "/assets/img/person-f-12.webp" }
+  ]
+}
