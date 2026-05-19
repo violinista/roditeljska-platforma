@@ -11,11 +11,11 @@
 
       <div class="col-lg-7">
         <div class="featured-activity position-relative h-100">
-          <img src="{{ activities.featured.image }}" alt="{{ activities.featured.title }}" class="img-fluid rounded w-100">
+          <img src="{{ activities.featured.image | url }}" alt="{{ activities.featured.title }}" class="img-fluid rounded w-100">
           <div class="activity-overlay">
             <h3>{{ activities.featured.title }}</h3>
             <p>{{ activities.featured.body }}</p>
-            <a href="{{ activities.featured.cta.url }}" class="btn-secondary">{{ activities.featured.cta.label }}</a>
+            <a href="{{ activities.featured.cta.url | url }}" class="btn-secondary">{{ activities.featured.cta.label }}</a>
           </div>
         </div>
       </div>

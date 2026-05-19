@@ -3,7 +3,7 @@
     <div class="row g-4">
 
       <div class="col-lg-5 col-md-12 footer-about">
-        <a href="/" class="logo d-flex align-items-center text-decoration-none mb-3">
+        <a href="{{ '/' | url }}" class="logo d-flex align-items-center text-decoration-none mb-3">
           <span class="sitename fw-bold">{{ site.brand.name }}</span>
         </a>
         <p class="mb-3">{{ site.footer.tagline }}</p>
@@ -12,7 +12,7 @@
 
         <div class="social-links d-flex gap-2 mt-3">
           {% for s in site.footer.social %}
-            <a href="{{ s.url }}" aria-label="{{ s.label }}"><i class="bi {{ s.icon }}"></i></a>
+            <a href="{{ s.url | url }}" aria-label="{{ s.label }}"><i class="bi {{ s.icon }}"></i></a>
           {% endfor %}
         </div>
       </div>
@@ -22,7 +22,7 @@
           <h4>{{ col.title }}</h4>
           <ul class="list-unstyled">
             {% for link in col.links %}
-              <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+              <li><a href="{{ link.url | url }}">{{ link.label }}</a></li>
             {% endfor %}
           </ul>
         </div>

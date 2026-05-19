@@ -22,7 +22,7 @@
     <div class="sidebar-item upcoming-events">
       <h4>Izdvojeni događaj</h4>
       <div class="featured-event">
-        <img src="{{ events.featured.image }}" alt="{{ events.featured.title }}" class="img-fluid">
+        <img src="{{ events.featured.image | url }}" alt="{{ events.featured.title }}" class="img-fluid">
         <div class="featured-event-details">
           <h5>{{ events.featured.title }}</h5>
           <span class="event-date"><i class="bi bi-calendar"></i> {{ events.featured.date }}</span>

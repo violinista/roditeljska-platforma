@@ -35,7 +35,7 @@
         <div class="gallery-grid">
           {% for g in highlights.gallery %}
             <div class="gallery-item gallery-item-{{ g.size }}">
-              <img src="{{ g.image }}" alt="{{ g.alt }}" class="img-fluid">
+              <img src="{{ g.image | url }}" alt="{{ g.alt }}" class="img-fluid">
             </div>
           {% endfor %}
         </div>

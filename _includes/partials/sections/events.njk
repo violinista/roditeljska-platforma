@@ -17,7 +17,7 @@
         <div class="col-lg-4 col-md-6">
           <article class="event-item h-100 d-flex flex-column">
             <div class="event-image position-relative">
-              <img src="{{ e.image }}" alt="{{ e.title }}" class="img-fluid rounded-top w-100">
+              <img src="{{ e.image | url }}" alt="{{ e.title }}" class="img-fluid rounded-top w-100">
               <div class="event-date-overlay">
                 <span class="day d-block">{{ e.date | day }}</span>
                 <span class="month d-block">{{ e.date | monthShortSr }}</span>
@@ -31,7 +31,7 @@
                 <span class="info-row"><i class="bi bi-geo-alt me-2"></i>{{ e.location }}</span>
               </div>
               <div class="event-footer mt-auto">
-                <a href="/savetovanje/" class="register-btn">Prijavi se <i class="bi bi-arrow-right"></i></a>
+                <a href="{{ '/savetovanje/' | url }}" class="register-btn">Prijavi se <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </article>

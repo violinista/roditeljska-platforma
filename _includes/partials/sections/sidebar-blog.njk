@@ -23,9 +23,9 @@
       <h4>Nedavno objavljeno</h4>
       {% for p in recentPosts %}
         <div class="post-item">
-          <img src="{{ p.image }}" alt="{{ p.title }}" class="img-fluid">
+          <img src="{{ p.image | url }}" alt="{{ p.title }}" class="img-fluid">
           <div>
-            <h5><a href="{{ p.url }}">{{ p.title }}</a></h5>
+            <h5><a href="{{ p.url | url }}">{{ p.title }}</a></h5>
             <time>{{ p.date | dateSr }}</time>
           </div>
         </div>

@@ -2,7 +2,7 @@
   <div class="container-xl">
     <div class="d-flex align-items-center justify-content-between py-3">
 
-      <a href="/" class="logo d-flex align-items-center text-decoration-none">
+      <a href="{{ '/' | url }}" class="logo d-flex align-items-center text-decoration-none">
         <span class="sitename">{{ site.brand.name }}</span>
       </a>
 
@@ -11,18 +11,18 @@
           {% for item in site.nav %}
             {% if item.children %}
               <li class="dropdown position-relative">
-                <a href="{{ item.url }}" class="d-inline-flex align-items-center gap-1">
+                <a href="{{ item.url | url }}" class="d-inline-flex align-items-center gap-1">
                   <span>{{ item.label }}</span>
                   <i class="bi bi-chevron-down toggle-dropdown"></i>
                 </a>
                 <ul class="dropdown-menu-custom list-unstyled">
                   {% for child in item.children %}
-                    <li><a href="{{ child.url }}">{{ child.label }}</a></li>
+                    <li><a href="{{ child.url | url }}">{{ child.label }}</a></li>
                   {% endfor %}
                 </ul>
               </li>
             {% else %}
-              <li><a href="{{ item.url }}" {% if item.url == page.url or (item.active and page.url == '/') %}class="active"{% endif %}>{{ item.label }}</a></li>
+              <li><a href="{{ item.url | url }}" {% if item.url == page.url or (item.active and page.url == '/') %}class="active"{% endif %}>{{ item.label }}</a></li>
             {% endif %}
           {% endfor %}
         </ul>

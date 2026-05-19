@@ -3,7 +3,7 @@
     <h1 class="mb-2 mb-lg-0">{{ pageTitle or title }}</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href="{{ '/' | url }}">Početna</a></li>
         <li class="current">{{ breadcrumb or pageTitle or title }}</li>
       </ol>
     </nav>

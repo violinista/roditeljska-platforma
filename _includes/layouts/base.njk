@@ -8,12 +8,12 @@
   <title>{% if title %}{{ title }} — {{ site.brand.name }}{% else %}{{ site.brand.name }}{% endif %}</title>
   <meta name="description" content="{{ description or site.footer.tagline }}">
 
-  <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/vendor/bootstrap-icons.css">
-  <link rel="stylesheet" href="/assets/css/vendor/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/assets/css/vendor/glightbox.min.css">
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap-icons.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/swiper-bundle.min.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/vendor/glightbox.min.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/tokens.css' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
 </head>
 <body class="{{ bodyClass or 'page' }}">
 

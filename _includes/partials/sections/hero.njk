@@ -16,13 +16,13 @@
         </div>
 
         <div class="action-buttons d-flex flex-wrap gap-3">
-          <a href="{{ hero.ctaPrimary.url }}" class="btn-primary">{{ hero.ctaPrimary.label }}</a>
-          <a href="{{ hero.ctaSecondary.url }}" class="btn-secondary">{{ hero.ctaSecondary.label }}</a>
+          <a href="{{ hero.ctaPrimary.url | url }}" class="btn-primary">{{ hero.ctaPrimary.label }}</a>
+          <a href="{{ hero.ctaSecondary.url | url }}" class="btn-secondary">{{ hero.ctaSecondary.label }}</a>
         </div>
       </div>
 
       <div class="col-lg-6 hero-media position-relative">
-        <img src="{{ hero.image }}" alt="{{ hero.imageAlt }}" class="img-fluid main-image rounded">
+        <img src="{{ hero.image | url }}" alt="{{ hero.imageAlt }}" class="img-fluid main-image rounded">
         <div class="image-overlay">
           <div class="badge-accredited">
             <i class="bi {{ hero.badge.icon }}"></i>
