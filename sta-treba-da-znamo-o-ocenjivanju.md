@@ -38,7 +38,7 @@ Iz tog razloga, važno je da razumemo kako su definisani ciljevi obrazovanja, **
 | ***Ocene** su preseci, međukoraci u kojima dobijamo **povratne informacije o stečenim znanjima** i utiču na planiranje **podrške detetu da napreduje** na putu razvoja veština i kompetencija značajnih za budućnost.* |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-Suštinski, ocenjivanje je jedna etapa u sticanju znanja i kompetencija ključnih za budući profesionalni i lični razvoj. Razumevanje različitih elemenat obrazovnog sistema - ciljeva, ishoda, definisanje nastave i učenje, razvoj kompetencija, pomaže nam da jasnije sagledamo „šumu“, bolje razumemo sopstvenu ulogu u obrazovanju deteta i *prepoznamo najbolji interes svog deteta u obrazovanju*. Više o različitim elementima obrazovnog sistema, šta predstavljaju i kako su povezani, možete da pročitate na sledećem **linku [Tekst 3](Tekst%204.docx).**
+Suštinski, ocenjivanje je jedna etapa u sticanju znanja i kompetencija ključnih za budući profesionalni i lični razvoj. Razumevanje različitih elemenat obrazovnog sistema - ciljeva, ishoda, definisanje nastave i učenje, razvoj kompetencija, pomaže nam da jasnije sagledamo „šumu“, bolje razumemo sopstvenu ulogu u obrazovanju deteta i *prepoznamo najbolji interes svog deteta u obrazovanju*. Više o različitim elementima obrazovnog sistema, šta predstavljaju i kako su povezani, možete da pročitate na ** [posebnoj stranici](/vestine-koje-se-sticu-u-skoli).**
 
 Ako bismo sumirali šta je to ključno što bi trebalo da znate kako biste jasnije razumeli ulogu ocenjivanja, najvažniji bi bilo sledeće.
 
@@ -209,7 +209,7 @@ I ovde razlikujemo ***provere u svrhu učenja*** od ***provera znanja*** koje se
 | *Ocenjivanje iz istog predmeta u jednoj školi izvodi se na osnovu istih kriterijuma i uporedivih instrumenata ocenjivanja, kako bi se obezbedilo pravednost i objektivnosti u ocenjivanju.* Jedinstveni kriterijumi ocenjivanja utvrđuju se na nivou *stručnih veća* u okviru istog i/ili srodnih predmeta i usvajaju se na *pedagoškom kolegijumu*. |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-Nekoliko je važnih napomena koje treba imati na umu, a tiču se zaključivanja **završne ocene** možete da pročitate na sledećem **linku [Tekst 2 Zaključna ocena](Tekst%202%20Zaključna%20ocena.docx)**.
+Nekoliko je važnih napomena koje treba imati na umu, a tiču se zaključivanja **završne ocene** možete da pročitate na **[posebnoj stranici](/zakljucna-ocena)**.
 
 Pored navedenih pitanja, oba pravilnika definišu pitanja koja pomažu roditelju (ali i učeniku) u planiranju i praćenju učenja, a tiču se dinamike ocenjivanja, obaveštavanja o oceni i evidentiranje ocene. Više o ovome možete pročitati u tekstu koji pomaže u planiranju roditeljima kako da prate napredak učenika i ocene koji se nalazi na sledećem **linku [Tekst 4](Tekst%204.docx).**
 
@@ -250,7 +250,6 @@ Ukoliko smatrate da dete nije dobilo adekvatnu ocenu, povratnu informaciju važn
 | **Pristup dokumentima koji su važni za oblast ocenjivanja: ZOSOV, Pravilnik o ocenjivanju u osnovnom obrazovanju, Pravilnik o ocenjivanju u srednjem obrazovanju, Standardi postignuća učenika.** |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-> Slika dole ne daje opciju da se linkuje direktno ka tekstovima, programer će naći već mogućnost kako to da se uradi. Kratka legenda: Žutim je obeleženo na kom se testu nalazi čitalac, a ovde su linkovi tako da možete da „šetate“ po platformi kako vas vodi interese. [Tekst 2](Tekst%202.docx). [Tekst 3](Tekst%203.docx). [Tekst 4](Tekst%204.docx). [Tekst 5](Tekst%205.docx).)
 
 <table>
 <colgroup>

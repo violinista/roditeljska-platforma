@@ -4,6 +4,24 @@
    Layered AFTER bootstrap.min.css + tokens.css.
 ============================================================================ */
 
+/* =============================================================================
+   EDIT — non-header font-size scale +15%
+   Bootstrap-style variable override: re-declares the project's design tokens at
+   :root so every `var(--font-size-*)` in the cascade picks up the new value.
+   tokens.css is the immutable source of truth and is NOT modified. Header-tier
+   tokens (--font-size-xl through --font-size-5xl) are intentionally left
+   untouched so h1–h4, .section-title, hero, and display sizes stay the same.
+   --bs-body-font-size cascades automatically because it is defined in
+   tokens.css as `var(--font-size-base)`.
+============================================================================ */
+:root {
+  --font-size-xs:   0.8625rem;   /* was 0.75rem  × 1.15 */
+  --font-size-sm:   1.00625rem;  /* was 0.875rem × 1.15 */
+  --font-size-base: 1.15rem;     /* was 1rem     × 1.15 */
+  --font-size-md:   1.265rem;    /* was 1.1rem   × 1.15 */
+  --font-size-lg:   1.4375rem;   /* was 1.25rem  × 1.15 */
+}
+
 /* ---------- Base ---------- */
 /* Smooth scroll for in-page anchor jumps (Table of Contents links).
    Explicit exception to the site-wide no-scroll-animations rule. */
@@ -95,6 +113,15 @@ a:hover { color: var(--color-link-hover); }
   z-index: 100;
   margin: 0;
 }
+/* EDIT — anchor the LAST top-level dropdown panel to its toggle's right edge so
+   it opens leftward and does not overflow the viewport. Targets only the last
+   nav <li> (currently "O nama"); other dropdowns keep the default left-anchor.
+   Properties no-op on mobile where the panel becomes position: static. */
+.navmenu > ul > li:last-child .dropdown-menu-custom {
+  left: auto;
+  right: 0;
+}
+
 .navmenu .dropdown:hover .dropdown-menu-custom,
 .navmenu .dropdown.active .dropdown-menu-custom,
 .navmenu .dropdown-menu-custom.dropdown-active {
@@ -762,17 +789,6 @@ a:hover { color: var(--color-link-hover); }
 
 .article-featured-image { margin: var(--space-5) 0; }
 .article-featured-image img { width: 100%; border-radius: var(--radius-lg); }
-
-.article-wrapper {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: var(--space-7);
-  align-items: start;
-}
-.article-wrapper.no-toc { grid-template-columns: 1fr; }
-@media (max-width: 991.98px) {
-  .article-wrapper { grid-template-columns: 1fr; }
-}
 
 .table-of-contents {
   position: sticky;

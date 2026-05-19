@@ -144,7 +144,6 @@ Na ovaj način učenik gradi kompetencije važne za samostalan život po završe
 
 Ako se vratimo na početak ovog teksta i izazove sa kojima će se naše dete suočavati u odraslom dobu kada bude u situaciji da se prilagođava promenjivom i teško previdljivom svetu rada, jasno se može videti da je suština obrazovanja **ne sticanje specifičnih znanja**, već **razvoj šireg spektra kompetencija** koje će učenicima omogućiti da upravljaju svojim učenjem, ličnim i profesionalnim razvojem, kao i da se uspešno uključe u društvo i na tržište rada u našoj zemlji ili u inostranstvu. Upravo su ove kompetencije alati koji će biti podrška našem detetu da 2075. bude uspešno i profesionalno ostvareno.
 
-> Slika dole ne daje opciju da se linkuje direktno ka tekstovima, programer će naći već mogućnost kako to da se uradi. Kratka legenda: Žutim je obeleženo na kom se testu nalazi čitalac, a ovde su linkovi tako da možete da „šetate“ po platformi kako vas vodi interese. [Tekst 2](Tekst%202.docx). [Tekst 3](Tekst%203.docx). [Tekst 4](Tekst%204.docx). [Tekst 5](Tekst%205.docx).)
 
 <table>
 <colgroup>

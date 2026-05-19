@@ -3,8 +3,6 @@ layout: layouts/page-article.njk
 title: Savetovanje i prijava na programe
 categories: [Podrška, Programi]
 ---
-# Savetovanje i prijava na programe
-
 ## Naši programi i usluge
 
 {{ savetovanjeForm.intro }} Trenutno možete da se prijavite za:

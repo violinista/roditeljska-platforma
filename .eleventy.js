@@ -30,6 +30,28 @@ module.exports = function (eleventyConfig) {
       slugify: slugifySerbianLatin,
       permalink: false,
     });
+
+  const PATH_PREFIX = "/roditeljska-platforma/";
+  const isInternalPath = (href) =>
+    typeof href === "string" &&
+    href.startsWith("/") &&
+    !href.startsWith("//") &&
+    !href.startsWith(PATH_PREFIX);
+
+  md.core.ruler.after("inline", "prefix-internal-links", (state) => {
+    for (const blockToken of state.tokens) {
+      if (blockToken.type !== "inline" || !blockToken.children) continue;
+      for (const token of blockToken.children) {
+        if (token.type !== "link_open") continue;
+        const hrefIdx = token.attrIndex("href");
+        if (hrefIdx < 0) continue;
+        const href = token.attrs[hrefIdx][1];
+        if (!isInternalPath(href)) continue;
+        token.attrs[hrefIdx][1] = PATH_PREFIX + href.slice(1);
+      }
+    }
+  });
+
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addFilter("extractToc", (html) => {

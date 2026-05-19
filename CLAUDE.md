@@ -6,6 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 "Platforma za roditelje" — a static informational site (in Serbian) aimed at parents, with content on school grading, parent-school communication, child development topics, counseling registration, and the team behind the platform.
 
+## Deployment
+
+- **Repository**: `https://github.com/violinista/roditeljska-platforma` (public, owned by user `violinista`). The local `.git` lives inside `website/`, so the repo's working tree IS the Eleventy project root.
+- **Live URL**: `https://violinista.github.io/roditeljska-platforma/` — GitHub Pages at a **subpath**, not a custom domain. See the "URL handling / `pathPrefix`" section for the consequences this has on internal links.
+- **CI workflow**: `.github/workflows/deploy.yml` builds with Node 20 + `npm ci` + `npm run build` and publishes `_site/` via the official Pages actions (`actions/configure-pages`, `actions/upload-pages-artifact`, `actions/deploy-pages`). Triggers on `push` to `main` plus `workflow_dispatch`. No `working-directory:` override is needed — the runner's checkout lands at the Eleventy root and the cwd guard in `.eleventy.js` passes naturally.
+- **Pages source setting**: configured in repo Settings → Pages → Build and deployment → Source = **GitHub Actions** (NOT "Deploy from a branch"). If you ever rebuild the repo from scratch, this is a manual one-time step.
+- **Deploy = push.** To publish a change: commit, `git push origin main`, watch the Actions tab. No other action required.
+
 ## Build / serve
 
 The site is built with [Eleventy (11ty) v3](https://www.11ty.dev/).
@@ -27,7 +35,8 @@ Always run via npm scripts so the local pinned Eleventy is used (not a globally 
 # from inside website/  ← required
 cd /Users/mika/PROJECTS/2026\ Platforma\ za\ decu/website
 npm run build      # one-shot build into _site/
-npm start          # dev server with live reload at http://localhost:8080/
+npm start          # dev server with live reload — serves at http://localhost:8080/roditeljska-platforma/
+                   # (because pathPrefix is set; the root URL redirects to the prefixed path)
 npm run clean      # rm -rf _site
 
 # from anywhere else — also works:
@@ -51,8 +60,10 @@ The site is a reusable 11ty/Nunjucks template recreated from the BootstrapMade "
 ## Directory layout
 
 ```
-.eleventy.js                  # passthroughs, layout aliases, markdown-it-anchor + extractToc filter, Serbian date filters, cwd guard
+.eleventy.js                  # passthroughs, layout aliases, markdown-it-anchor + extractToc filter, Serbian date filters, cwd guard, pathPrefix
+.github/workflows/deploy.yml  # GitHub Actions: build with Node 20 + npm ci + npm run build, deploy _site/ to GitHub Pages on push to main
 package.json                  # 11ty, bootstrap-icons, markdown-it{,-anchor} devDeps; build/start scripts
+package-lock.json             # pins exact dep versions; required by `npm ci` in CI
 robots.txt.njk                # renders to /robots.txt — site-wide crawler block
 _includes/
   layouts/
@@ -144,6 +155,8 @@ title: Naslov
 
 The site is deployed to GitHub Pages at `https://violinista.github.io/roditeljska-platforma/` — a **subpath**, not a custom domain. `.eleventy.js` sets `pathPrefix: "/roditeljska-platforma/"` so that the `| url` filter prepends that prefix to any path-shaped string. **`pathPrefix` is opt-in per URL — it does NOT auto-rewrite anything.** Any bare `href="/foo"` or `src="/foo"` that you write as a literal will stay as `/foo` in the rendered HTML and **will 404 on the deployed site**.
 
+The entire existing codebase has already been wrapped (~120+ URLs across layouts, partials, sections, the page-article layout, and the 16 legacy College-kit pages). Your job when adding new templates/markdown is to **maintain** this rule, not implement it from scratch.
+
 ### Rule: wrap every internal URL with the `| url` filter
 
 ```njk
@@ -165,7 +178,7 @@ The filter is a no-op on `#`, `#anchor`, `mailto:`, `tel:`, `https://…`, `http
 
 1. **Data files stay clean.** Keep paths in `_data/*.json` as bare `/foo` strings (no Nunjucks). Wrap at the template iteration site (`{{ item.url | url }}`), not inside the JSON. This keeps `_data/` template-agnostic.
 2. **Concatenated paths need `~`.** When building a path from a string + a variable, concatenate first, then filter: `{{ ('/assets/img/' ~ img) | url }}`. The naive form `{{ '/assets/img/{{ img }}' | url }}` is **broken** — the inner `{{ }}` becomes literal text, not a substitution.
-3. **Markdown body links can't use `| url` inside `[text](url)`.** Inside a `.md` page, switch to inline HTML: `<a href="{{ '/foo/' | url }}">text</a>`. (`markdown-it` runs with `html: true` in `.eleventy.js`, so inline HTML is fine.) Plain `[text](/foo)` will render to bare `/foo` and 404.
+3. **Markdown body links auto-prefix.** Inside a `.md` page you can write plain `[text](/foo/)` — a custom `markdown-it` core rule (`prefix-internal-links` in `.eleventy.js`) rewrites the `href` to `/roditeljska-platforma/foo/` at parse time. The match rule mirrors `| url`: any href starting with `/` (but not `//`, `#`, `mailto:`, `tel:`, `http(s)://`) gets prefixed; already-prefixed paths are skipped (idempotent). The inline-HTML form `<a href="{{ '/foo/' | url }}">text</a>` still works and is fine to keep where it exists, just no longer required. This auto-prefixing applies **only inside `.md` files** — `.njk` templates and `_data/*.json` paths still need explicit `| url` at the template iteration site.
 4. **`page.url` is pre-prefix.** When comparing the current page against a nav entry (`{% if item.url == page.url %}`), do NOT wrap either side of the comparison — both are raw paths. Only wrap the rendered `href`.
 5. **`robots.txt.njk` is plaintext, not HTML.** The `Disallow: /` directive is a robots.txt rule, not a URL — do not run it through `| url`.
 
@@ -191,7 +204,7 @@ The entire site is blocked from being crawled or indexed:
 - **`<meta name="robots">` and `<meta name="googlebot">`** on every page (in `base.njk` `<head>`) default to `noindex, nofollow, noarchive, nosnippet, noimageindex`. Frontmatter `robots:` can override per-page.
 - **`/robots.txt`** (generated from `robots.txt.njk`) declares `User-agent: * / Disallow: /` plus explicit blocks for ~27 known crawlers including AI scrapers (GPTBot, ClaudeBot, anthropic-ai, Google-Extended, PerplexityBot, CCBot, Bytespider, etc.) and SEO bots (SemrushBot, AhrefsBot, MJ12bot).
 
-When the site is ready to go public: edit both layers (remove the `robots.txt.njk` blocks AND change the default `robots:` string in `base.njk`).
+When the site is ready to go public: edit both layers (remove the `robots.txt.njk` blocks AND change the default `robots:` string in `base.njk`). Note that the GitHub repo itself is already public, so anyone with the URL `https://violinista.github.io/roditeljska-platforma/` can view the site today — the blocks just prevent it from appearing in search results.
 
 ## Design tokens
 
@@ -221,7 +234,7 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 
   Then add a matching link to `_data/site.json` under `nav` and/or `footer.columns`. Store the URL as a bare path (e.g. `"/sazetak-odredbi-zosov-a/"`) — `header.njk` and `footer.njk` already apply `| url` when rendering. See the "URL handling / `pathPrefix`" section above for the wrapping rule.
 
-  **Markdown internal links**: a plain `[tekst](/savetovanje)` does NOT get the `pathPrefix` applied and will 404 on the deployed site. Use inline HTML instead: `<a href="{{ '/savetovanje/' | url }}">tekst</a>`.
+  **Markdown internal links**: write them as plain markdown — `[tekst](/savetovanje/)`. A custom `markdown-it` core rule (`prefix-internal-links` in `.eleventy.js`) auto-prepends the `pathPrefix` to any href that starts with `/` (excluding `//`, `#`, `mailto:`, `tel:`, `http(s)://`). The older inline-HTML form `<a href="{{ '/savetovanje/' | url }}">tekst</a>` still works (and exists in a few pages) but is no longer required. Auto-prefixing is markdown-only — `.njk` templates still need explicit `| url`.
 
   **Table of Contents** is auto-generated for `page-article` pages: every `<h2>` in the rendered HTML gets an `id` (via `markdown-it-anchor`, configured with a Serbian-Latin-aware slugify in `.eleventy.js`), and the layout's `extractToc` filter scans the rendered content and lists those headings as an `<aside class="table-of-contents">`. Pages with fewer than 1 H2 hide the aside and render full-width. To get a TOC, just write `## Heading` in the markdown body — no frontmatter `toc:` array needed (but `toc:` is still honored as an override if explicitly set).
 

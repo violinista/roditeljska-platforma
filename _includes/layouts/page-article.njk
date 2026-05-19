@@ -54,20 +54,38 @@
 
         {% set autoToc = content | extractToc %}
         {% set tocItems = toc or autoToc %}
-        <div class="article-wrapper {% if not (tocItems and tocItems.length > 0) %}no-toc{% endif %}">
-          {% if tocItems and tocItems.length > 0 %}
-            <aside class="table-of-contents">
-              <h3>Sadržaj</h3>
-              <nav>
-                <ul>
-                  {% for item in tocItems %}
-                    <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
-                  {% endfor %}
-                </ul>
-              </nav>
-            </aside>
-          {% endif %}
+        {% if tocItems and tocItems.length > 0 %}
+          <div class="row">
+            <div class="col-lg-3">
+              <aside class="table-of-contents">
+                <h3>Sadržaj</h3>
+                <nav>
+                  <ul>
+                    {% for item in tocItems %}
+                      <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </nav>
+              </aside>
+            </div>
+            <div class="col-lg-9">
+              <div class="article-content">
+                {{ content | safe }}
 
+                {% if cta %}
+                  <aside class="article-cta">
+                    <div class="cta-icon"><i class="bi bi-chat-heart"></i></div>
+                    <div class="cta-body">
+                      <h3>Potrebna vam je dodatna podrška?</h3>
+                      <p>Naš tim stručnjaka — psihologa i pedagoga — pomaže roditeljima da pronađu najbolji odgovor na izazove sa kojima se njihova deca suočavaju u školi. Zakažite individualno savetovanje i razgovarajte sa nekim ko razume šta vam je potrebno.</p>
+                      <a href="{{ '/savetovanje/' | url }}" class="cta-button">Zakaži savetovanje <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </aside>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% else %}
           <div class="article-content">
             {{ content | safe }}
 
@@ -82,7 +100,7 @@
               </aside>
             {% endif %}
           </div>
-        </div>
+        {% endif %}
 
         <div class="article-footer">
           <div class="share-article">
