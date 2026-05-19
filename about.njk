@@ -9,7 +9,7 @@ bodyClass: about-page
     <h1 class="mb-2 mb-lg-0">About</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">About</li>
       </ol>
     </nav>
@@ -60,7 +60,7 @@ bodyClass: about-page
 
       <div class="col-lg-6">
         <div class="about-image">
-          <img src="/assets/img/campus-5.webp" alt="Campus" class="img-fluid rounded">
+          <img src="{{ '/assets/img/campus-5.webp' | url }}" alt="Campus" class="img-fluid rounded">
           <div class="mission-vision">
             <div class="mission">
               <h3>Our Mission</h3>
@@ -121,7 +121,7 @@ bodyClass: about-page
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
           <div class="intro-image">
-            <img src="/assets/img/teacher-7.webp" alt="School Leadership" class="img-fluid rounded-lg">
+            <img src="{{ '/assets/img/teacher-7.webp' | url }}" alt="School Leadership" class="img-fluid rounded-lg">
             <div class="experience-badge">
               <span class="years">35+</span>
               <span class="text">Years of Educational Excellence</span>
@@ -167,7 +167,7 @@ bodyClass: about-page
             <div class="team-card">
               <div class="card-inner">
                 <div class="card-front">
-                  <div class="member-image"><img src="{{ m.photo }}" alt="{{ m.name }}" class="img-fluid"></div>
+                  <div class="member-image"><img src="{{ m.photo | url }}" alt="{{ m.name }}" class="img-fluid"></div>
                   <div class="member-info">
                     <h4>{{ m.name }}</h4>
                     <p>{{ m.role }}</p>

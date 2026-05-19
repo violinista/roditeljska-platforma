@@ -9,7 +9,7 @@ bodyClass: events-page
     <h1 class="mb-2 mb-lg-0">Events</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">Events</li>
       </ol>
     </nav>
@@ -35,7 +35,7 @@ bodyClass: events-page
                   <span><i class="bi bi-geo-alt"></i> {{ e.loc }}</span>
                 </div>
                 <p class="event-description">{{ e.desc }}</p>
-                <a href="/event-details/" class="btn-event-details">Learn More <i class="bi bi-arrow-right"></i></a>
+                <a href="{{ '/event-details/' | url }}" class="btn-event-details">Learn More <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           {% endfor %}

@@ -9,7 +9,7 @@ bodyClass: faculty-staff-page
     <h1 class="mb-2 mb-lg-0">Faculty Staff</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">Faculty Staff</li>
       </ol>
     </nav>
@@ -43,7 +43,7 @@ bodyClass: faculty-staff-page
           <div class="col-lg-4 col-md-6">
             <div class="faculty-card">
               <div class="faculty-image">
-                <img src="{{ f.photo }}" class="img-fluid" alt="{{ f.name }}">
+                <img src="{{ f.photo | url }}" class="img-fluid" alt="{{ f.name }}">
                 <div class="social-links">
                   <a href="#"><i class="bi bi-twitter"></i></a>
                   <a href="#"><i class="bi bi-linkedin"></i></a>

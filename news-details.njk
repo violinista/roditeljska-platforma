@@ -9,7 +9,7 @@ bodyClass: news-details-page
     <h1 class="mb-2 mb-lg-0">News Details</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">News Details</li>
       </ol>
     </nav>
@@ -28,7 +28,7 @@ bodyClass: news-details-page
         <h1 class="title">The Evolution of User Interface Design: From Skeuomorphism to Neumorphism</h1>
         <div class="article-meta">
           <div class="author">
-            <img src="/assets/img/person-m-8.webp" alt="Author" class="author-img">
+            <img src="{{ '/assets/img/person-m-8.webp' | url }}" alt="Author" class="author-img">
             <div class="author-info">
               <h4>David Wilson</h4>
               <span>UI/UX Design Lead</span>
@@ -43,7 +43,7 @@ bodyClass: news-details-page
       </div>
 
       <div class="article-featured-image">
-        <img src="/assets/img/showcase-6.webp" alt="UI Design Evolution" class="img-fluid">
+        <img src="{{ '/assets/img/showcase-6.webp' | url }}" alt="UI Design Evolution" class="img-fluid">
       </div>
 
       <div class="article-wrapper">
@@ -76,7 +76,7 @@ bodyClass: news-details-page
           <div class="content-section" id="skeuomorphism">
             <h2>The Skeuomorphic Era</h2>
             <div class="image-with-caption right">
-              <img src="/assets/img/blog-post-2.webp" alt="Skeuomorphic Design Example" class="img-fluid" loading="lazy">
+              <img src="{{ '/assets/img/blog-post-2.webp' | url }}" alt="Skeuomorphic Design Example" class="img-fluid" loading="lazy">
               <figcaption>Early iOS design showcasing skeuomorphic elements</figcaption>
             </div>
             <p>Skeuomorphic design dominated the early years of digital interfaces, attempting to mirror real-world objects in digital form. This approach helped users transition from physical to digital interactions through familiar visual metaphors.</p>

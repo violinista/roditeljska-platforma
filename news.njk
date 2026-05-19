@@ -9,7 +9,7 @@ bodyClass: news-page
     <h1 class="mb-2 mb-lg-0">News</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">News</li>
       </ol>
     </nav>
@@ -22,14 +22,14 @@ bodyClass: news-page
 
       <div class="col-lg-8">
         <article class="featured-post position-relative mb-4">
-          <img src="/assets/img/blog-post-1.webp" alt="Featured post" class="img-fluid">
+          <img src="{{ '/assets/img/blog-post-1.webp' | url }}" alt="Featured post" class="img-fluid">
           <div class="post-overlay">
             <div class="post-content">
               <div class="post-meta">
                 <span class="category">Politics</span>
                 <span class="date">02/15/2024</span>
               </div>
-              <h2 class="post-title"><a href="/news-details/">Optimizing Strategic Initiatives Through Cross-Functional Collaboration</a></h2>
+              <h2 class="post-title"><a href="{{ '/news-details/' | url }}">Optimizing Strategic Initiatives Through Cross-Functional Collaboration</a></h2>
               <p class="post-excerpt">Leveraging core competencies to drive sustainable growth and maximize stakeholder value through innovative solutions and market-driven approaches.</p>
               <div class="post-author"><span>by</span><a href="#">Jennifer Mitchell</a></div>
             </div>
@@ -39,20 +39,20 @@ bodyClass: news-page
         <div class="row g-4">
           <div class="col-md-6">
             <article class="secondary-post">
-              <div class="post-image"><img src="/assets/img/blog-post-2.webp" alt="Post" class="img-fluid"></div>
+              <div class="post-image"><img src="{{ '/assets/img/blog-post-2.webp' | url }}" alt="Post" class="img-fluid"></div>
               <div class="post-content">
                 <div class="post-meta"><span class="category">Politics</span><span class="date">03/21/2024</span></div>
-                <h3 class="post-title"><a href="/news-details/">Implementing Agile Methodologies for Enhanced Business Performance</a></h3>
+                <h3 class="post-title"><a href="{{ '/news-details/' | url }}">Implementing Agile Methodologies for Enhanced Business Performance</a></h3>
                 <div class="post-author"><span>by</span><a href="#">Robert Anderson</a></div>
               </div>
             </article>
           </div>
           <div class="col-md-6">
             <article class="secondary-post">
-              <div class="post-image"><img src="/assets/img/blog-post-3.webp" alt="Post" class="img-fluid"></div>
+              <div class="post-image"><img src="{{ '/assets/img/blog-post-3.webp' | url }}" alt="Post" class="img-fluid"></div>
               <div class="post-content">
                 <div class="post-meta"><span class="category">Business</span><span class="date">01/30/2024</span></div>
-                <h3 class="post-title"><a href="/news-details/">Streamlining Operations Through Digital Transformation Solutions</a></h3>
+                <h3 class="post-title"><a href="{{ '/news-details/' | url }}">Streamlining Operations Through Digital Transformation Solutions</a></h3>
                 <div class="post-author"><span>by</span><a href="#">Sarah Thompson</a></div>
               </div>
             </article>
@@ -74,11 +74,11 @@ bodyClass: news-page
                 {% for p in t.posts %}
                   <article class="tab-post">
                     <div class="row g-0 align-items-center">
-                      <div class="col-4"><img src="{{ p.img }}" alt="Post" class="img-fluid"></div>
+                      <div class="col-4"><img src="{{ p.img | url }}" alt="Post" class="img-fluid"></div>
                       <div class="col-8">
                         <div class="post-content">
                           <span class="category">{{ p.category }}</span>
-                          <h4 class="post-title"><a href="/news-details/">{{ p.title }}</a></h4>
+                          <h4 class="post-title"><a href="{{ '/news-details/' | url }}">{{ p.title }}</a></h4>
                           <div class="post-author">by <a href="#">{{ p.author }}</a></div>
                         </div>
                       </div>
@@ -100,11 +100,11 @@ bodyClass: news-page
       {% for g in newsExt.grid %}
         <div class="col-xl-4 col-md-6">
           <article>
-            <div class="post-img"><img src="{{ g.img }}" alt="" class="img-fluid"></div>
+            <div class="post-img"><img src="{{ g.img | url }}" alt="" class="img-fluid"></div>
             <p class="post-category">{{ g.category }}</p>
-            <h2 class="title"><a href="/news-details/">{{ g.title }}</a></h2>
+            <h2 class="title"><a href="{{ '/news-details/' | url }}">{{ g.title }}</a></h2>
             <div class="d-flex align-items-center">
-              <img src="{{ g.authorImg }}" alt="" class="img-fluid post-author-img flex-shrink-0">
+              <img src="{{ g.authorImg | url }}" alt="" class="img-fluid post-author-img flex-shrink-0">
               <div class="post-meta">
                 <p class="post-author">{{ g.author }}</p>
                 <p class="post-date"><time datetime="{{ g.date }}">{{ g.dateLabel }}</time></p>

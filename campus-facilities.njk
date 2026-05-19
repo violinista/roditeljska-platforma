@@ -9,7 +9,7 @@ bodyClass: campus-facilities-page
     <h1 class="mb-2 mb-lg-0">Campus &amp; Facilities</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">Campus Facilities</li>
       </ol>
     </nav>
@@ -36,7 +36,7 @@ bodyClass: campus-facilities-page
         <div class="col-lg-4">
           <div class="hero-visual">
             <div class="image-stack">
-              <img src="/assets/img/campus-3.webp" alt="Campus View" class="img-fluid primary-img">
+              <img src="{{ '/assets/img/campus-3.webp' | url }}" alt="Campus View" class="img-fluid primary-img">
               <div class="floating-card"><i class="bi bi-mortarboard"></i><span>Academic Excellence</span></div>
             </div>
           </div>
@@ -51,7 +51,7 @@ bodyClass: campus-facilities-page
           <h3>Academic Facilities</h3>
         </div>
         <div class="card-content">
-          <div class="facility-image"><img src="/assets/img/education-4.webp" alt="Academic Building" class="img-fluid"></div>
+          <div class="facility-image"><img src="{{ '/assets/img/education-4.webp' | url }}" alt="Academic Building" class="img-fluid"></div>
           <div class="facility-list">
             <div class="facility-item"><i class="bi bi-check2-circle"></i><span>Advanced Research Labs</span></div>
             <div class="facility-item"><i class="bi bi-check2-circle"></i><span>Smart Classrooms</span></div>
@@ -68,7 +68,7 @@ bodyClass: campus-facilities-page
           <h3>Sports Complex</h3>
         </div>
         <div class="card-content">
-          <div class="facility-image"><img src="/assets/img/education-6.webp" alt="Sports Complex" class="img-fluid"></div>
+          <div class="facility-image"><img src="{{ '/assets/img/education-6.webp' | url }}" alt="Sports Complex" class="img-fluid"></div>
           <div class="facility-list">
             <div class="facility-item"><i class="bi bi-check2-circle"></i><span>Olympic Pool</span></div>
             <div class="facility-item"><i class="bi bi-check2-circle"></i><span>Gymnasium</span></div>
@@ -85,7 +85,7 @@ bodyClass: campus-facilities-page
           <h3>Living Spaces</h3>
         </div>
         <div class="card-content">
-          <div class="facility-image"><img src="/assets/img/campus-5.webp" alt="Student Housing" class="img-fluid"></div>
+          <div class="facility-image"><img src="{{ '/assets/img/campus-5.webp' | url }}" alt="Student Housing" class="img-fluid"></div>
           <div class="facility-list">
             <div class="facility-item"><i class="bi bi-check2-circle"></i><span>Modern Dormitories</span></div>
             <div class="facility-item"><i class="bi bi-check2-circle"></i><span>Common Areas</span></div>
@@ -117,7 +117,7 @@ bodyClass: campus-facilities-page
         <div class="col-lg-6">
           <div class="tour-visual">
             <div class="video-container">
-              <img src="/assets/img/showcase-6.webp" alt="Campus Tour" class="img-fluid">
+              <img src="{{ '/assets/img/showcase-6.webp' | url }}" alt="Campus Tour" class="img-fluid">
               <div class="play-overlay">
                 <button class="play-btn"><i class="bi bi-play-fill"></i></button>
               </div>
@@ -149,7 +149,7 @@ bodyClass: campus-facilities-page
             <div class="swiper-slide">
               <div class="highlight-card">
                 <div class="card-image">
-                  <img src="{{ h.img }}" alt="{{ h.title }}" class="img-fluid" loading="lazy">
+                  <img src="{{ h.img | url }}" alt="{{ h.title }}" class="img-fluid" loading="lazy">
                   <div class="image-overlay"><span class="category-tag">{{ h.tag }}</span></div>
                 </div>
                 <div class="card-body">

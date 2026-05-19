@@ -9,7 +9,7 @@ bodyClass: academics-page
     <h1 class="mb-2 mb-lg-0">Academics</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">Academics</li>
       </ol>
     </nav>
@@ -60,7 +60,7 @@ bodyClass: academics-page
             <div class="col-lg-4 col-md-6 program-item {{ p.filter }}">
               <div class="program-card">
                 <div class="program-img">
-                  <img src="{{ p.image }}" alt="{{ p.title }}" class="img-fluid">
+                  <img src="{{ p.image | url }}" alt="{{ p.title }}" class="img-fluid">
                   <div class="program-tag">{{ p.tag }}</div>
                 </div>
                 <div class="program-content">
@@ -89,7 +89,7 @@ bodyClass: academics-page
         {% for f in academics.facultyShort %}
           <div class="col-lg-3 col-md-6">
             <div class="faculty-card">
-              <div class="faculty-img"><img src="{{ f.photo }}" alt="{{ f.name }}" class="img-fluid"></div>
+              <div class="faculty-img"><img src="{{ f.photo | url }}" alt="{{ f.name }}" class="img-fluid"></div>
               <div class="faculty-content">
                 <h4>{{ f.name }}</h4>
                 <p class="faculty-position">{{ f.role }}</p>

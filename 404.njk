@@ -9,7 +9,7 @@ bodyClass: page-404
     <h1 class="mb-2 mb-lg-0">404</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">404</li>
       </ol>
     </nav>
@@ -34,7 +34,7 @@ bodyClass: page-404
         </form>
       </div>
       <div class="error-action">
-        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href=\"{{ '/' | url }}\" class="btn btn-primary">Back to Home</a>
       </div>
     </div>
   </div>

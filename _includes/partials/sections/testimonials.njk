@@ -25,7 +25,7 @@
           <div class="swiper-slide">
             <div class="testimonial-item h-100">
               <div class="testimonial-header d-flex align-items-center gap-3 mb-3">
-                <img src="{{ t.photo }}" alt="{{ t.name }}" class="rounded-circle" width="56" height="56">
+                <img src="{{ t.photo | url }}" alt="{{ t.name }}" class="rounded-circle" width="56" height="56">
                 <div>
                   <h4 class="mb-0">{{ t.name }}</h4>
                   <span>{{ t.role }}</span>

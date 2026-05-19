@@ -9,7 +9,7 @@ bodyClass: event-details-page
     <h1 class="mb-2 mb-lg-0">Event Details</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">Event Details</li>
       </ol>
     </nav>
@@ -22,7 +22,7 @@ bodyClass: event-details-page
 
       <div class="col-lg-8">
         <div class="event-image mb-4">
-          <img src="/assets/img/events-2.webp" alt="Event" class="img-fluid rounded">
+          <img src="{{ '/assets/img/events-2.webp' | url }}" alt="Event" class="img-fluid rounded">
         </div>
 
         <div class="event-meta mb-4">
@@ -66,8 +66,8 @@ bodyClass: event-details-page
             <div class="row g-4 mt-2">
               {% for img in ['events-3.webp','events-5.webp','events-6.webp'] %}
                 <div class="col-md-4">
-                  <a href="/assets/img/{{ img }}" class="glightbox">
-                    <img src="/assets/img/{{ img }}" alt="Event Gallery" class="img-fluid rounded">
+                  <a href="{{ ('/assets/img/' ~ img) | url }}" class="glightbox">
+                    <img src="{{ ('/assets/img/' ~ img) | url }}" alt="Event Gallery" class="img-fluid rounded">
                   </a>
                 </div>
               {% endfor %}
@@ -113,7 +113,7 @@ bodyClass: event-details-page
             <h3>Event Organizer</h3>
             <div class="organizer-details">
               <div class="organizer-image">
-                <img src="/assets/img/person-m-12.webp" class="img-fluid rounded" alt="Organizer">
+                <img src="{{ '/assets/img/person-m-12.webp' | url }}" class="img-fluid rounded" alt="Organizer">
               </div>
               <div class="organizer-content">
                 <h4>Prof. Michael Anderson</h4>

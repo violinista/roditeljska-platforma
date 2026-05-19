@@ -9,7 +9,7 @@ bodyClass: alumni-page
     <h1 class="mb-2 mb-lg-0">Alumni</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">Alumni</li>
       </ol>
     </nav>
@@ -42,7 +42,7 @@ bodyClass: alumni-page
       </div>
       <div class="col-lg-6">
         <div class="alumni-image">
-          <img src="/assets/img/campus-3.webp" alt="Alumni gathering" class="img-fluid rounded">
+          <img src="{{ '/assets/img/campus-3.webp' | url }}" alt="Alumni gathering" class="img-fluid rounded">
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ bodyClass: alumni-page
 
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="alumni-card">
-          <div class="alumni-image"><img src="/assets/img/person-m-8.webp" alt="Alumni" class="img-fluid"></div>
+          <div class="alumni-image"><img src="{{ '/assets/img/person-m-8.webp' | url }}" alt="Alumni" class="img-fluid"></div>
           <div class="alumni-content">
             <h4>Dr. Michael Roberts</h4>
             <p class="alumni-class">Class of 2007</p>
@@ -68,7 +68,7 @@ bodyClass: alumni-page
 
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="alumni-card">
-          <div class="alumni-image"><img src="/assets/img/person-f-6.webp" alt="Alumni" class="img-fluid"></div>
+          <div class="alumni-image"><img src="{{ '/assets/img/person-f-6.webp' | url }}" alt="Alumni" class="img-fluid"></div>
           <div class="alumni-content">
             <h4>Sarah Chen, Ph.D.</h4>
             <p class="alumni-class">Class of 2010</p>
@@ -81,7 +81,7 @@ bodyClass: alumni-page
 
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="alumni-card">
-          <div class="alumni-image"><img src="/assets/img/person-m-10.webp" alt="Alumni" class="img-fluid"></div>
+          <div class="alumni-image"><img src="{{ '/assets/img/person-m-10.webp' | url }}" alt="Alumni" class="img-fluid"></div>
           <div class="alumni-content">
             <h4>James Wilson</h4>
             <p class="alumni-class">Class of 2012</p>

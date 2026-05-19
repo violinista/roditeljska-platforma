@@ -140,6 +140,37 @@ title: Naslov
 ---
 ```
 
+## URL handling / `pathPrefix` (⚠️ MUST READ before adding links or assets)
+
+The site is deployed to GitHub Pages at `https://violinista.github.io/roditeljska-platforma/` — a **subpath**, not a custom domain. `.eleventy.js` sets `pathPrefix: "/roditeljska-platforma/"` so that the `| url` filter prepends that prefix to any path-shaped string. **`pathPrefix` is opt-in per URL — it does NOT auto-rewrite anything.** Any bare `href="/foo"` or `src="/foo"` that you write as a literal will stay as `/foo` in the rendered HTML and **will 404 on the deployed site**.
+
+### Rule: wrap every internal URL with the `| url` filter
+
+```njk
+<a href="{{ '/savetovanje/' | url }}">…</a>
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+<script src="{{ '/assets/js/main.js' | url }}"></script>
+<img src="{{ '/assets/img/hero.webp' | url }}" alt="">
+
+<!-- data-driven iteration: wrap at the template, NOT in the JSON -->
+{% for item in site.nav %}
+  <a href="{{ item.url | url }}">{{ item.label }}</a>
+{% endfor %}
+<img src="{{ post.image | url }}" alt="">
+```
+
+The filter is a no-op on `#`, `#anchor`, `mailto:`, `tel:`, `https://…`, `http://…`, and protocol-relative URLs, so a uniform "always wrap" habit is safe and simpler than a conditional rule.
+
+### Gotchas
+
+1. **Data files stay clean.** Keep paths in `_data/*.json` as bare `/foo` strings (no Nunjucks). Wrap at the template iteration site (`{{ item.url | url }}`), not inside the JSON. This keeps `_data/` template-agnostic.
+2. **Concatenated paths need `~`.** When building a path from a string + a variable, concatenate first, then filter: `{{ ('/assets/img/' ~ img) | url }}`. The naive form `{{ '/assets/img/{{ img }}' | url }}` is **broken** — the inner `{{ }}` becomes literal text, not a substitution.
+3. **Markdown body links can't use `| url` inside `[text](url)`.** Inside a `.md` page, switch to inline HTML: `<a href="{{ '/foo/' | url }}">text</a>`. (`markdown-it` runs with `html: true` in `.eleventy.js`, so inline HTML is fine.) Plain `[text](/foo)` will render to bare `/foo` and 404.
+4. **`page.url` is pre-prefix.** When comparing the current page against a nav entry (`{% if item.url == page.url %}`), do NOT wrap either side of the comparison — both are raw paths. Only wrap the rendered `href`.
+5. **`robots.txt.njk` is plaintext, not HTML.** The `Disallow: /` directive is a robots.txt rule, not a URL — do not run it through `| url`.
+
+When adding a new template, new partial, new section, or new markdown link, **check that every `href`, `src`, `srcset`, lightbox `href`, etc. either flows through `| url` or starts with one of the safe prefixes (`#`, `mailto:`, `tel:`, `http(s)://`, `//`).**
+
 ## Animations / motion
 
 The site is **intentionally static** — no load or scroll animations:
@@ -188,7 +219,9 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
   ---
   ```
 
-  Then add a matching link to `_data/site.json` under `nav` and/or `footer.columns`.
+  Then add a matching link to `_data/site.json` under `nav` and/or `footer.columns`. Store the URL as a bare path (e.g. `"/sazetak-odredbi-zosov-a/"`) — `header.njk` and `footer.njk` already apply `| url` when rendering. See the "URL handling / `pathPrefix`" section above for the wrapping rule.
+
+  **Markdown internal links**: a plain `[tekst](/savetovanje)` does NOT get the `pathPrefix` applied and will 404 on the deployed site. Use inline HTML instead: `<a href="{{ '/savetovanje/' | url }}">tekst</a>`.
 
   **Table of Contents** is auto-generated for `page-article` pages: every `<h2>` in the rendered HTML gets an `id` (via `markdown-it-anchor`, configured with a Serbian-Latin-aware slugify in `.eleventy.js`), and the layout's `extractToc` filter scans the rendered content and lists those headings as an `<aside class="table-of-contents">`. Pages with fewer than 1 H2 hide the aside and render full-width. To get a TOC, just write `## Heading` in the markdown body — no frontmatter `toc:` array needed (but `toc:` is still honored as an override if explicitly set).
 
@@ -198,7 +231,7 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 
 - **College multi-page templates**: 16 `.njk` files at the repo root (about, academics, admissions, alumni, campus-facilities, contact, event-details, events, faculty-staff, news, news-details, privacy, starter-page, students-life, terms-of-service, 404). All use `layout: layouts/base.njk`. Repeating blocks are fed from `_data/about.json`, `academics.json`, `campus.json`, `faculty.json`, `eventsExt.json`, `newsExt.json`. **These pages are currently orphaned** — they have no nav links pointing to them; they remain as a layout reference kit, reachable only via direct URL.
 
-- **Adding a new homepage section**: create `_includes/partials/sections/<name>.njk`, add `_data/<name>.json` (read as a top-level variable in the partial), and `{% include %}` it in `_includes/layouts/home.njk`.
+- **Adding a new homepage section**: create `_includes/partials/sections/<name>.njk`, add `_data/<name>.json` (read as a top-level variable in the partial), and `{% include %}` it in `_includes/layouts/home.njk`. Every `href`/`src` you emit in the new partial must flow through `| url` (see "URL handling / `pathPrefix`" above).
 
 ## Content language
 

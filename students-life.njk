@@ -9,7 +9,7 @@ bodyClass: students-life-page
     <h1 class="mb-2 mb-lg-0">Student Life</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">Students Life</li>
       </ol>
     </nav>
@@ -21,7 +21,7 @@ bodyClass: students-life-page
 
     <div class="row">
       <div class="col-lg-6 d-flex align-items-center">
-        <img src="/assets/img/campus-3.webp" class="img-fluid rounded" alt="Campus Life">
+        <img src="{{ '/assets/img/campus-3.webp' | url }}" class="img-fluid rounded" alt="Campus Life">
       </div>
       <div class="col-lg-6">
         <div class="student-life-intro">
@@ -82,7 +82,7 @@ bodyClass: students-life-page
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="athletics-card">
-              <img src="/assets/img/activities-2.webp" class="img-fluid" loading="lazy" alt="Swimming">
+              <img src="{{ '/assets/img/activities-2.webp' | url }}" class="img-fluid" loading="lazy" alt="Swimming">
               <div class="athletics-content">
                 <h5>Swimming</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
@@ -91,7 +91,7 @@ bodyClass: students-life-page
           </div>
           <div class="swiper-slide">
             <div class="athletics-card">
-              <img src="/assets/img/activities-4.webp" class="img-fluid" loading="lazy" alt="Basketball">
+              <img src="{{ '/assets/img/activities-4.webp' | url }}" class="img-fluid" loading="lazy" alt="Basketball">
               <div class="athletics-content">
                 <h5>Basketball</h5>
                 <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in.</p>
@@ -100,7 +100,7 @@ bodyClass: students-life-page
           </div>
           <div class="swiper-slide">
             <div class="athletics-card">
-              <img src="/assets/img/activities-6.webp" class="img-fluid" loading="lazy" alt="Soccer">
+              <img src="{{ '/assets/img/activities-6.webp' | url }}" class="img-fluid" loading="lazy" alt="Soccer">
               <div class="athletics-content">
                 <h5>Soccer</h5>
                 <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus.</p>
@@ -109,7 +109,7 @@ bodyClass: students-life-page
           </div>
           <div class="swiper-slide">
             <div class="athletics-card">
-              <img src="/assets/img/activities-1.webp" class="img-fluid" loading="lazy" alt="Tennis">
+              <img src="{{ '/assets/img/activities-1.webp' | url }}" class="img-fluid" loading="lazy" alt="Tennis">
               <div class="athletics-content">
                 <h5>Tennis</h5>
                 <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque.</p>
@@ -126,7 +126,7 @@ bodyClass: students-life-page
       <div class="row g-4">
         <div class="col-md-6 col-lg-3">
           <div class="facility-card">
-            <img src="/assets/img/campus-5.webp" class="img-fluid" alt="Housing">
+            <img src="{{ '/assets/img/campus-5.webp' | url }}" class="img-fluid" alt="Housing">
             <div class="facility-info">
               <h5>Student Housing</h5>
               <p>Comfortable living spaces designed for academic success and community building.</p>
@@ -135,7 +135,7 @@ bodyClass: students-life-page
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="facility-card">
-            <img src="/assets/img/campus-3.webp" class="img-fluid" alt="Dining">
+            <img src="{{ '/assets/img/campus-3.webp' | url }}" class="img-fluid" alt="Dining">
             <div class="facility-info">
               <h5>Dining Facilities</h5>
               <p>Multiple dining options with diverse meal plans to accommodate all dietary preferences.</p>
@@ -144,7 +144,7 @@ bodyClass: students-life-page
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="facility-card">
-            <img src="/assets/img/education-6.webp" class="img-fluid" alt="Library">
+            <img src="{{ '/assets/img/education-6.webp' | url }}" class="img-fluid" alt="Library">
             <div class="facility-info">
               <h5>Modern Library</h5>
               <p>Extensive collection of resources with dedicated study spaces and digital access.</p>
@@ -153,7 +153,7 @@ bodyClass: students-life-page
         </div>
         <div class="col-md-6 col-lg-3">
           <div class="facility-card">
-            <img src="/assets/img/education-10.webp" class="img-fluid" alt="Recreation">
+            <img src="{{ '/assets/img/education-10.webp' | url }}" class="img-fluid" alt="Recreation">
             <div class="facility-info">
               <h5>Recreation Center</h5>
               <p>State-of-the-art fitness equipment, courts, and spaces for group activities.</p>
@@ -199,8 +199,8 @@ bodyClass: students-life-page
         {% set galleryImgs = ['students-5.webp','students-7.webp','activities-1.webp','activities-2.webp','activities-4.webp','activities-6.webp'] %}
         {% for img in galleryImgs %}
           <div class="col-md-4">
-            <a href="/assets/img/{{ img }}" class="gallery-item glightbox">
-              <img src="/assets/img/{{ img }}" class="img-fluid" loading="lazy" alt="Student Life">
+            <a href="{{ ('/assets/img/' ~ img) | url }}" class="gallery-item glightbox">
+              <img src="{{ ('/assets/img/' ~ img) | url }}" class="img-fluid" loading="lazy" alt="Student Life">
               <div class="gallery-overlay"><i class="bi bi-plus-circle"></i></div>
             </a>
           </div>

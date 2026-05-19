@@ -9,7 +9,7 @@ bodyClass: admissions-page
     <h1 class="mb-2 mb-lg-0">Admissions</h1>
     <nav class="breadcrumbs">
       <ol>
-        <li><a href="/">Početna</a></li>
+        <li><a href=\"{{ '/' | url }}\">Početna</a></li>
         <li class="current">Admissions</li>
       </ol>
     </nav>
@@ -118,7 +118,7 @@ bodyClass: admissions-page
     <div class="row mt-5 campus-visit">
       <div class="col-lg-6">
         <div class="visit-image">
-          <img src="/assets/img/campus-5.webp" class="img-fluid" alt="Campus Visit" loading="lazy">
+          <img src="{{ '/assets/img/campus-5.webp' | url }}" class="img-fluid" alt="Campus Visit" loading="lazy">
           <div class="image-caption">Experience our beautiful campus in person</div>
         </div>
       </div>
