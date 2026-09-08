@@ -46,7 +46,7 @@ Nadamo se da će vam ovaj svojevrsni vodič kroz ocenjivanje pomoći da jasnije 
 
 ## Kako da koristite ovaj vodič
 
-Ovaj vodič je zamišljen da odgovori na nekoliko ključnih pitanja koja su nam roditelji postavljali na temu ocenjivanja, a o kojima možete čitati u nastavku. Možete pratiti redosled tekstova kao što je naznačeno u dijagramu ispod, klikom na pojedinačne tekstove, ili otvarati temu po temu, prateći lični interes.
+Ovaj vodič je zamišljen da odgovori na nekoliko ključnih pitanja koja su nam roditelji postavljali na temu ocenjivanja, a o kojima možete čitati u nastavku. Možete pratiti predloženi redosled kroz teme navedene ispod, klikom na pojedinačne tekstove, ili otvarati temu po temu, prateći lični interes.
 
 <nav class="guide-map" aria-label="Vodič kroz ocenjivanje">
   <ol>
@@ -57,28 +57,28 @@ Ovaj vodič je zamišljen da odgovori na nekoliko ključnih pitanja koja su nam 
     </li>
     <li class="guide-map-item">
       <a href="{{ '/ocenjivanje/sta-moje-dete-treba-da-zna/' | url }}">
-        <span class="guide-map-step">Tekst 2</span>
+        <span class="guide-map-step">Očekivanja</span>
         <span class="guide-map-title">Šta moje dete treba da zna</span>
         <span class="guide-map-note">Koje veštine dete stiče u školi kako bi bilo spremno za život u svetu koji se stalno menja</span>
       </a>
     </li>
     <li class="guide-map-item">
       <a href="{{ '/ocenjivanje/sta-znamo-o-ocenjivanju/' | url }}">
-        <span class="guide-map-step">Tekst 3</span>
+        <span class="guide-map-step">Pravila</span>
         <span class="guide-map-title">Šta sve treba da znamo o ocenjivanju</span>
         <span class="guide-map-note">Svrha, principi, vrste i procedure ocenjivanja</span>
       </a>
     </li>
     <li class="guide-map-item">
       <a href="{{ '/ocenjivanje/pracenje-napredovanja-deteta/' | url }}">
-        <span class="guide-map-step">Tekst 4</span>
+        <span class="guide-map-step">Praćenje</span>
         <span class="guide-map-title">Kako da pratim napredovanje deteta</span>
         <span class="guide-map-note">EsDnevnik i sastanci sa nastavnicima</span>
       </a>
     </li>
     <li class="guide-map-item">
       <a href="{{ '/ocenjivanje/reagovanje-na-ocenu/' | url }}">
-        <span class="guide-map-step">Tekst 5</span>
+        <span class="guide-map-step">Reagovanje</span>
         <span class="guide-map-title">Kako da reagujemo na ocenu</span>
         <span class="guide-map-note">Koraci u postupanju kada dete nije dobilo ocenu koju zaslužuje</span>
       </a>
