@@ -52,6 +52,27 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  // Open every external link in a new tab. `rel` is required alongside
+  // target="_blank": without noopener the opened page gets a handle on
+  // window.opener and can navigate this tab elsewhere (tabnabbing).
+  // Applies to markdown bodies only — .njk templates set their own attrs.
+  const isExternalHref = (href) =>
+    typeof href === "string" && /^(https?:)?\/\//i.test(href);
+
+  md.core.ruler.after("inline", "external-links-new-tab", (state) => {
+    for (const blockToken of state.tokens) {
+      if (blockToken.type !== "inline" || !blockToken.children) continue;
+      for (const token of blockToken.children) {
+        if (token.type !== "link_open") continue;
+        const hrefIdx = token.attrIndex("href");
+        if (hrefIdx < 0) continue;
+        if (!isExternalHref(token.attrs[hrefIdx][1])) continue;
+        token.attrSet("target", "_blank");
+        token.attrSet("rel", "noopener noreferrer");
+      }
+    }
+  });
+
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addFilter("extractToc", (html) => {
