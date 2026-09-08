@@ -19,12 +19,6 @@
       <article class="article">
 
         <div class="article-header">
-          {% if categories %}
-            <div class="meta-categories">
-              {% for c in categories %}<a href="#" class="category">{{ c }}</a>{% endfor %}
-            </div>
-          {% endif %}
-
           <h1 class="title">{{ title }}</h1>
 
           {% if author or date or readTime %}

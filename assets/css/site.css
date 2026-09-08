@@ -95,6 +95,13 @@ a:hover { color: var(--color-link-hover); }
 .navmenu ul li a:hover,
 .navmenu ul li a.active { color: var(--color-primary); }
 
+/* Desktop: widen spacing between top-level nav items. Bootstrap's gap-3 (1rem)
+   sat the labels too close together. Mobile keeps its own gap via the
+   max-width:1199.98px block below. */
+@media (min-width: 1200px) {
+  .navmenu > ul { gap: var(--space-5) !important; }
+}
+
 .navmenu .dropdown { position: relative; }
 .navmenu .dropdown-menu-custom {
   position: absolute;
@@ -753,17 +760,6 @@ a:hover { color: var(--color-link-hover); }
 /* ---------- Article (page-article layout + news-details) ---------- */
 .article { max-width: 100%; }
 .article-header { margin-bottom: var(--space-5); }
-.article-header .meta-categories { display: flex; justify-content: center; gap: var(--space-2); margin-bottom: var(--space-3); }
-.article-header .meta-categories .category {
-  background: var(--color-primary-tint);
-  color: var(--color-primary);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-wide);
-  text-transform: uppercase;
-}
 .article-header .title {
   font-size: var(--font-size-4xl);
   letter-spacing: var(--letter-spacing-tight);
