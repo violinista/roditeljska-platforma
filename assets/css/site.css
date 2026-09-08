@@ -258,33 +258,6 @@ a:hover { color: var(--color-link-hover); }
 }
 .badge-accredited i { color: var(--color-accent); }
 
-.feature-cards-wrapper { margin-top: var(--space-7); }
-.feature-card {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-5);
-  height: 100%;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-.feature-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-.feature-card.active {
-  background: var(--color-primary);
-  color: var(--color-text-on-primary);
-  border-color: var(--color-primary);
-}
-.feature-card.active h3, .feature-card.active p { color: var(--color-text-on-primary); }
-.feature-card .feature-icon {
-  font-size: var(--font-size-2xl);
-  color: var(--color-accent);
-  margin-bottom: var(--space-3);
-}
-.feature-card h3 {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-2);
-}
-.feature-card p { font-size: var(--font-size-sm); margin: 0; }
-
 /* ---------- About / Timeline / Values ---------- */
 .about h3 { font-size: var(--font-size-2xl); }
 

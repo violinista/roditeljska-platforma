@@ -28,25 +28,5 @@
   "badge": {
     "icon": "bi-patch-check-fill",
     "label": "Stručna podrška"
-  },
-  "featureCards": [
-    {
-      "icon": "bi-mortarboard",
-      "title": "Kako se ocenjuje",
-      "body": "Svrha, principi i vrste ocenjivanja — šta propisi zaista nalažu.",
-      "active": true
-    },
-    {
-      "icon": "bi-people",
-      "title": "Razgovor sa školom",
-      "body": "Kako se pripremiti za otvorena vrata i šta imate pravo da tražite.",
-      "active": false
-    },
-    {
-      "icon": "bi-shield-check",
-      "title": "Žalba na ocenu",
-      "body": "Koraci i rokovi kada procenite da ocena nije pravično formirana.",
-      "active": false
-    }
-  ]
+  }
 }
