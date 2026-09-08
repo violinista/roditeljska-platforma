@@ -9,44 +9,48 @@
       "label": "Ocenjivanje",
       "url": "#",
       "children": [
-        { "label": "Ocenjivanje u školi", "url": "/ocenjivanje-u-skoli/" },
-        { "label": "Šta treba da znamo o ocenjivanju", "url": "/sta-treba-da-znamo-o-ocenjivanju/" },
-        { "label": "Zaključna ocena", "url": "/zakljucna-ocena/" },
-        { "label": "Reagovanje na ocenu", "url": "/koraci-za-reagovanje-o-oceni/" },
-        { "label": "Praćenje napredovanja", "url": "/pracenje-napredovanja-deteta/" },
-        { "label": "Veštine koje se stiču u školi", "url": "/vestine-koje-se-sticu-u-skoli/" },
-        { "label": "Sažetak odredbi ZOSOV-a", "url": "/sazetak-odredbi-zosov-a/" }
+        {
+          "label": "Uvod — Ocenjivanje u školi",
+          "url": "/ocenjivanje/"
+        },
+        {
+          "label": "Šta moje dete treba da zna",
+          "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/"
+        },
+        {
+          "label": "Šta znamo o ocenjivanju",
+          "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/"
+        },
+        {
+          "label": "Kako da pratim napredovanje",
+          "url": "/ocenjivanje/pracenje-napredovanja-deteta/"
+        },
+        {
+          "label": "Kako da reagujemo na ocenu",
+          "url": "/ocenjivanje/reagovanje-na-ocenu/"
+        }
       ]
     },
     {
-      "label": "Bezbednost dece",
-      "url": "#",
-      "children": [
-        { "label": "Bezbednost dece", "url": "/bezbednost-dece/" }
-      ]
+      "label": "Savetovanje",
+      "url": "/savetovanje/"
     },
-    {
-      "label": "Roditelji i škola",
-      "url": "#",
-      "children": [
-        { "label": "Roditelji i škola", "url": "/roditelji-i-skola/" }
-      ]
-    },
-    {
-      "label": "Tranzicija u obrazovanju",
-      "url": "#",
-      "children": [
-        { "label": "Tranzicija u obrazovanju", "url": "/tranzicija-u-obrazovanju/" }
-      ]
-    },
-    { "label": "Savetovanje", "url": "/savetovanje/" },
     {
       "label": "O nama",
       "url": "#",
       "children": [
-        { "label": "Naš tim", "url": "/nas-tim/" },
-        { "label": "Pitanja i odgovori", "url": "/pitanja-i-odgovori/" },
-        { "label": "Kontakt", "url": "/kontakt/" }
+        {
+          "label": "Naš tim",
+          "url": "/nas-tim/"
+        },
+        {
+          "label": "Pitanja i odgovori",
+          "url": "/pitanja-i-odgovori/"
+        },
+        {
+          "label": "Kontakt",
+          "url": "/kontakt/"
+        }
       ]
     }
   ],
@@ -57,31 +61,68 @@
     "email": "kontakt@platformazaroditelje.rs",
     "columns": [
       {
-        "title": "Ocenjivanje",
+        "title": "Vodič kroz ocenjivanje",
         "links": [
-          { "label": "Ocenjivanje u školi", "url": "/ocenjivanje-u-skoli/" },
-          { "label": "Šta treba da znamo o ocenjivanju", "url": "/sta-treba-da-znamo-o-ocenjivanju/" },
-          { "label": "Zaključna ocena", "url": "/zakljucna-ocena/" },
-          { "label": "Reagovanje na ocenu", "url": "/koraci-za-reagovanje-o-oceni/" },
-          { "label": "Praćenje napredovanja", "url": "/pracenje-napredovanja-deteta/" },
-          { "label": "Veštine koje se stiču u školi", "url": "/vestine-koje-se-sticu-u-skoli/" },
-          { "label": "Sažetak odredbi ZOSOV-a", "url": "/sazetak-odredbi-zosov-a/" }
+          {
+            "label": "Uvod — Ocenjivanje u školi",
+            "url": "/ocenjivanje/"
+          },
+          {
+            "label": "Šta moje dete treba da zna",
+            "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/"
+          },
+          {
+            "label": "Šta znamo o ocenjivanju",
+            "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/"
+          },
+          {
+            "label": "Kako da pratim napredovanje",
+            "url": "/ocenjivanje/pracenje-napredovanja-deteta/"
+          },
+          {
+            "label": "Kako da reagujemo na ocenu",
+            "url": "/ocenjivanje/reagovanje-na-ocenu/"
+          }
         ]
       },
       {
         "title": "Platforma",
         "links": [
-          { "label": "Savetovanje", "url": "/savetovanje/" },
-          { "label": "Naš tim", "url": "/nas-tim/" },
-          { "label": "Pitanja i odgovori", "url": "/pitanja-i-odgovori/" },
-          { "label": "Kontakt", "url": "/kontakt/" }
+          {
+            "label": "Savetovanje",
+            "url": "/savetovanje/"
+          },
+          {
+            "label": "Naš tim",
+            "url": "/nas-tim/"
+          },
+          {
+            "label": "Pitanja i odgovori",
+            "url": "/pitanja-i-odgovori/"
+          },
+          {
+            "label": "Kontakt",
+            "url": "/kontakt/"
+          }
         ]
       }
     ],
     "social": [
-      { "icon": "bi-facebook", "url": "#", "label": "Facebook" },
-      { "icon": "bi-instagram", "url": "#", "label": "Instagram" },
-      { "icon": "bi-linkedin", "url": "#", "label": "LinkedIn" }
+      {
+        "icon": "bi-facebook",
+        "url": "#",
+        "label": "Facebook"
+      },
+      {
+        "icon": "bi-instagram",
+        "url": "#",
+        "label": "Instagram"
+      },
+      {
+        "icon": "bi-linkedin",
+        "url": "#",
+        "label": "LinkedIn"
+      }
     ]
   }
 }

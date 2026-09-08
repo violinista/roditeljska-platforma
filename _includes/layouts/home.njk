@@ -4,11 +4,16 @@
 
 {% block content %}
   {% include "partials/sections/hero.njk" %}
-  {% include "partials/sections/about.njk" %}
   {% include "partials/sections/programs.njk" %}
-  {% include "partials/sections/students-life.njk" %}
-  {% include "partials/sections/testimonials.njk" %}
-  {% include "partials/sections/stats.njk" %}
-  {% include "partials/sections/news.njk" %}
-  {% include "partials/sections/events.njk" %}
+  {% include "partials/sections/about.njk" %}
+
+  <section class="section">
+    <div class="container">
+      {% set ctaTitle = "Potrebna vam je podrška oko ocene ili razgovora sa školom?" %}
+      {% set ctaBody = "Naš tim stručnjaka pomaže roditeljima da se pripreme za razgovor sa nastavnikom, razumeju kako je ocena formirana i, po potrebi, pripreme primedbu ili žalbu." %}
+      {% set ctaLabel = "Zakaži savetovanje" %}
+      {% set ctaUrl = "/savetovanje/" %}
+      {% include "partials/sections/cta-banner.njk" %}
+    </div>
+  </section>
 {% endblock %}

@@ -74,12 +74,10 @@ _includes/
   partials/
     header.njk, footer.njk, scripts.njk
     sections/                 # one partial per homepage section + reusable building blocks
-      hero, about, programs, students-life, testimonials, stats, news, events,
-      page-title, pagination, cta-banner, sidebar-blog, sidebar-events, contact-info-cards
+      hero, about, programs, page-title, cta-banner
 _data/                        # global data, autoloaded by Eleventy
   site.json                   # nav, footer columns, social, brand, lang
-  hero, timeline, coreValues, programs, activities, testimonials, metrics, highlights, news, events
-  about, academics, campus, faculty, eventsExt, newsExt   # data for College multi-page kit
+  hero, timeline, coreValues, programs, savetovanjeForm
   savetovanjeForm             # programs list + intro for the /savetovanje/ registration form
 assets/
   css/
@@ -96,47 +94,40 @@ assets/
 # Homepage
 index.md                      # layout: layouts/home.njk
 
-# Serbian content pages — all use layout: layouts/page-article.njk
-nas-tim.md                    # team page (renamed from o-nama.md)
+# Ocenjivanje guide — 5 pages, all use layout: layouts/page-article.njk
+# Each sets an explicit `permalink:` nesting it under /ocenjivanje/.
+ocenjivanje.md                     # /ocenjivanje/  — uvodni tekst + guide navigator
+sta-moje-dete-treba-da-zna.md      # /ocenjivanje/sta-moje-dete-treba-da-zna/
+sta-znamo-o-ocenjivanju.md         # /ocenjivanje/sta-znamo-o-ocenjivanju/
+pracenje-napredovanja-deteta.md    # /ocenjivanje/pracenje-napredovanja-deteta/
+reagovanje-na-ocenu.md             # /ocenjivanje/reagovanje-na-ocenu/
+
+# Supporting pages
+nas-tim.md                    # team page (stub)
 kontakt.md                    # contact page (stub)
 pitanja-i-odgovori.md         # FAQ (stub)
 savetovanje.md                # registration page with inquiry form (mailto)
-ocenjivanje-u-skoli.md        # main grading guide
-sta-treba-da-znamo-o-ocenjivanju.md
-zakljucna-ocena.md
-koraci-za-reagovanje-o-oceni.md
-pracenje-napredovanja-deteta.md
-sazetak-odredbi-zosov-a.md
-vestine-koje-se-sticu-u-skoli.md
-bezbednost-dece.md            # stub for new category
-roditelji-i-skola.md          # stub for new category
-tranzicija-u-obrazovanju.md   # stub for new category
+404.njk                       # Serbian 404 page
 
-# College multi-page kit (16 templates, 1:1 with source HTML, all use layout: layouts/base.njk)
-# Orphaned — no longer linked from nav after the "Više stranica" dropdown removal,
-# but still build at their URLs (/about/, /contact/, /news-details/, etc.).
-404.njk, about.njk, academics.njk, admissions.njk, alumni.njk,
-campus-facilities.njk, contact.njk, event-details.njk, events.njk,
-faculty-staff.njk, news.njk, news-details.njk, privacy.njk,
-starter-page.njk, students-life.njk, terms-of-service.njk
+# Source material
+dokumenti-ocenjivanje/        # 30 .docx sources + 5 shema PDFs — gitignored (local only),
+                              #   also excluded from the build via .eleventyignore
+NOTES-ocenjivanje.md          # editorial notes & unresolved links from the sources
 ```
 
 Each top-level `.md` or `.njk` file maps to a slugged URL (`foo.njk` → `/foo/`). Internal links use the slugged form (e.g. `/savetovanje`, `/nas-tim`).
 
 ## Navigation
 
-The header nav lives in `_data/site.json` `nav`. Current structure (6 top-level entries):
+The header nav lives in `_data/site.json` `nav`. Current structure (3 top-level entries):
 
-1. **Ocenjivanje** (dropdown, 7 children) — grading guides
-2. **Bezbednost dece** (dropdown, 1 child) — stub category
-3. **Roditelji i škola** (dropdown, 1 child) — stub category
-4. **Tranzicija u obrazovanju** (dropdown, 1 child) — stub category
-5. **Savetovanje** (flat link) — `/savetovanje/`, the inquiry/registration page
-6. **O nama** (dropdown, 3 children: Naš tim, Pitanja i odgovori, Kontakt)
+1. **Ocenjivanje** (dropdown, 5 children) — the guide, in reading order
+2. **Savetovanje** (flat link) — `/savetovanje/`, the inquiry/registration page
+3. **O nama** (dropdown, 3 children: Naš tim, Pitanja i odgovori, Kontakt)
 
-The homepage is reachable by clicking the brand name in the header (no "Početna" nav entry). The College multi-page kit is not linked anywhere in the nav (the previous "Više stranica" dropdown was removed); those 16 pages still build and are reachable only by typing the URL.
+The homepage is reachable by clicking the brand name in the header (no "Početna" nav entry).
 
-Footer has two columns (`_data/site.json` `footer.columns`): "Ocenjivanje" (7 grading articles) and "Platforma" (Savetovanje, Naš tim, Pitanja i odgovori, Kontakt).
+Footer has two columns (`_data/site.json` `footer.columns`): "Vodič kroz ocenjivanje" (the 5 guide texts) and "Platforma" (Savetovanje, Naš tim, Pitanja i odgovori, Kontakt).
 
 ## Layout resolution convention
 
@@ -155,7 +146,7 @@ title: Naslov
 
 The site is deployed to GitHub Pages at `https://violinista.github.io/roditeljska-platforma/` — a **subpath**, not a custom domain. `.eleventy.js` sets `pathPrefix: "/roditeljska-platforma/"` so that the `| url` filter prepends that prefix to any path-shaped string. **`pathPrefix` is opt-in per URL — it does NOT auto-rewrite anything.** Any bare `href="/foo"` or `src="/foo"` that you write as a literal will stay as `/foo` in the rendered HTML and **will 404 on the deployed site**.
 
-The entire existing codebase has already been wrapped (~120+ URLs across layouts, partials, sections, the page-article layout, and the 16 legacy College-kit pages). Your job when adding new templates/markdown is to **maintain** this rule, not implement it from scratch.
+The entire existing codebase has already been wrapped (across layouts, partials, sections and the page-article layout). Your job when adding new templates/markdown is to **maintain** this rule, not implement it from scratch.
 
 ### Rule: wrap every internal URL with the `| url` filter
 
@@ -189,7 +180,6 @@ When adding a new template, new partial, new section, or new markdown link, **ch
 The site is **intentionally static** — no load or scroll animations:
 - No AOS (fade-in on viewport entry)
 - No PureCounter (number count-up)
-- No Swiper autoplay (testimonials still swipeable, just not auto-rotating)
 - No scroll-driven header shadow, no scroll-top button
 - Hover transitions ARE kept (card lift, link color, button hover, dropdown open) — these aren't load/scroll-triggered
 
@@ -212,11 +202,12 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 - Tokens mirror into `--bs-*` (e.g. `--bs-primary`, `--bs-body-color`, `--bs-border-radius`) so Bootstrap utilities pick up the brand palette.
 - Brand: primary `#244F95` (deep blue), accent `#DDB33D` (warm gold), plus teal/taupe/red/navy accents and a 0–900 neutral scale.
 - Typography: Montserrat only (weights 400/500/600/700/800), imported from Google Fonts at the top of `tokens.css`.
+- Article components added for the Ocenjivanje guide (in `assets/css/site.css`, token-driven only): `.article-callout` (highlighted aside), `.article-details` (collapsible `<details>` reference block), `.table-responsive` (horizontally scrolling wide table), `.guide-map` (clickable navigator on `/ocenjivanje/`), and styling for `blockquote`.
 - **Never edit `tokens.css` or `sample-template/` files.** Project styles go in `assets/css/site.css`; new component patterns should use only `var(--…)` references, no hard-coded colors/fonts/sizes.
 
 ## Content authoring
 
-- **Homepage**: data-driven. Edit `_data/*.json` to change copy, images, stats, testimonials, events, etc. The Nunjucks partials render whatever the JSON contains.
+- **Homepage**: data-driven. Edit `_data/hero.json`, `programs.json`, `timeline.json` and `coreValues.json` to change copy, images and the guide navigator. The Nunjucks partials render whatever the JSON contains.
 
 - **Serbian content pages**: plain Markdown bodies with `layout: layouts/page-article.njk` frontmatter. To add a new Serbian content page, create `<slug>.md` at the repo root with frontmatter:
 
@@ -232,7 +223,7 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
   ---
   ```
 
-  Then add a matching link to `_data/site.json` under `nav` and/or `footer.columns`. Store the URL as a bare path (e.g. `"/sazetak-odredbi-zosov-a/"`) — `header.njk` and `footer.njk` already apply `| url` when rendering. See the "URL handling / `pathPrefix`" section above for the wrapping rule.
+  Then add a matching link to `_data/site.json` under `nav` and/or `footer.columns`. Store the URL as a bare path (e.g. `"/ocenjivanje/reagovanje-na-ocenu/"`) — `header.njk` and `footer.njk` already apply `| url` when rendering. See the "URL handling / `pathPrefix`" section above for the wrapping rule.
 
   **Markdown internal links**: write them as plain markdown — `[tekst](/savetovanje/)`. A custom `markdown-it` core rule (`prefix-internal-links` in `.eleventy.js`) auto-prepends the `pathPrefix` to any href that starts with `/` (excluding `//`, `#`, `mailto:`, `tel:`, `http(s)://`). The older inline-HTML form `<a href="{{ '/savetovanje/' | url }}">tekst</a>` still works (and exists in a few pages) but is no longer required. Auto-prefixing is markdown-only — `.njk` templates still need explicit `| url`.
 
@@ -242,21 +233,21 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 
 - **`/savetovanje/` registration form**: the page renders a Serbian inquiry form. Submit fires a `mailto:` to `kontakt@platformazaroditelje.rs` (read from `site.json` `footer.email`) via an inline JS handler that builds a `mailto:?subject=…&body=…` URL. The program list shown in the body bullets AND the form's `<select>` is driven by `_data/savetovanjeForm.json` — adding a program there updates both.
 
-- **College multi-page templates**: 16 `.njk` files at the repo root (about, academics, admissions, alumni, campus-facilities, contact, event-details, events, faculty-staff, news, news-details, privacy, starter-page, students-life, terms-of-service, 404). All use `layout: layouts/base.njk`. Repeating blocks are fed from `_data/about.json`, `academics.json`, `campus.json`, `faculty.json`, `eventsExt.json`, `newsExt.json`. **These pages are currently orphaned** — they have no nav links pointing to them; they remain as a layout reference kit, reachable only via direct URL.
+- **Ocenjivanje guide pages**: the five `.md` files listed in the directory layout carry the whole topic. They were generated from the `.docx` sources in `dokumenti-ocenjivanje/`; sub-topics became `##` sections and short leaf documents became `.article-callout` / `.article-details` blocks. Wide reference tables are wrapped in `<div class="table-responsive">`. See `NOTES-ocenjivanje.md` for the source-to-page mapping and unresolved items.
 
 - **Adding a new homepage section**: create `_includes/partials/sections/<name>.njk`, add `_data/<name>.json` (read as a top-level variable in the partial), and `{% include %}` it in `_includes/layouts/home.njk`. Every `href`/`src` you emit in the new partial must flow through `| url` (see "URL handling / `pathPrefix`" above).
 
 ## Content language
 
-All user-facing content is in Serbian (Latin script). Preserve diacritics (š, č, ć, ž, đ) when editing. The Serbian `.md` pages are the canonical content surface; the 16 College `.njk` templates retain BootstrapMade English placeholder copy and are intended as reference / future-translation candidates.
+All user-facing content is in Serbian (Latin script). Preserve diacritics (š, č, ć, ž, đ) when editing. The Serbian `.md` pages are the canonical content surface.
 
 ## Planned pages
 
-The site is intended to grow to cover: youth empowerment ("Osnaživanje mladih"), youth employability ("Zapošljivost mladih"), and team bios for Tanja and two collaborators. The current category stubs (Bezbednost dece, Roditelji i škola, Tranzicija u obrazovanju) are placeholders for upcoming content under those themes. See `README.md` for details.
+The site is currently single-topic (Ocenjivanje). Previously stubbed categories (Bezbednost dece, Roditelji i škola, Tranzicija u obrazovanju) and the 16-page College reference kit were removed on the `ocenjivanje-single-topic` branch; they remain in git history on `main` if needed. Topics the sources reference but that do not yet exist: učešće roditelja u obrazovanju / Savet roditelja, karijerno informisanje i savetovanje, and a bodovni kalkulator for the završni ispit.
 
 ## Reference / inspiration directories (NOT in build)
 
 - `sample-template/` — the original BootstrapMade "College" homepage HTML, kept read-only as the source for the homepage conversion.
-- `/Users/mika/PROJECTS/2026 Platforma za decu/insiration-website/bootstrapmade.com/content/demo/College/` — the full multi-page demo (16 HTML files + index.html), source for the College multi-page kit. Lives outside the `website/` repo. The folder name has a typo (`insiration-` instead of `inspiration-`) that is preserved.
+- `/Users/mika/PROJECTS/2026 Platforma za decu/insiration-website/bootstrapmade.com/content/demo/College/` — the full multi-page demo. Lives outside the `website/` repo. The folder name has a typo (`insiration-` instead of `inspiration-`) that is preserved.
 - `inspiration/` — saved copy of `schoolavoidance.org` (`website.html` + `website_files/`). The real brand palette/typography was extracted from the inline `<style id="global-styles-inline-css">` block (Elementor kit-9), **not** the CSS files under `website_files/` (those are Hello Elementor + plugin defaults).
 - `design-system/index.html` — single-page reference doc that consumes `tokens.css`. Open directly in a browser to review.

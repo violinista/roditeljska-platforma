@@ -13,3 +13,6 @@ _site/
 # Node (in case package.json is added later)
 node_modules/
 npm-debug.log*
+
+# Source materials for the Ocenjivanje guide (kept locally, not published)
+dokumenti-ocenjivanje/

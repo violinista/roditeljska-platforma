@@ -1,33 +1,51 @@
 {
-  "headline": "Podrška roditeljima u obrazovanju dece",
-  "lede": "Praktičan vodič i zajednica koja pomaže roditeljima da informisano učestvuju u školovanju svoje dece — od ocenjivanja, preko savetovanja, do svakodnevnih izazova odrastanja.",
+  "headline": "Razumevanje ocenjivanja u školi",
+  "lede": "Praktičan vodič koji pomaže roditeljima da razumeju kako se ocenjuje u školi, kako da prate napredovanje deteta i kako da reaguju kada ocena ne odgovara znanju koje je dete pokazalo.",
   "stats": [
-    { "value": "10+", "label": "Godina iskustva" },
-    { "value": "3", "label": "Stručnjaka u timu" },
-    { "value": "100%", "label": "Posvećenost roditeljima" }
+    {
+      "value": "5",
+      "label": "Povezanih tekstova"
+    },
+    {
+      "value": "3 dana",
+      "label": "Rok za žalbu na ocenu"
+    },
+    {
+      "value": "1-5",
+      "label": "Skala ocenjivanja"
+    }
   ],
-  "ctaPrimary": { "label": "Zakaži savetovanje", "url": "/savetovanje/" },
-  "ctaSecondary": { "label": "Pročitaj vodič", "url": "/ocenjivanje-u-skoli/" },
+  "ctaPrimary": {
+    "label": "Zakaži savetovanje",
+    "url": "/savetovanje/"
+  },
+  "ctaSecondary": {
+    "label": "Pročitaj vodič",
+    "url": "/ocenjivanje/"
+  },
   "image": "/assets/img/showcase-6.webp",
-  "imageAlt": "Roditelj i dete u razgovoru",
-  "badge": { "icon": "bi-patch-check-fill", "label": "Stručna podrška" },
+  "imageAlt": "Roditelj i dete u razgovoru o školi",
+  "badge": {
+    "icon": "bi-patch-check-fill",
+    "label": "Stručna podrška"
+  },
   "featureCards": [
     {
       "icon": "bi-mortarboard",
-      "title": "Razumevanje ocenjivanja",
-      "body": "Kako sistem ocenjivanja funkcioniše i šta to znači za vaše dete.",
+      "title": "Kako se ocenjuje",
+      "body": "Svrha, principi i vrste ocenjivanja — šta propisi zaista nalažu.",
       "active": true
     },
     {
       "icon": "bi-people",
-      "title": "Komunikacija sa školom",
-      "body": "Kako pripremiti razgovor sa nastavnikom i konstruktivno rešiti situacije.",
+      "title": "Razgovor sa školom",
+      "body": "Kako se pripremiti za otvorena vrata i šta imate pravo da tražite.",
       "active": false
     },
     {
-      "icon": "bi-lightbulb",
-      "title": "Osnaživanje deteta",
-      "body": "Kako podržati dete da gradi rezilijentnost i samopouzdanje.",
+      "icon": "bi-shield-check",
+      "title": "Žalba na ocenu",
+      "body": "Koraci i rokovi kada procenite da ocena nije pravično formirana.",
       "active": false
     }
   ]

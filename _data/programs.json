@@ -1,35 +1,35 @@
 {
   "featured": {
-    "badge": "Glavni vodič",
+    "badge": "Vodič za roditelje",
     "title": "Ocenjivanje u školi",
-    "summary": "Sveobuhvatan vodič za roditelje o tome kako funkcioniše ocenjivanje, kako razgovarati sa školom i kako podržati dete kada dobije ocenu ispod očekivanja.",
+    "summary": "Sveobuhvatan vodič za roditelje o tome kako funkcioniše ocenjivanje, šta propisi garantuju vama i vašem detetu, kako razgovarati sa školom i kako reagovati kada ocena ne odgovara pokazanom znanju.",
     "stats": [
-      { "value": "7", "label": "Poglavlja" },
-      { "value": "30 min", "label": "Vreme čitanja" }
+      { "value": "5", "label": "Povezanih tekstova" },
+      { "value": "80 min", "label": "Vreme čitanja" }
     ],
-    "cta": { "label": "Otvori vodič", "url": "/ocenjivanje-u-skoli/" },
+    "cta": { "label": "Počni od uvoda", "url": "/ocenjivanje/" },
     "image": "/assets/img/education-4.webp"
   },
   "grid": [
     {
-      "title": "Šta treba da znamo o ocenjivanju",
-      "summary": "Pravila, kriterijumi i procedure koje propisuju ocenjivanje u školi.",
-      "url": "/sta-treba-da-znamo-o-ocenjivanju/"
+      "title": "Šta moje dete treba da zna",
+      "summary": "Ciljevi, ishodi i kompetencije — šta obrazovni sistem očekuje od deteta i zašto.",
+      "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/"
     },
     {
-      "title": "Zaključna ocena",
-      "summary": "Kako se formira zaključna ocena i šta roditelj može da uradi.",
-      "url": "/zakljucna-ocena/"
+      "title": "Šta znamo o ocenjivanju",
+      "summary": "Svrha, principi, vrste i procedure ocenjivanja, uz sažetak najvažnijih odredbi.",
+      "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/"
     },
     {
-      "title": "Osnaživanje mladih",
-      "summary": "Programi koji jačaju rezilijentnost i samopouzdanje dece i tinejdžera.",
-      "url": "#"
+      "title": "Kako da pratim napredovanje",
+      "summary": "EsDnevnik i otvorena vrata — kako doći do informacija koje ocena ne pokazuje.",
+      "url": "/ocenjivanje/pracenje-napredovanja-deteta/"
     },
     {
-      "title": "Zapošljivost mladih",
-      "summary": "Kako pomoći mladima da naprave informisan izbor karijernog puta.",
-      "url": "#"
+      "title": "Kako da reagujemo na ocenu",
+      "summary": "Koraci, rokovi i tri tipične situacije kada dete nije dobilo ocenu koju zaslužuje.",
+      "url": "/ocenjivanje/reagovanje-na-ocenu/"
     }
   ]
 }
