@@ -1480,8 +1480,8 @@ a:hover { color: var(--color-link-hover); }
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
 }
-/* "You are here" marker: a map pin on the current item, in the group TOC and
-   the guide map. The text equivalent is in a .visually-hidden span beside it. */
+/* "You are here" marker: an arrow on the current item in the group TOC.
+   The text equivalent is in a .visually-hidden span beside it. */
 .here-icon {
   flex-shrink: 0;
   margin-right: var(--space-2);

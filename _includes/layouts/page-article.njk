@@ -97,7 +97,7 @@
                       {% for item in groupTree | groupFlatten(page.url) %}
                         <li class="depth-{{ item.depth }}{% if item.isCurrent %} is-current{% endif %}">
                           {% if item.isCurrent %}
-                            <span aria-current="page"><i class="bi bi-geo-alt-fill here-icon" aria-hidden="true" title="Nalazite se ovde"></i><span>{{ item.label }}</span><span class="visually-hidden"> (nalazite se ovde)</span></span>
+                            <span aria-current="page"><i class="bi bi-arrow-right here-icon" aria-hidden="true" title="Nalazite se ovde"></i><span>{{ item.label }}</span><span class="visually-hidden"> (nalazite se ovde)</span></span>
                           {% else %}
                             <a href="{{ item.url | url }}">{{ item.label }}</a>
                           {% endif %}
