@@ -86,6 +86,31 @@ module.exports = function (eleventyConfig) {
     }));
   });
 
+  // Page groups (_data/pageGroups.json): a tree of { url, label, title, children }.
+  // groupFlatten → sidebar rows in document order; groupNode → the current
+  // page's node and its parent, for the links at the bottom of the article.
+  eleventyConfig.addFilter("groupFlatten", (tree, currentUrl) => {
+    const rows = [];
+    const walk = (node, depth) => {
+      rows.push({ label: node.label, url: node.url, depth, isCurrent: node.url === currentUrl });
+      (node.children || []).forEach((child) => walk(child, depth + 1));
+    };
+    if (tree) walk(tree, 0);
+    return rows;
+  });
+
+  eleventyConfig.addFilter("groupNode", (tree, currentUrl) => {
+    const find = (node, parent) => {
+      if (node.url === currentUrl) return { node, parent };
+      for (const child of node.children || []) {
+        const hit = find(child, node);
+        if (hit) return hit;
+      }
+      return null;
+    };
+    return (tree && find(tree, null)) || {};
+  });
+
   eleventyConfig.addLayoutAlias("home", "layouts/home.njk");
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk");
   eleventyConfig.addLayoutAlias("page-article", "layouts/page-article.njk");

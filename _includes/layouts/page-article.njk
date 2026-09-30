@@ -46,53 +46,89 @@
           </div>
         {% endif %}
 
+        {% set groupTree = pageGroups[group] if group else null %}
         {% set autoToc = content | extractToc %}
         {% set tocItems = toc or autoToc %}
-        {% if tocItems and tocItems.length > 0 %}
+
+        {% set articleBody %}
+          {{ content | safe }}
+
+          {% if groupTree %}
+            {% set groupHit = groupTree | groupNode(page.url) %}
+            {% if groupHit.node and groupHit.node.children %}
+              <nav class="guide-map group-children" aria-label="Nastavite čitanje">
+                <ol>
+                  {% for child in groupHit.node.children %}
+                    <li class="guide-map-item">
+                      <a href="{{ child.url | url }}">
+                        <span class="guide-map-title">{{ child.title }}</span>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ol>
+              </nav>
+            {% elif groupHit.parent %}
+              <p class="group-back">
+                <a href="{{ groupHit.parent.url | url }}"><i class="bi bi-arrow-left"></i> Nazad na: {{ groupHit.parent.label }}</a>
+              </p>
+            {% endif %}
+          {% endif %}
+
+          {% if cta %}
+            <aside class="article-cta">
+              <div class="cta-icon"><i class="bi bi-chat-heart"></i></div>
+              <div class="cta-body">
+                <h3>Potrebna vam je dodatna podrška?</h3>
+                <p>Naš tim stručnjaka — psihologa i pedagoga — pomaže roditeljima da pronađu najbolji odgovor na izazove sa kojima se njihova deca suočavaju u školi. Zakažite individualno savetovanje i razgovarajte sa nekim ko razume šta vam je potrebno.</p>
+                <a href="{{ '/savetovanje/' | url }}" class="cta-button">Zakaži savetovanje <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </aside>
+          {% endif %}
+        {% endset %}
+
+        {% if groupTree or (tocItems and tocItems.length > 0) %}
           <div class="row">
             <div class="col-lg-3">
-              <aside class="table-of-contents">
-                <h3>Sadržaj</h3>
-                <nav>
-                  <ul>
-                    {% for item in tocItems %}
-                      <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </nav>
-              </aside>
+              {% if groupTree %}
+                <aside class="table-of-contents group-toc">
+                  <h3>Sadržaj</h3>
+                  <nav aria-label="Sadržaj celine">
+                    <ul>
+                      {% for item in groupTree | groupFlatten(page.url) %}
+                        <li class="depth-{{ item.depth }}{% if item.isCurrent %} is-current{% endif %}">
+                          {% if item.isCurrent %}
+                            <span aria-current="page">{{ item.label }}</span>
+                            <small class="group-toc-here">Nalazite se ovde</small>
+                          {% else %}
+                            <a href="{{ item.url | url }}">{{ item.label }}</a>
+                          {% endif %}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </nav>
+                </aside>
+              {% else %}
+                <aside class="table-of-contents">
+                  <h3>Sadržaj</h3>
+                  <nav>
+                    <ul>
+                      {% for item in tocItems %}
+                        <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </nav>
+                </aside>
+              {% endif %}
             </div>
             <div class="col-lg-9">
               <div class="article-content">
-                {{ content | safe }}
-
-                {% if cta %}
-                  <aside class="article-cta">
-                    <div class="cta-icon"><i class="bi bi-chat-heart"></i></div>
-                    <div class="cta-body">
-                      <h3>Potrebna vam je dodatna podrška?</h3>
-                      <p>Naš tim stručnjaka — psihologa i pedagoga — pomaže roditeljima da pronađu najbolji odgovor na izazove sa kojima se njihova deca suočavaju u školi. Zakažite individualno savetovanje i razgovarajte sa nekim ko razume šta vam je potrebno.</p>
-                      <a href="{{ '/savetovanje/' | url }}" class="cta-button">Zakaži savetovanje <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </aside>
-                {% endif %}
+                {{ articleBody | safe }}
               </div>
             </div>
           </div>
         {% else %}
           <div class="article-content">
-            {{ content | safe }}
-
-            {% if cta %}
-              <aside class="article-cta">
-                <div class="cta-icon"><i class="bi bi-chat-heart"></i></div>
-                <div class="cta-body">
-                  <h3>Potrebna vam je dodatna podrška?</h3>
-                  <p>Naš tim stručnjaka — psihologa i pedagoga — pomaže roditeljima da pronađu najbolji odgovor na izazove sa kojima se njihova deca suočavaju u školi. Zakažite individualno savetovanje i razgovarajte sa nekim ko razume šta vam je potrebno.</p>
-                  <a href="{{ '/savetovanje/' | url }}" class="cta-button">Zakaži savetovanje <i class="bi bi-arrow-right"></i></a>
-                </div>
-              </aside>
-            {% endif %}
+            {{ articleBody | safe }}
           </div>
         {% endif %}
 

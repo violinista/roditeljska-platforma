@@ -13,7 +13,7 @@ Ovaj dokument beleži odluke i otvorena pitanja nastala prilikom prenošenja izv
 | Izvorni dokument | Stranica |
 |---|---|
 | `Ocenjivanje UVODNI TEKST 1 fin.docx` | `/ocenjivanje/` |
-| `Tekst 2/2 Fin Šta moje dete treba da zna.docx` + 2.1, 2.2, 2.3, 2.3.1, 2.3.1.a, 2.3.2, 2.3.3, 2.3.4 | `/ocenjivanje/sta-moje-dete-treba-da-zna/` |
+| `Tekst 2/2 Fin Šta moje dete treba da zna.docx` + 2.1, 2.2, 2.3, 2.3.1, 2.3.1.a, 2.3.2, 2.3.3, 2.3.4 | `/ocenjivanje/sta-moje-dete-treba-da-zna/` i 8 podstranica (vidi ispod) |
 | `Tekst 3/3.1 …` + 3.1.1, 3.1.1.a, 3.2, 3.2.1, 3.2.2, 3.3, 3.3.1, 3.3.2, 3.3.3, 3.3.4 | `/ocenjivanje/sta-znamo-o-ocenjivanju/` |
 | `Tekst 4/4 …` + 4.1, 4.1.1, 4.2 | `/ocenjivanje/pracenje-napredovanja-deteta/` |
 | `Tekst 5/5 …` + 5.1, 5.2, 5.3, 5.4 | `/ocenjivanje/reagovanje-na-ocenu/` |
@@ -24,6 +24,22 @@ i hijerarhiju kao i međusobni linkovi u dokumentima.
 Dokumenti drugog nivoa postali su `##` sekcije na matičnoj stranici, a kratki
 dokumenti trećeg nivoa (primeri, izvodi iz zakona) prikazani su kao `article-callout`
 blokovi ili `article-details` (proširivi) blokovi.
+
+**Izuzetak — Tekst 2** je razdvojen na 9 stranica, po jedna za svaki dokument, povezane
+tačno kao na `tekst 2 shema.pdf` (izvor: `ciljevi-obrazovanja-source/`). Tekst je prenet
+doslovno, bez dodatih podnaslova; ispravljene su samo očigledne slovne greške.
+
+| Dokument | Stranica (ispod `/ocenjivanje/sta-moje-dete-treba-da-zna/`) |
+|---|---|
+| 2 Fin | *(matična stranica)* |
+| 2.1 | `obrazovne-politike/` |
+| 2.2 | `vrednosti-i-principi/` |
+| 2.3.1.a (linkovan iz 2.2, nije na shemi) | `vrednosti-i-principi/opsti-principi/` |
+| 2.3 | `ciljevi-i-ishodi/` |
+| 2.3.1 | `ciljevi-i-ishodi/zosov-ciljevi-i-ishodi/` |
+| 2.3.2 | `ciljevi-i-ishodi/primer-srpski-jezik/` |
+| 2.3.3 | `ciljevi-i-ishodi/primer-biologija/` |
+| 2.3.4 | `ciljevi-i-ishodi/kompetencije/` |
 
 ## Uredničke napomene izostavljene sa stranica
 

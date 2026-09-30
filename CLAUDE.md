@@ -79,6 +79,7 @@ _data/                        # global data, autoloaded by Eleventy
   site.json                   # nav, footer columns, social, brand, lang
   hero, timeline, coreValues, programs, savetovanjeForm
   savetovanjeForm             # programs list + intro for the /savetovanje/ registration form
+  pageGroups.json             # page-group trees (sidebar TOC + bottom links), see "Page groups"
 assets/
   css/
     site.css                  # project components (token-driven)
@@ -97,7 +98,8 @@ index.md                      # layout: layouts/home.njk
 # Ocenjivanje guide — 5 pages, all use layout: layouts/page-article.njk
 # Each sets an explicit `permalink:` nesting it under /ocenjivanje/.
 ocenjivanje.md                     # /ocenjivanje/  — uvodni tekst + guide navigator
-sta-moje-dete-treba-da-zna.md      # /ocenjivanje/sta-moje-dete-treba-da-zna/
+sta-moje-dete-treba-da-zna.md      # /ocenjivanje/sta-moje-dete-treba-da-zna/  (root of a 9-page group)
+sta-moje-dete-treba-da-zna/        # its 8 sub-pages (explicit permalinks) + shared *.11tydata.json
 sta-znamo-o-ocenjivanju.md         # /ocenjivanje/sta-znamo-o-ocenjivanju/
 pracenje-napredovanja-deteta.md    # /ocenjivanje/pracenje-napredovanja-deteta/
 reagovanje-na-ocenu.md             # /ocenjivanje/reagovanje-na-ocenu/
@@ -227,7 +229,9 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 
 - **`/savetovanje/` registration form**: the page renders a Serbian inquiry form. Submit fires a `mailto:` to `kontakt@platformazaroditelje.rs` (read from `site.json` `footer.email`) via an inline JS handler that builds a `mailto:?subject=…&body=…` URL. The program list shown in the body bullets AND the form's `<select>` is driven by `_data/savetovanjeForm.json` — adding a program there updates both.
 
-- **Ocenjivanje guide pages**: the five `.md` files listed in the directory layout carry the whole topic. They were generated from the `.docx` sources in `dokumenti-ocenjivanje/`; sub-topics became `##` sections and short leaf documents became `.article-callout` / `.article-details` blocks. Wide reference tables are wrapped in `<div class="table-responsive">`. See `NOTES-ocenjivanje.md` for the source-to-page mapping and unresolved items.
+- **Ocenjivanje guide pages**: the five `.md` files listed in the directory layout carry the whole topic. They were generated from the `.docx` sources in `dokumenti-ocenjivanje/`; sub-topics became `##` sections and short leaf documents became `.article-callout` / `.article-details` blocks. Wide reference tables are wrapped in `<div class="table-responsive">`. See `NOTES-ocenjivanje.md` for the source-to-page mapping and unresolved items. **Exception:** "Šta moje dete treba da zna" is a page group (see below), one page per source document.
+
+- **Page groups** (currently only `sta-moje-dete`): a set of `page-article` pages that share one sidebar TOC. The tree (`url`, short `label` for the sidebar, full `title` for bottom links, `children`) lives in `_data/pageGroups.json`; a page joins by setting `group: <key>` in frontmatter (the sub-pages get it from `sta-moje-dete-treba-da-zna/sta-moje-dete-treba-da-zna.11tydata.json`). `page-article.njk` then replaces the auto-TOC with the group tree (filter `groupFlatten`, current page marked `aria-current` + "Nalazite se ovde") and, after the content, lists the page's children as a `.guide-map` or — on leaf pages — a "Nazad na: <parent>" link (filter `groupNode`). To add a page to a group: create the `.md` with a `permalink` matching a new node's `url`, and add the node to the JSON. Sources for this group: `ciljevi-obrazovanja-source/` (gitignored, like `dokumenti-ocenjivanje/`).
 
 - **Adding a new homepage section**: create `_includes/partials/sections/<name>.njk`, add `_data/<name>.json` (read as a top-level variable in the partial), and `{% include %}` it in `_includes/layouts/home.njk`. Write `href`/`src` as root-absolute paths; the `relative-urls` transform handles them (see "URL handling / relative URLs" above).
 

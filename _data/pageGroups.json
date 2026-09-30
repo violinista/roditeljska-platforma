@@ -1,0 +1,53 @@
+{
+  "sta-moje-dete": {
+    "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/",
+    "label": "Šta moje dete treba da zna",
+    "title": "Šta moje dete treba da zna, koja znanja i veštine da stekne u školi, kako bi bio spreman za život u svetu koji se stalno menja?",
+    "children": [
+      {
+        "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/obrazovne-politike/",
+        "label": "Obrazovne politike",
+        "title": "Koje su najvažnije obrazovne politike koje određuju pravac obrazovanja i kako su međusobno povezane?"
+      },
+      {
+        "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/vrednosti-i-principi/",
+        "label": "Vrednosti i principi",
+        "title": "Koje vrednosti i principe škola razvija kod učenika i zašto su oni važni za život pojedinca i društvo u celini?",
+        "children": [
+          {
+            "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/vrednosti-i-principi/opsti-principi/",
+            "label": "Opšti principi (ZOSOV čl. 7)",
+            "title": "Opšti principi obrazovanja ZOSOV (čl. 7)"
+          }
+        ]
+      },
+      {
+        "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/",
+        "label": "Ciljevi i ishodi obrazovanja",
+        "title": "Kako ciljevi i ishodi obrazovanja određuju šta očekujemo da učenici znaju i mogu da urade nakon školovanja?",
+        "children": [
+          {
+            "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/zosov-ciljevi-i-ishodi/",
+            "label": "ZOSOV ciljevi i ishodi",
+            "title": "Ciljevi obrazovanja i vaspitanja (ZOSOV čl 8) i Ishodi obrazovanja (ZOSOV, čl.9)"
+          },
+          {
+            "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/primer-srpski-jezik/",
+            "label": "Primer: Srpski jezik",
+            "title": "Srpski jezik – standardi postignuća na kraju IV razreda osnovne škole (primer)"
+          },
+          {
+            "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/primer-biologija/",
+            "label": "Primer: Biologija V razred",
+            "title": "Primer kako se definišu ciljevi i ishodi obrazovanja za predmet Biologija, V razred"
+          },
+          {
+            "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/kompetencije/",
+            "label": "Opšte i međupredmetne kompetencije",
+            "title": "Opšte i međupredmetne kompetencije"
+          }
+        ]
+      }
+    ]
+  }
+}

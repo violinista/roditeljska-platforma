@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/page-article.njk",
+  "group": "sta-moje-dete",
+  "categories": ["Vodič", "Ocenjivanje"]
+}

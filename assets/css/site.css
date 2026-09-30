@@ -1457,6 +1457,68 @@ a:hover { color: var(--color-link-hover); }
   color: var(--color-text-muted);
 }
 
+/* Page-group sidebar (_data/pageGroups.json): the same tree on every page of
+   the group, with the page being read clearly marked. */
+.group-toc li { margin-bottom: var(--space-1); }
+.group-toc li.depth-1 { padding-left: var(--space-3); }
+.group-toc li.depth-2 { padding-left: var(--space-6); }
+.group-toc li.depth-0 > a,
+.group-toc li.depth-0 > span { font-weight: var(--font-weight-semibold); }
+.group-toc li.is-current {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  padding-right: var(--space-2);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--color-primary-tint);
+}
+.group-toc li.is-current > span {
+  display: block;
+  padding: 0 var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+.group-toc .group-toc-here {
+  display: block;
+  padding: 0 var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.article-content .group-children .guide-map-title { font-size: var(--font-size-md); margin-bottom: 0; }
+.article-content .group-back { margin: var(--space-6) 0; font-weight: var(--font-weight-semibold); }
+
+/* Diagram of how the education laws relate (obrazovne-politike page). */
+.article-content .law-map {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: var(--space-5) 0;
+}
+.law-map-branches { display: grid; gap: var(--space-3); flex: 2; }
+.law-map-branch { display: flex; align-items: center; gap: var(--space-4); }
+.law-map-node {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+.law-map-root { background: var(--color-primary-tint); }
+@media (max-width: 767.98px) {
+  .article-content .law-map,
+  .law-map-branch { flex-direction: column; align-items: stretch; gap: var(--space-2); }
+  .law-map-branch { padding-left: var(--space-4); border-left: 2px solid var(--color-border); }
+}
+
 @media (max-width: 575.98px) {
   .article-content .article-callout { padding: var(--space-4); }
   .article-content .article-details > summary { padding: var(--space-3) var(--space-4); }
