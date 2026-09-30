@@ -50,10 +50,9 @@ Ovaj vodič je zamišljen da odgovori na nekoliko ključnih pitanja koja su nam 
 
 <nav class="guide-map" aria-label="Vodič kroz ocenjivanje">
   <ol>
-    <li class="guide-map-item is-current">
+    <li class="guide-map-item is-current" aria-current="page">
       <span class="guide-map-step">Uvod</span>
-      <span class="guide-map-title">Ocenjivanje u školi</span>
-      <span class="guide-map-note">Nalazite se ovde</span>
+      <span class="guide-map-title"><i class="bi bi-geo-alt-fill here-icon" aria-hidden="true" title="Nalazite se ovde"></i>Ocenjivanje u školi<span class="visually-hidden"> (nalazite se ovde)</span></span>
     </li>
     <li class="guide-map-item">
       <a href="{{ '/ocenjivanje/sta-moje-dete-treba-da-zna/' | url }}">

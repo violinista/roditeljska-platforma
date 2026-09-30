@@ -1473,20 +1473,19 @@ a:hover { color: var(--color-link-hover); }
   background: var(--color-primary-tint);
 }
 .group-toc li.is-current > span {
-  display: block;
+  display: flex;
+  align-items: baseline;
   padding: 0 var(--space-2);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
 }
-.group-toc .group-toc-here {
-  display: block;
-  padding: 0 var(--space-2);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-text-muted);
+/* "You are here" marker: a map pin on the current item, in the group TOC and
+   the guide map. The text equivalent is in a .visually-hidden span beside it. */
+.here-icon {
+  flex-shrink: 0;
+  margin-right: var(--space-2);
+  color: var(--color-primary);
 }
 
 .article-content .group-children .guide-map-title { font-size: var(--font-size-md); margin-bottom: 0; }
