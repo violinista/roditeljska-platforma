@@ -31,27 +31,6 @@ module.exports = function (eleventyConfig) {
       permalink: false,
     });
 
-  const PATH_PREFIX = "/roditeljska-platforma/";
-  const isInternalPath = (href) =>
-    typeof href === "string" &&
-    href.startsWith("/") &&
-    !href.startsWith("//") &&
-    !href.startsWith(PATH_PREFIX);
-
-  md.core.ruler.after("inline", "prefix-internal-links", (state) => {
-    for (const blockToken of state.tokens) {
-      if (blockToken.type !== "inline" || !blockToken.children) continue;
-      for (const token of blockToken.children) {
-        if (token.type !== "link_open") continue;
-        const hrefIdx = token.attrIndex("href");
-        if (hrefIdx < 0) continue;
-        const href = token.attrs[hrefIdx][1];
-        if (!isInternalPath(href)) continue;
-        token.attrs[hrefIdx][1] = PATH_PREFIX + href.slice(1);
-      }
-    }
-  });
-
   // Open every external link in a new tab. `rel` is required alongside
   // target="_blank": without noopener the opened page gets a handle on
   // window.opener and can navigate this tab elsewhere (tabnabbing).
@@ -74,6 +53,29 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.setLibrary("md", md);
+
+  // Rewrite every root-absolute href/src ("/assets/…", "/savetovanje/") in the
+  // final HTML into a path relative to the page being written. The site then
+  // works wherever _site/ is served from — the GitHub Pages subpath, a local
+  // static server at the root, or file:// — without a pathPrefix.
+  // Protocol-relative ("//…"), external, "#", mailto: and tel: are untouched.
+  const toRelative = (fromUrl, target) => {
+    const [, pathname, suffix] = target.match(/^([^?#]*)(.*)$/);
+    const fromDir = fromUrl.endsWith("/") ? fromUrl : path.posix.dirname(fromUrl) + "/";
+    let rel = path.posix.relative(fromDir, pathname) || ".";
+    if (pathname.endsWith("/") && !rel.endsWith("/")) rel += "/";
+    return rel + suffix;
+  };
+
+  eleventyConfig.addTransform("relative-urls", function (content) {
+    const outputPath = this.page.outputPath;
+    if (typeof outputPath !== "string" || !outputPath.endsWith(".html")) return content;
+    const fromUrl = this.page.url;
+    return content.replace(
+      /(\s(?:href|src)=)(["'])(\/(?!\/)[^"']*)\2/g,
+      (_, attr, quote, target) => attr + quote + toRelative(fromUrl, target) + quote
+    );
+  });
 
   eleventyConfig.addFilter("extractToc", (html) => {
     if (!html) return [];
@@ -113,7 +115,6 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: { input: ".", includes: "_includes", data: "_data", output: "_site" },
-    pathPrefix: "/roditeljska-platforma/",
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     templateFormats: ["md", "njk", "html"],
