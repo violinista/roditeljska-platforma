@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-"Platforma za roditelje" — a static informational site (in Serbian) aimed at parents, with content on school grading, parent-school communication, child development topics, counseling registration, and the team behind the platform.
+"Oko deteta" (tagline: "Platforma za roditelje") — a static informational site (in Serbian) aimed at parents, with content on school grading, parent-school communication, child development topics, counseling registration, and the team behind the platform.
 
 ## Deployment
 
@@ -45,7 +45,7 @@ npm --prefix /Users/mika/PROJECTS/2026\ Platforma\ za\ decu/website run build
 
 **Do NOT** run `npx @11ty/eleventy` from the parent dir — it will silently pick up the global v3 install (`/Users/mika/node_modules/@11ty/eleventy/`), miss the project's `.eleventy.js`, and fail with the layout error above.
 
-`_site/` is the build output (gitignored). `node_modules/` is gitignored. `README.md`, `CLAUDE.md`, `inspiration/`, `design-system/`, `sample-template/` are excluded from the build via `.eleventyignore`.
+`_site/` is the build output (gitignored). `node_modules/` is gitignored. `README.md`, `CLAUDE.md`, `DESIGN-SYSTEM.md`, `resources-*`, `inspiration/`, `design-system/`, `sample-template/` are excluded from the build via `.eleventyignore`.
 
 ## Architecture overview
 
@@ -55,12 +55,13 @@ The site is a reusable 11ty/Nunjucks template recreated from the BootstrapMade "
 2. **`design-system/tokens.css`** — project design tokens; rebinds `--bs-*` vars to brand palette/typography
 3. **`assets/css/site.css`** — project component styles, written from scratch against the tokens
 
-`sample-template/main.css` is **NOT loaded at runtime**. The sample template and `insiration-website/` are reference material only. Likewise, `design-system/tokens.css` is treated as an immutable source of truth — it's surfaced to the build via passthrough copy (`addPassthroughCopy({ "design-system/tokens.css": "assets/css/tokens.css" })` in `.eleventy.js`) and never edited from build code.
+`sample-template/main.css` is **NOT loaded at runtime**. The sample template and `insiration-website/` are reference material only. `design-system/tokens.css` is the design-system source of truth (rewritten for the 2026-10 "Oko deteta" redesign — it is no longer the immutable inspiration-site extract). It's surfaced to the build via passthrough copy (`addPassthroughCopy({ "design-system/tokens.css": "assets/css/tokens.css" })` in `.eleventy.js`). Edit it deliberately, together with `DESIGN-SYSTEM.md`.
 
 ## Directory layout
 
 ```
-.eleventy.js                  # passthroughs, layout aliases, markdown-it-anchor + extractToc filter, Serbian date filters, cwd guard, relative-urls transform
+.eleventy.js                  # passthroughs, layout aliases, markdown-it-anchor + extractToc filter, navActive filter, search-index (eleventy.after), Serbian date filters, cwd guard, relative-urls transform
+DESIGN-SYSTEM.md              # design rules for humans + agents (tokens, contrast, type, components, logo)
 .github/workflows/deploy.yml  # GitHub Actions: build with Node 20 + npm ci + npm run build, deploy _site/ to GitHub Pages on push to main
 package.json                  # 11ty, bootstrap-icons, markdown-it{,-anchor} devDeps; build/start scripts
 package-lock.json             # pins exact dep versions; required by `npm ci` in CI
@@ -68,16 +69,16 @@ robots.txt.njk                # renders to /robots.txt — site-wide crawler blo
 _includes/
   layouts/
     base.njk                  # HTML shell: <head> (with noindex meta), header, footer, scripts
-    home.njk                  # extends base; composes 8 homepage sections
+    home.njk                  # extends base; hero → programs → about → numbers-steps → CTA banner
     page.njk                  # extends base; generic markdown wrapper (no Serbian content uses this anymore)
     page-article.njk          # extends base; rich article shell (breadcrumb, auto-TOC, share, tags, optional CTA block)
   partials/
-    header.njk, footer.njk, scripts.njk
+    header.njk, footer.njk, scripts.njk, search-dialog.njk
     sections/                 # one partial per homepage section + reusable building blocks
-      hero, about, programs, page-title, cta-banner
+      hero, about, programs, numbers-steps, page-title, cta-banner
 _data/                        # global data, autoloaded by Eleventy
-  site.json                   # nav, footer columns, social, brand, lang
-  hero, timeline, coreValues, programs, savetovanjeForm
+  site.json                   # nav, headerActions, footer columns, social, brand, lang
+  hero, timeline, coreValues, programs, stats, steps
   savetovanjeForm             # programs list + intro for the /savetovanje/ registration form
   pageGroups.json             # page-group trees (sidebar TOC + bottom links), see "Page groups"
 assets/
@@ -86,11 +87,13 @@ assets/
     vendor/                   # bootstrap, bootstrap-icons, swiper, glightbox
     vendor/fonts/             # bootstrap-icons.woff{,2}
   js/
-    main.js                   # mobile nav, dropdown toggle, Swiper init
+    main.js                   # mobile nav (button + aria-expanded), dropdown toggle, Swiper init
+    search.js                 # site search dialog (fetches /search-index.json)
     vendor/                   # bootstrap bundle, swiper, glightbox
                               # (aos.js, purecounter, isotope, imagesloaded
                               #  remain on disk but are NOT loaded)
-  img/                        # ~32 .webp images
+  img/                        # ~32 .webp images + logo-horizontal{,-light}.png
+    illustrations/            # decorative SVGs (leaf, heart-doodle, sunburst, swoosh, heart-outline)
 
 # Homepage
 index.md                      # layout: layouts/home.njk
@@ -127,7 +130,9 @@ The header nav lives in `_data/site.json` `nav`. Current structure (3 top-level 
 2. **Savetovanje** (flat link) — `/savetovanje/`, the inquiry/registration page
 3. **O nama** (dropdown, 3 children: Naš tim, Pitanja i odgovori, Kontakt)
 
-The homepage is reachable by clicking the brand name in the header (no "Početna" nav entry).
+The homepage is reachable by clicking the logo in the header (no "Početna" nav entry). The current section gets a coral underline via the `navActive` filter in `.eleventy.js` (prefix match on child URLs).
+
+To the right of the nav: a **search** icon (native `<dialog>`, `_includes/partials/search-dialog.njk` + `assets/js/search.js`; the index `_site/search-index.json` is written by an `eleventy.after` hook from the rendered HTML — no dependency) and `site.json` `headerActions`: "Prijava / Registracija" (outline pill → `/savetovanje/#prijava`, the existing program sign-up form — the site has no user accounts) and "Zakaži savetovanje" (coral pill). Below 1200px they move into the hamburger menu (docked at the bottom of the panel).
 
 Footer has two columns (`_data/site.json` `footer.columns`): "Vodič kroz ocenjivanje" (the 5 guide texts) and "Platforma" (Savetovanje, Naš tim, Pitanja i odgovori, Kontakt).
 
@@ -196,14 +201,16 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 
 - All design values live in `design-system/tokens.css` as `:root` custom properties. Naming: `--color-{role}`, `--font-size-{step}`, `--space-{n}`, `--radius-{name}`, `--shadow-{level}`.
 - Tokens mirror into `--bs-*` (e.g. `--bs-primary`, `--bs-body-color`, `--bs-border-radius`) so Bootstrap utilities pick up the brand palette.
-- Brand: primary `#244F95` (deep blue), accent `#DDB33D` (warm gold), plus teal/taupe/red/navy accents and a 0–900 neutral scale.
-- Typography: Montserrat only (weights 400/500/600/700/800), imported from Google Fonts at the top of `tokens.css`.
+- **Read `DESIGN-SYSTEM.md` before any visual change** — palette, contrast rules, type scale, components, logo usage.
+- Brand (from `resources-colors.png` / `resources-mockup.pdf`): navy-slate `#264653`, coral `#E76F51` (CTA), gold `#E9C46A`, orange `#F4A261` (decor only), logo teal `#006B70`, on a cream `#FBF9F4` page. Coral/gold/orange are never body-size text on light backgrounds (use `--color-secondary-text`).
+- Typography: Plus Jakarta Sans (headings, nav, buttons) + Open Sans (body, 18px), linked from Google Fonts in `base.njk`. Caveat is loaded (glyph-subset) only on `cta: true` pages for the "Niste sami u ovome." annotation.
+- Logo: `assets/img/logo-horizontal.png` (header) / `logo-horizontal-light.png` (footer), generated from `resources-logo.png` by `design-system/make-logo-horizontal.py` (needs Pillow; not part of the build).
 - Article components added for the Ocenjivanje guide (in `assets/css/site.css`, token-driven only): `.article-callout` (highlighted aside), `.article-details` (collapsible `<details>` reference block), `.table-responsive` (horizontally scrolling wide table), `.guide-map` (clickable navigator on `/ocenjivanje/`), and styling for `blockquote`.
-- **Never edit `tokens.css` or `sample-template/` files.** Project styles go in `assets/css/site.css`; new component patterns should use only `var(--…)` references, no hard-coded colors/fonts/sizes.
+- **Never edit `sample-template/` files.** Project styles go in `assets/css/site.css`, which must use only `var(--…)` references (no hex/rgb/font names) — add a token to `tokens.css` first if needed. Decorative SVGs in `assets/img/illustrations/` are the only place with literal palette hex values.
 
 ## Content authoring
 
-- **Homepage**: data-driven. Edit `_data/hero.json`, `programs.json`, `timeline.json` and `coreValues.json` to change copy, images and the guide navigator. The Nunjucks partials render whatever the JSON contains.
+- **Homepage**: data-driven. Edit `_data/hero.json`, `programs.json`, `timeline.json`, `coreValues.json`, `stats.json` ("U brojkama" — keep these figures verifiable from site content) and `steps.json` ("Kako funkcioniše?") to change copy, images and the guide navigator. The Nunjucks partials render whatever the JSON contains.
 
 - **Serbian content pages**: plain Markdown bodies with `layout: layouts/page-article.njk` frontmatter. To add a new Serbian content page, create `<slug>.md` at the repo root with frontmatter:
 
@@ -248,4 +255,5 @@ The site is currently single-topic (Ocenjivanje). Previously stubbed categories 
 - `sample-template/` — the original BootstrapMade "College" homepage HTML, kept read-only as the source for the homepage conversion.
 - `/Users/mika/PROJECTS/2026 Platforma za decu/insiration-website/bootstrapmade.com/content/demo/College/` — the full multi-page demo. Lives outside the `website/` repo. The folder name has a typo (`insiration-` instead of `inspiration-`) that is preserved.
 - `inspiration/` — saved copy of `schoolavoidance.org` (`website.html` + `website_files/`). The real brand palette/typography was extracted from the inline `<style id="global-styles-inline-css">` block (Elementor kit-9), **not** the CSS files under `website_files/` (those are Hello Elementor + plugin defaults).
-- `design-system/index.html` — single-page reference doc that consumes `tokens.css`. Open directly in a browser to review.
+- `design-system/index.html` — live token specimen that consumes `tokens.css`. Open directly in a browser to review.
+- `resources-colors.png`, `resources-mockup.pdf`, `resources-logo.png` (repo root) — brand references for the redesign; `resources-logo-horizontal.png` is the generated horizontal logo.

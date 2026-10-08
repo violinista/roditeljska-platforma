@@ -3,467 +3,115 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Design system — Platforma za roditelje</title>
+  <title>Oko deteta — design tokens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Caveat:wght@500&display=swap">
   <link rel="stylesheet" href="./tokens.css">
   <style>
-    /* Page-layout styles only. All design values come from tokens.css. */
-    body {
-      margin: 0;
-      font-family: var(--font-family-base);
-      font-size: var(--font-size-base);
-      line-height: var(--line-height-relaxed);
-      color: var(--color-text);
-      background: var(--color-bg);
-    }
-    .wrap {
-      max-width: 64rem;
-      margin: 0 auto;
-      padding: var(--space-7) var(--space-5);
-    }
-    header.page-header {
-      border-bottom: 1px solid var(--color-border);
-      padding-bottom: var(--space-5);
-      margin-bottom: var(--space-6);
-    }
-    header.page-header h1 {
-      font-family: var(--font-family-heading);
-      font-size: var(--font-size-4xl);
-      font-weight: var(--font-weight-bold);
-      line-height: var(--line-height-tight);
-      letter-spacing: var(--letter-spacing-tight);
-      margin: 0 0 var(--space-3);
-      color: var(--color-secondary);
-    }
-    header.page-header p {
-      margin: 0;
-      color: var(--color-text-muted);
-      max-width: 42rem;
-    }
-    nav.toc {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3) var(--space-5);
-      margin-bottom: var(--space-7);
-      font-weight: var(--font-weight-medium);
-    }
-    nav.toc a {
-      color: var(--color-link);
-      text-decoration: none;
-    }
-    nav.toc a:hover { color: var(--color-link-hover); }
-
-    section {
-      margin-bottom: var(--space-8);
-    }
-    section > h2 {
-      font-family: var(--font-family-heading);
-      font-size: var(--font-size-2xl);
-      font-weight: var(--font-weight-medium);
-      line-height: var(--line-height-tight);
-      margin: 0 0 var(--space-2);
-      color: var(--color-secondary);
-    }
-    section > .section-lead {
-      color: var(--color-text-muted);
-      margin: 0 0 var(--space-5);
-    }
-    section > h3 {
-      font-family: var(--font-family-heading);
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-semibold);
-      letter-spacing: var(--letter-spacing-wide);
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin: var(--space-6) 0 var(--space-4);
-    }
-
-    /* Two-column grid — used for colors, spacing, radii, shadows. */
-    .grid-2col {
-      display: grid;
-      grid-template-columns: minmax(8rem, 1fr) 2fr;
-      gap: var(--space-3) var(--space-5);
-      align-items: center;
-    }
-    .grid-2col > .preview { display: flex; align-items: center; }
-    .grid-2col > .meta code {
-      font-family: var(--font-family-mono);
-      font-size: var(--font-size-sm);
-      color: var(--color-secondary);
-    }
-    .grid-2col > .meta .value {
-      display: block;
-      font-family: var(--font-family-mono);
-      font-size: var(--font-size-xs);
-      color: var(--color-text-muted);
-      margin-top: 2px;
-    }
-
-    /* Color swatches */
-    .swatch {
-      width: 6rem;
-      height: 3rem;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* Typography specimens — stacked */
-    .specimen {
-      padding: var(--space-4) 0;
-      border-bottom: 1px dashed var(--color-border);
-    }
-    .specimen:last-child { border-bottom: 0; }
-    .specimen .sample {
-      font-family: var(--font-family-heading);
-      color: var(--color-secondary);
-      margin: 0 0 var(--space-2);
-    }
-    .specimen .tokens {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2) var(--space-4);
-      font-family: var(--font-family-mono);
-      font-size: var(--font-size-xs);
-      color: var(--color-text-muted);
-    }
-    .specimen .tokens code {
-      color: var(--color-secondary);
-      background: var(--color-bg-subtle);
-      padding: 2px 6px;
-      border-radius: var(--radius-sm);
-    }
-
-    /* Spacing bars */
-    .bar {
-      height: 0.75rem;
-      background: var(--color-primary);
-      border-radius: var(--radius-sm);
-    }
-
-    /* Radius squares */
-    .rsquare {
-      width: 4rem;
-      height: 4rem;
-      background: var(--color-primary-tint);
-      border: 1px solid var(--color-primary);
-    }
-
-    /* Shadow tiles */
-    .stile {
-      width: 8rem;
-      height: 4rem;
-      background: var(--color-bg);
-      border-radius: var(--radius-md);
-      margin: var(--space-3);
-    }
-
-    footer {
-      margin-top: var(--space-8);
-      padding-top: var(--space-5);
-      border-top: 1px solid var(--color-border);
-      color: var(--color-text-muted);
-      font-size: var(--font-size-sm);
-    }
+    /* Reference page only — open directly in a browser. Rules: ../DESIGN-SYSTEM.md */
+    body { margin: 0; font-family: var(--font-family-base); font-size: var(--font-size-base); line-height: var(--line-height-relaxed); color: var(--color-text); background: var(--color-bg); }
+    main { max-width: 72rem; margin: 0 auto; padding: var(--space-7) var(--space-5); }
+    h1, h2, h3 { font-family: var(--font-family-heading); color: var(--color-heading); line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-tight); }
+    h1 { font-size: var(--font-size-3xl); margin: 0 0 var(--space-3); }
+    h2 { font-size: var(--font-size-xl); margin: var(--space-8) 0 var(--space-4); }
+    h2::after { content: ""; display: block; width: 48px; height: 4px; margin-top: var(--space-3); border-radius: var(--radius-full); background: var(--color-tertiary); }
+    h3 { font-size: var(--font-size-md); margin: var(--space-5) 0 var(--space-3); }
+    a { color: var(--color-link); }
+    code { font-size: var(--font-size-xs); color: var(--color-text-muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: var(--space-4); }
+    .swatch { border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; background: var(--color-surface); }
+    .swatch b { display: block; height: 72px; }
+    .swatch span { display: block; padding: var(--space-2) var(--space-3); font-size: var(--font-size-xs); line-height: var(--line-height-snug); }
+    .row { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+    .pill { display: inline-flex; align-items: center; min-height: 48px; padding: var(--space-3) var(--space-6); border-radius: var(--radius-full); border: 2px solid transparent; font-family: var(--font-family-heading); font-weight: var(--font-weight-bold); font-size: var(--font-size-sm); }
+    .card { padding: var(--space-5); border-radius: var(--radius-lg); }
+    .band { padding: var(--space-6); border-radius: var(--radius-lg); }
+    .box { width: 96px; height: 64px; background: var(--color-surface); border: 1px solid var(--color-border); display: flex; align-items: flex-end; padding: var(--space-2); font-size: var(--font-size-xs); }
   </style>
 </head>
 <body>
-  <div class="wrap">
+<main>
+  <img src="../resources-logo-horizontal.png" alt="Oko deteta — Platforma za roditelje" style="height: 52px; width: auto;">
+  <h1>Design tokens</h1>
+  <p>Live specimen of <code>design-system/tokens.css</code>. Usage rules and contrast notes: <a href="../DESIGN-SYSTEM.md">DESIGN-SYSTEM.md</a>.</p>
 
-    <header class="page-header">
-      <h1>Design system</h1>
-      <p>Foundation tokens for the Platforma za roditelje 11ty site. Extracted from <code>inspiration/website.html</code> (Elementor kit-9 global styles). Variable names align with Bootstrap's <code>--bs-*</code> convention so <code>bootstrap.css</code> can be layered on top later.</p>
-    </header>
-
-    <nav class="toc" aria-label="Sections">
-      <a href="#typography">Typography</a>
-      <a href="#colors">Colors</a>
-      <a href="#spacing">Spacing</a>
-      <a href="#radii">Radii</a>
-      <a href="#shadows">Shadows</a>
-    </nav>
-
-    <!-- ====================================================================
-         TYPOGRAPHY — stacked specimens
-    ===================================================================== -->
-    <section id="typography">
-      <h2>Typography</h2>
-      <p class="section-lead">Single family — Montserrat — across headings and body, mirroring the inspiration kit. Weights 400, 500, 600, 700, 800.</p>
-
-      <h3>Family &amp; weights</h3>
-      <div class="grid-2col">
-        <div class="preview" style="font-family: var(--font-family-base); font-size: var(--font-size-md);">Montserrat — neutralna, mirna, dobro čita ćirilicu i latinicu.</div>
-        <div class="meta"><code>--font-family-base</code></div>
-
-        <div class="preview" style="font-weight: var(--font-weight-regular); font-size: var(--font-size-md);">Regular 400 — Aa Bb Šš Čč Ćć Žž Đđ</div>
-        <div class="meta"><code>--font-weight-regular</code><span class="value">400</span></div>
-
-        <div class="preview" style="font-weight: var(--font-weight-medium); font-size: var(--font-size-md);">Medium 500 — Aa Bb Šš Čč Ćć Žž Đđ</div>
-        <div class="meta"><code>--font-weight-medium</code><span class="value">500</span></div>
-
-        <div class="preview" style="font-weight: var(--font-weight-semibold); font-size: var(--font-size-md);">Semibold 600 — Aa Bb Šš Čč Ćć Žž Đđ</div>
-        <div class="meta"><code>--font-weight-semibold</code><span class="value">600</span></div>
-
-        <div class="preview" style="font-weight: var(--font-weight-bold); font-size: var(--font-size-md);">Bold 700 — Aa Bb Šš Čč Ćć Žž Đđ</div>
-        <div class="meta"><code>--font-weight-bold</code><span class="value">700</span></div>
-
-        <div class="preview" style="font-weight: var(--font-weight-black); font-size: var(--font-size-md);">Black 800 — Aa Bb Šš Čč Ćć Žž Đđ</div>
-        <div class="meta"><code>--font-weight-black</code><span class="value">800</span></div>
-      </div>
-
-      <h3>Type scale</h3>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-5xl); font-weight: var(--font-weight-black); line-height: var(--line-height-tight);">Display — Podrška za roditelje</p>
-        <div class="tokens">
-          <code>--font-size-5xl</code><span>3.8rem</span>
-          <code>--font-weight-black</code><span>800</span>
-          <code>--line-height-tight</code><span>1.1</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-tight);">Hero — Pomažemo deci, mladima i porodicama</p>
-        <div class="tokens">
-          <code>--font-size-4xl</code><span>3.2rem</span>
-          <code>--font-weight-bold</code><span>700</span>
-          <code>--line-height-tight</code><span>1.1</span>
-          <code>--letter-spacing-tight</code><span>-0.5px</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); line-height: var(--line-height-tight);">H1 — Ocenjivanje u školi</p>
-        <div class="tokens">
-          <code>--font-size-3xl</code><span>2.25rem</span>
-          <code>--font-weight-bold</code><span>700</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-medium); line-height: var(--line-height-tight);">H2 — Savetovanje sa stručnjacima</p>
-        <div class="tokens">
-          <code>--font-size-2xl</code><span>1.8rem</span>
-          <code>--font-weight-medium</code><span>500</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); line-height: var(--line-height-snug);">H3 — Najčešća pitanja</p>
-        <div class="tokens">
-          <code>--font-size-xl</code><span>1.5rem</span>
-          <code>--font-weight-semibold</code><span>600</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">H4 — O nama</p>
-        <div class="tokens">
-          <code>--font-size-lg</code><span>1.25rem</span>
-          <code>--font-weight-semibold</code><span>600</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-md); font-weight: var(--font-weight-bold); letter-spacing: var(--letter-spacing-wide); text-transform: uppercase;">Subheading — Resursi i materijali</p>
-        <div class="tokens">
-          <code>--font-size-md</code><span>1.1rem</span>
-          <code>--font-weight-bold</code><span>700</span>
-          <code>--letter-spacing-wide</code><span>0.2px</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-base); font-weight: var(--font-weight-regular); line-height: var(--line-height-relaxed); color: var(--color-text);">Body — Verujemo da ste imali u svom iskustvu neku od situacija kada je vaše dete bilo uznemireno ocenom koju je dobilo u školi. Ove situacije brinu roditelje, koji pokušavaju da razumeju šta je problem.</p>
-        <div class="tokens">
-          <code>--font-size-base</code><span>1rem</span>
-          <code>--font-weight-regular</code><span>400</span>
-          <code>--line-height-relaxed</code><span>1.6</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Small — Sporedni tekst, opisi slika, napomene.</p>
-        <div class="tokens">
-          <code>--font-size-sm</code><span>0.875rem</span>
-        </div>
-      </div>
-
-      <div class="specimen">
-        <p class="sample" style="font-size: var(--font-size-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: var(--letter-spacing-wide);">Caption — META PODACI</p>
-        <div class="tokens">
-          <code>--font-size-xs</code><span>0.75rem</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         COLORS — two-column
-    ===================================================================== -->
-    <section id="colors">
-      <h2>Colors</h2>
-      <p class="section-lead">Brand palette extracted verbatim from <code>--e-global-color-*</code> in the inspiration kit. Neutrals scaled 0–900. Semantic tokens reference the above by name so adjustments cascade.</p>
-
-      <h3>Brand</h3>
-      <div class="grid-2col">
-        <div class="preview"><div class="swatch" style="background: var(--color-primary);"></div></div>
-        <div class="meta"><code>--color-primary</code><span class="value">#244F95</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-secondary);"></div></div>
-        <div class="meta"><code>--color-secondary</code><span class="value">#1D1D1D</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-accent);"></div></div>
-        <div class="meta"><code>--color-accent</code><span class="value">#DDB33D</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-info);"></div></div>
-        <div class="meta"><code>--color-info</code><span class="value">#037F8C</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-warm);"></div></div>
-        <div class="meta"><code>--color-warm</code><span class="value">#D9AE89</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-danger);"></div></div>
-        <div class="meta"><code>--color-danger</code><span class="value">#C5260E</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-navy);"></div></div>
-        <div class="meta"><code>--color-navy</code><span class="value">#0D1C46</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-primary-tint);"></div></div>
-        <div class="meta"><code>--color-primary-tint</code><span class="value">rgba(36, 79, 149, 0.08)</span></div>
-      </div>
-
-      <h3>Neutrals</h3>
-      <div class="grid-2col">
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-0);"></div></div>
-        <div class="meta"><code>--color-neutral-0</code><span class="value">#FFFFFF</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-50);"></div></div>
-        <div class="meta"><code>--color-neutral-50</code><span class="value">#FAF9FB</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-100);"></div></div>
-        <div class="meta"><code>--color-neutral-100</code><span class="value">#F6F6F6</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-200);"></div></div>
-        <div class="meta"><code>--color-neutral-200</code><span class="value">#E6E6E6</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-400);"></div></div>
-        <div class="meta"><code>--color-neutral-400</code><span class="value">#8E8E8E</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-500);"></div></div>
-        <div class="meta"><code>--color-neutral-500</code><span class="value">#696969</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-700);"></div></div>
-        <div class="meta"><code>--color-neutral-700</code><span class="value">#424242</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-800);"></div></div>
-        <div class="meta"><code>--color-neutral-800</code><span class="value">#353535</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-neutral-900);"></div></div>
-        <div class="meta"><code>--color-neutral-900</code><span class="value">#1D1D1D</span></div>
-      </div>
-
-      <h3>Semantic</h3>
-      <div class="grid-2col">
-        <div class="preview"><div class="swatch" style="background: var(--color-bg);"></div></div>
-        <div class="meta"><code>--color-bg</code><span class="value">→ --color-neutral-0</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-bg-subtle);"></div></div>
-        <div class="meta"><code>--color-bg-subtle</code><span class="value">→ --color-neutral-50</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-surface);"></div></div>
-        <div class="meta"><code>--color-surface</code><span class="value">→ --color-neutral-100</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-text);"></div></div>
-        <div class="meta"><code>--color-text</code><span class="value">→ --color-neutral-700</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-text-muted);"></div></div>
-        <div class="meta"><code>--color-text-muted</code><span class="value">→ --color-neutral-500</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-border);"></div></div>
-        <div class="meta"><code>--color-border</code><span class="value">→ --color-neutral-200</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-link);"></div></div>
-        <div class="meta"><code>--color-link</code><span class="value">→ --color-primary</span></div>
-
-        <div class="preview"><div class="swatch" style="background: var(--color-link-hover);"></div></div>
-        <div class="meta"><code>--color-link-hover</code><span class="value">→ --color-navy</span></div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         SPACING — two-column bars
-    ===================================================================== -->
-    <section id="spacing">
-      <h2>Spacing</h2>
-      <p class="section-lead">8-step scale on a 4px grid. Use for padding, margins, gaps, and column gutters.</p>
-      <div class="grid-2col">
-        <div class="preview"><div class="bar" style="width: var(--space-1);"></div></div>
-        <div class="meta"><code>--space-1</code><span class="value">0.25rem · 4px</span></div>
-
-        <div class="preview"><div class="bar" style="width: var(--space-2);"></div></div>
-        <div class="meta"><code>--space-2</code><span class="value">0.5rem · 8px</span></div>
-
-        <div class="preview"><div class="bar" style="width: var(--space-3);"></div></div>
-        <div class="meta"><code>--space-3</code><span class="value">0.75rem · 12px</span></div>
-
-        <div class="preview"><div class="bar" style="width: var(--space-4);"></div></div>
-        <div class="meta"><code>--space-4</code><span class="value">1rem · 16px</span></div>
-
-        <div class="preview"><div class="bar" style="width: var(--space-5);"></div></div>
-        <div class="meta"><code>--space-5</code><span class="value">1.5rem · 24px</span></div>
-
-        <div class="preview"><div class="bar" style="width: var(--space-6);"></div></div>
-        <div class="meta"><code>--space-6</code><span class="value">2rem · 32px</span></div>
-
-        <div class="preview"><div class="bar" style="width: var(--space-7);"></div></div>
-        <div class="meta"><code>--space-7</code><span class="value">3rem · 48px</span></div>
-
-        <div class="preview"><div class="bar" style="width: var(--space-8);"></div></div>
-        <div class="meta"><code>--space-8</code><span class="value">4rem · 64px</span></div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         RADII — two-column squares
-    ===================================================================== -->
-    <section id="radii">
-      <h2>Radii</h2>
-      <p class="section-lead">Four steps for soft, calm surfaces. <code>--radius-full</code> for pills and avatars.</p>
-      <div class="grid-2col">
-        <div class="preview"><div class="rsquare" style="border-radius: var(--radius-sm);"></div></div>
-        <div class="meta"><code>--radius-sm</code><span class="value">0.25rem · 4px</span></div>
-
-        <div class="preview"><div class="rsquare" style="border-radius: var(--radius-md);"></div></div>
-        <div class="meta"><code>--radius-md</code><span class="value">0.5rem · 8px</span></div>
-
-        <div class="preview"><div class="rsquare" style="border-radius: var(--radius-lg);"></div></div>
-        <div class="meta"><code>--radius-lg</code><span class="value">1rem · 16px</span></div>
-
-        <div class="preview"><div class="rsquare" style="border-radius: var(--radius-full);"></div></div>
-        <div class="meta"><code>--radius-full</code><span class="value">9999px</span></div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         SHADOWS — two-column tiles
-    ===================================================================== -->
-    <section id="shadows">
-      <h2>Shadows</h2>
-      <p class="section-lead">Three soft elevation levels tinted with the navy brand color for a calm, cohesive feel.</p>
-      <div class="grid-2col" style="background: var(--color-bg-subtle); padding: var(--space-5); border-radius: var(--radius-md);">
-        <div class="preview"><div class="stile" style="box-shadow: var(--shadow-sm);"></div></div>
-        <div class="meta"><code>--shadow-sm</code><span class="value">0 1px 2px rgba(13,28,70,0.06)</span></div>
-
-        <div class="preview"><div class="stile" style="box-shadow: var(--shadow-md);"></div></div>
-        <div class="meta"><code>--shadow-md</code><span class="value">0 4px 12px rgba(13,28,70,0.08)</span></div>
-
-        <div class="preview"><div class="stile" style="box-shadow: var(--shadow-lg);"></div></div>
-        <div class="meta"><code>--shadow-lg</code><span class="value">0 12px 32px rgba(13,28,70,0.12)</span></div>
-      </div>
-    </section>
-
-    <footer>
-      <p>Tokens defined in <code>./tokens.css</code>. Bootstrap-compatible: <code>--bs-primary</code>, <code>--bs-body-color</code>, <code>--bs-body-bg</code>, etc. are mapped to project tokens for clean integration with <code>bootstrap.css</code>.</p>
-    </footer>
-
+  <h2>Colors — brand</h2>
+  <div class="grid">
+    <div class="swatch"><b style="background: var(--color-primary)"></b><span><code>--color-primary</code><br>#264653 navy-slate</span></div>
+    <div class="swatch"><b style="background: var(--color-primary-dark)"></b><span><code>--color-primary-dark</code><br>#1A333D ink (headings)</span></div>
+    <div class="swatch"><b style="background: var(--color-secondary)"></b><span><code>--color-secondary</code><br>#E76F51 coral (CTA fill)</span></div>
+    <div class="swatch"><b style="background: var(--color-secondary-dark)"></b><span><code>--color-secondary-dark</code><br>#C4512F coral hover</span></div>
+    <div class="swatch"><b style="background: var(--color-secondary-text)"></b><span><code>--color-secondary-text</code><br>#A84428 coral as text</span></div>
+    <div class="swatch"><b style="background: var(--color-tertiary)"></b><span><code>--color-tertiary</code><br>#E9C46A gold</span></div>
+    <div class="swatch"><b style="background: var(--color-accent)"></b><span><code>--color-accent</code><br>#F4A261 orange (decor only)</span></div>
+    <div class="swatch"><b style="background: var(--color-teal)"></b><span><code>--color-teal</code><br>#006B70 logo teal, links</span></div>
   </div>
+
+  <h2>Colors — surfaces, text, lines</h2>
+  <div class="grid">
+    <div class="swatch"><b style="background: var(--color-bg)"></b><span><code>--color-bg</code><br>#FBF9F4 cream page</span></div>
+    <div class="swatch"><b style="background: var(--color-surface)"></b><span><code>--color-surface</code><br>#FFFFFF</span></div>
+    <div class="swatch"><b style="background: var(--color-surface-warm)"></b><span><code>--color-surface-warm</code><br>#F7F2EA</span></div>
+    <div class="swatch"><b style="background: var(--color-tint-coral)"></b><span><code>--color-tint-coral</code><br>#FCE9DF</span></div>
+    <div class="swatch"><b style="background: var(--color-tint-orange)"></b><span><code>--color-tint-orange</code><br>#FDECDA</span></div>
+    <div class="swatch"><b style="background: var(--color-tint-gold)"></b><span><code>--color-tint-gold</code><br>#FAF0DC</span></div>
+    <div class="swatch"><b style="background: var(--color-band-peach)"></b><span><code>--color-band-peach</code><br>#F9CEA4 CTA band</span></div>
+    <div class="swatch"><b style="background: var(--color-text-muted)"></b><span><code>--color-text-muted</code><br>#5A6E76</span></div>
+    <div class="swatch"><b style="background: var(--color-text-inverse-muted)"></b><span><code>--color-text-inverse-muted</code><br>#C9D6DA on navy</span></div>
+    <div class="swatch"><b style="background: var(--color-border)"></b><span><code>--color-border</code><br>#E8E1D6 hairline</span></div>
+    <div class="swatch"><b style="background: var(--color-border-input)"></b><span><code>--color-border-input</code><br>#7F9097 field edge</span></div>
+  </div>
+
+  <h2>Typography</h2>
+  <p style="font-family: var(--font-family-heading); font-size: var(--font-size-display); font-weight: var(--font-weight-extrabold); line-height: var(--line-height-display); letter-spacing: var(--letter-spacing-display); color: var(--color-heading); margin: 0 0 var(--space-4);">Zajedno do srećnijeg detinjstva</p>
+  <p style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-heading); margin: 0 0 var(--space-3);">H2 — Vodiči i teme · č ć đ š ž</p>
+  <p style="font-family: var(--font-family-heading); font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); color: var(--color-heading); margin: 0 0 var(--space-3);">H3 — Kako funkcioniše</p>
+  <p style="font-size: var(--font-size-md); margin: 0 0 var(--space-3);">Lead (Open Sans 20px) — praktični saveti i proverene informacije.</p>
+  <p style="margin: 0 0 var(--space-3);">Body (Open Sans 18px / 1.65) — Naši stručnjaci su tu da vam pruže savet, odgovore na pitanja i pomognu da lakše prođete kroz izazove roditeljstva. <em>Kurziv</em>, <strong>podebljano</strong>, <a href="#">link u tekstu</a>.</p>
+  <p style="font-family: var(--font-family-heading); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); letter-spacing: var(--letter-spacing-eyebrow); text-transform: uppercase; color: var(--color-teal);">Eyebrow — stručna podrška</p>
+  <p style="font-family: var(--font-family-script); font-size: 2rem; color: var(--color-primary);">Niste sami u ovome.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <span class="pill" style="background: var(--color-secondary); color: var(--color-text-inverse); font-size: var(--font-size-button);">Zakaži savetovanje</span>
+    <span class="pill" style="border-color: var(--color-secondary); color: var(--color-secondary-text);">Prijava / Registracija</span>
+    <span class="pill" style="background: var(--color-primary); color: var(--color-text-inverse);">Pridruži se</span>
+    <span class="band" style="background: var(--color-primary);"><span class="pill" style="background: var(--color-tertiary); color: var(--color-primary-dark);">Na tamnoj podlozi</span></span>
+  </div>
+
+  <h2>Cards &amp; bands</h2>
+  <div class="grid">
+    <div class="card" style="background: var(--color-tint-coral);"><h3 style="margin-top: 0;">Coral tint</h3>Card 1, 3…</div>
+    <div class="card" style="background: var(--color-tint-orange);"><h3 style="margin-top: 0;">Orange tint</h3>Card 2…</div>
+    <div class="card" style="background: var(--color-tint-gold);"><h3 style="margin-top: 0;">Gold tint</h3>Card 4…</div>
+    <div class="card" style="background: var(--color-primary); color: var(--color-text-inverse);"><h3 style="margin-top: 0; color: var(--color-text-inverse);">Navy band</h3>Article CTA, footer</div>
+    <div class="card" style="background: var(--color-band-peach);"><h3 style="margin-top: 0;">Peach band</h3>Homepage CTA</div>
+  </div>
+
+  <h2>Spacing</h2>
+  <div class="row" style="align-items: flex-end;">
+    <div style="width: var(--space-1); height: var(--space-1); background: var(--color-secondary);"></div><code>1</code>
+    <div style="width: var(--space-2); height: var(--space-2); background: var(--color-secondary);"></div><code>2</code>
+    <div style="width: var(--space-3); height: var(--space-3); background: var(--color-secondary);"></div><code>3</code>
+    <div style="width: var(--space-4); height: var(--space-4); background: var(--color-secondary);"></div><code>4</code>
+    <div style="width: var(--space-5); height: var(--space-5); background: var(--color-secondary);"></div><code>5</code>
+    <div style="width: var(--space-6); height: var(--space-6); background: var(--color-secondary);"></div><code>6</code>
+    <div style="width: var(--space-7); height: var(--space-7); background: var(--color-secondary);"></div><code>7</code>
+    <div style="width: var(--space-8); height: var(--space-8); background: var(--color-secondary);"></div><code>8</code>
+    <div style="width: var(--space-9); height: var(--space-9); background: var(--color-secondary);"></div><code>9</code>
+  </div>
+
+  <h2>Radii &amp; shadows</h2>
+  <div class="row">
+    <div class="box" style="border-radius: var(--radius-sm);">sm 8</div>
+    <div class="box" style="border-radius: var(--radius-md);">md 12</div>
+    <div class="box" style="border-radius: var(--radius-lg);">lg 16</div>
+    <div class="box" style="border-radius: var(--radius-xl);">xl 28</div>
+    <div class="box" style="border-radius: var(--radius-lg); border: 0; box-shadow: var(--shadow-sm);">shadow-sm</div>
+    <div class="box" style="border-radius: var(--radius-lg); border: 0; box-shadow: var(--shadow-md);">shadow-md</div>
+    <div class="box" style="border-radius: var(--radius-lg); border: 0; box-shadow: var(--shadow-lg);">shadow-lg</div>
+  </div>
+</main>
 </body>
 </html>

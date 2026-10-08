@@ -1,4 +1,4 @@
-# Platforma za roditelje
+# Oko deteta — Platforma za roditelje
 
 ## Running
 11ty
