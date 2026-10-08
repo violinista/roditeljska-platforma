@@ -6,13 +6,13 @@
     "children": [
       {
         "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/obrazovne-politike/",
-        "label": "Obrazovne politike",
-        "title": "Koje su najvažnije obrazovne politike koje određuju pravac obrazovanja i kako su međusobno povezane?"
+        "label": "Procedure koje definišu obrazovanje",
+        "title": "Koje su najvažnije politike i procedure u obrazovanju i kako su međusobno povezane?"
       },
       {
         "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/vrednosti-i-principi/",
-        "label": "Vrednosti i principi",
-        "title": "Koje vrednosti i principe škola razvija kod učenika i zašto su oni važni za život pojedinca i društvo u celini?",
+        "label": "Vrednosti koje obrazovanje razvija",
+        "title": "Koje vrednosti škola razvija kod učenika i zašto je to važno za njih i društvo?",
         "children": [
           {
             "url": "/ocenjivanje/sta-moje-dete-treba-da-zna/vrednosti-i-principi/opsti-principi/",

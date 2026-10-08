@@ -55,7 +55,16 @@
 
           {% if groupTree %}
             {% set groupHit = groupTree | groupNode(page.url) %}
-            {% if groupHit.node and groupHit.node.children %}
+            {% if groupHit.node and groupHit.node.children and groupHit.parent %}
+              {# Third-level pages (not in the sidebar): a plain list of normal links. #}
+              <nav class="group-links" aria-label="Nastavite čitanje">
+                <ul>
+                  {% for child in groupHit.node.children %}
+                    <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </nav>
+            {% elif groupHit.node and groupHit.node.children %}
               <nav class="guide-map group-children" aria-label="Nastavite čitanje">
                 <ol>
                   {% for child in groupHit.node.children %}
@@ -95,10 +104,13 @@
                   <h3>Sadržaj</h3>
                   <nav aria-label="Sadržaj celine">
                     <ul>
-                      {% for item in groupTree | groupFlatten(page.url) %}
-                        <li class="depth-{{ item.depth }}{% if item.isCurrent %} is-current{% endif %}">
+                      {# Sidebar shows two levels; third-level pages highlight their parent. #}
+                      {% for item in groupTree | groupFlatten(page.url, 1) %}
+                        <li class="depth-{{ item.depth }}{% if item.isCurrent %} is-current{% elif item.isCurrentSection %} is-current-section{% endif %}">
                           {% if item.isCurrent %}
                             <span aria-current="page"><i class="bi bi-arrow-right here-icon" aria-hidden="true" title="Nalazite se ovde"></i><span>{{ item.label }}</span><span class="visually-hidden"> (nalazite se ovde)</span></span>
+                          {% elif item.isCurrentSection %}
+                            <a href="{{ item.url | url }}" aria-current="true"><i class="bi bi-arrow-right here-icon" aria-hidden="true"></i><span>{{ item.label }}</span><span class="visually-hidden"> (nalazite se u ovom delu)</span></a>
                           {% else %}
                             <a href="{{ item.url | url }}">{{ item.label }}</a>
                           {% endif %}

@@ -1,7 +1,7 @@
 ---
 permalink: /ocenjivanje/sta-moje-dete-treba-da-zna/obrazovne-politike/
-title: Koje su najvažnije obrazovne politike koje određuju pravac obrazovanja i kako su međusobno povezane?
-breadcrumb: Obrazovne politike
+title: Koje su najvažnije politike i procedure u obrazovanju i kako su međusobno povezane?
+breadcrumb: Procedure koje definišu obrazovanje
 readTime: 2 min čitanja
 cta: true
 ---

@@ -89,11 +89,23 @@ module.exports = function (eleventyConfig) {
   // Page groups (_data/pageGroups.json): a tree of { url, label, title, children }.
   // groupFlatten → sidebar rows in document order; groupNode → the current
   // page's node and its parent, for the links at the bottom of the article.
-  eleventyConfig.addFilter("groupFlatten", (tree, currentUrl) => {
+  // maxDepth limits the sidebar (e.g. 1 = root + its children). A visible row
+  // whose hidden descendants include the current page is flagged
+  // isCurrentSection, so deeper pages still show where the reader is.
+  eleventyConfig.addFilter("groupFlatten", (tree, currentUrl, maxDepth = Infinity) => {
     const rows = [];
+    const contains = (node) =>
+      (node.children || []).some((child) => child.url === currentUrl || contains(child));
     const walk = (node, depth) => {
-      rows.push({ label: node.label, url: node.url, depth, isCurrent: node.url === currentUrl });
-      (node.children || []).forEach((child) => walk(child, depth + 1));
+      const atLimit = depth >= maxDepth;
+      rows.push({
+        label: node.label,
+        url: node.url,
+        depth,
+        isCurrent: node.url === currentUrl,
+        isCurrentSection: atLimit && contains(node),
+      });
+      if (!atLimit) (node.children || []).forEach((child) => walk(child, depth + 1));
     };
     if (tree) walk(tree, 0);
     return rows;

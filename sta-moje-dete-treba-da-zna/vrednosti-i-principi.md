@@ -1,7 +1,7 @@
 ---
 permalink: /ocenjivanje/sta-moje-dete-treba-da-zna/vrednosti-i-principi/
-title: Koje vrednosti i principe škola razvija kod učenika i zašto su oni važni za život pojedinca i društvo u celini?
-breadcrumb: Vrednosti i principi
+title: Koje vrednosti škola razvija kod učenika i zašto je to važno za njih i društvo?
+breadcrumb: Vrednosti koje obrazovanje razvija
 readTime: 1 min čitanja
 cta: true
 ---

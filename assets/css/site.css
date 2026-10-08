@@ -1107,6 +1107,18 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
   font-weight: var(--font-weight-bold);
   color: var(--color-secondary-text);
 }
+/* On a third-level page (not listed) its parent row marks the section. */
+.group-toc li.is-current-section {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--color-tint-coral);
+}
+.group-toc li.is-current-section > a {
+  display: flex;
+  align-items: baseline;
+  border-left-color: var(--color-secondary);
+  color: var(--color-secondary-text);
+  font-weight: var(--font-weight-bold);
+}
 /* "You are here" marker; the text equivalent is a .visually-hidden span. */
 .here-icon {
   flex-shrink: 0;
@@ -1286,6 +1298,10 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
   color: var(--color-text-muted);
 }
 .article-content .group-children .guide-map-title { margin-bottom: 0; }
+/* Links to third-level pages: plain list, default inline-link style. */
+.article-content .group-links { margin: var(--space-6) 0; }
+.article-content .group-links ul { list-style: none; padding: 0; margin: 0; }
+.article-content .group-links li { margin-bottom: var(--space-2); }
 .article-content .group-back { margin: var(--space-6) 0; }
 
 /* Diagram of how the education laws relate (obrazovne-politike page). */
