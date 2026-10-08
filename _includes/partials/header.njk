@@ -1,33 +1,49 @@
 <header id="header" class="header sticky-top">
   <div class="container-xl">
-    <div class="d-flex align-items-center justify-content-between py-3">
+    <div class="header-bar d-flex align-items-center justify-content-between">
 
       <a href="{{ '/' | url }}" class="logo d-flex align-items-center text-decoration-none">
-        <span class="sitename">{{ site.brand.name }}</span>
+        <img src="{{ '/assets/img/logo-horizontal.png' | url }}" alt="{{ site.brand.name }} — {{ site.brand.tagline }}" width="1449" height="368" class="logo-img">
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul class="d-flex align-items-center gap-3 list-unstyled mb-0">
-          {% for item in site.nav %}
-            {% if item.children %}
-              <li class="dropdown position-relative">
-                <a href="{{ item.url | url }}" class="d-inline-flex align-items-center gap-1">
-                  <span>{{ item.label }}</span>
-                  <i class="bi bi-chevron-down toggle-dropdown"></i>
-                </a>
-                <ul class="dropdown-menu-custom list-unstyled">
-                  {% for child in item.children %}
-                    <li><a href="{{ child.url | url }}">{{ child.label }}</a></li>
-                  {% endfor %}
-                </ul>
-              </li>
-            {% else %}
-              <li><a href="{{ item.url | url }}" {% if item.url == page.url or (item.active and page.url == '/') %}class="active"{% endif %}>{{ item.label }}</a></li>
-            {% endif %}
+      <div class="header-end d-flex align-items-center">
+        <nav id="navmenu" class="navmenu" aria-label="Glavna navigacija">
+          <ul id="navmenu-list" class="d-flex align-items-center list-unstyled mb-0">
+            {% for item in site.nav %}
+              {% set isActive = item | navActive(page.url) %}
+              {% if item.children %}
+                <li class="dropdown position-relative">
+                  <a href="{{ item.url | url }}" class="d-inline-flex align-items-center gap-1{% if isActive %} is-active{% endif %}">
+                    <span>{{ item.label }}</span>
+                    <i class="bi bi-chevron-down toggle-dropdown" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu-custom list-unstyled">
+                    {% for child in item.children %}
+                      <li><a href="{{ child.url | url }}"{% if child.url == page.url %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% else %}
+                <li><a href="{{ item.url | url }}"{% if isActive %} class="is-active" aria-current="page"{% endif %}>{{ item.label }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
+
+        <button type="button" class="header-icon-btn search-toggle" data-search-open aria-label="Pretraga" aria-haspopup="dialog" aria-controls="search-dialog">
+          <i class="bi bi-search" aria-hidden="true"></i>
+        </button>
+
+        <div id="header-actions" class="header-actions">
+          {% for action in site.headerActions %}
+            <a href="{{ action.url | url }}" class="btn-pill btn-pill-{{ action.style }}">{{ action.label }}</a>
           {% endfor %}
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+        </div>
+
+        <button type="button" class="header-icon-btn mobile-nav-toggle d-xl-none" aria-label="Otvori meni" aria-expanded="false" aria-controls="navmenu-list header-actions">
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+      </div>
 
     </div>
   </div>

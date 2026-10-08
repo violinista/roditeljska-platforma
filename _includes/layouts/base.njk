@@ -8,6 +8,14 @@
   <title>{% if title %}{{ title }} — {{ site.brand.name }}{% else %}{{ site.brand.name }}{% endif %}</title>
   <meta name="description" content="{{ description or site.footer.tagline }}">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+  {%- if cta %}
+  {# Script face for the "Niste sami u ovome." annotation only — &text= limits the download to these glyphs. #}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&text=Niste%20samiuovme.&display=swap">
+  {%- endif %}
+
   <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap.min.css' | url }}">
   <link rel="stylesheet" href="{{ '/assets/css/vendor/bootstrap-icons.css' | url }}">
   <link rel="stylesheet" href="{{ '/assets/css/vendor/swiper-bundle.min.css' | url }}">
@@ -24,6 +32,8 @@
   </main>
 
   {% include "partials/footer.njk" %}
+
+  {% include "partials/search-dialog.njk" %}
 
   {% include "partials/scripts.njk" %}
 </body>

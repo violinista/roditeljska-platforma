@@ -1,147 +1,130 @@
 /* =============================================================================
-   Design tokens — Platforma za roditelje
+   Design tokens — Oko deteta
    -----------------------------------------------------------------------------
-   Source of truth: extracted from inspiration/website.html
-   (Elementor "kit-9" global styles, <style id="global-styles-inline-css">).
-   The inspiration site is https://www.schoolavoidance.org — a calm, content-
-   focused parent-support site built with WordPress + Elementor.
+   Source of truth for every colour, font, size, space, radius and shadow on the
+   site. Derived from the brand references in the repo root:
+     resources-colors.png   palette (#264653 #E76F51 #F4A261 #E9C46A + logo teal)
+     resources-mockup.pdf   homepage mockup (surfaces, tints, type, components)
+     resources-logo.png     logo inks (teal #006B70, coral #E76F51, yellow)
+   Usage rules, contrast notes and component guidance: DESIGN-SYSTEM.md.
 
-   Naming convention:
-   - Project tokens: --color-*, --font-size-*, --space-*, --radius-*, --shadow-*
-   - Bootstrap overrides (--bs-*) are mapped from project tokens at the bottom
-     of each section so importing bootstrap.css later cascades cleanly.
-
-   Webfont: Montserrat is the only family actively assigned in the inspiration
-   kit. The OMGF plugin on the live site also self-hosts Roboto / Work Sans /
-   Catamaran, but they aren't bound to any element. We load Montserrat from
-   Google Fonts here; swap to self-hosted later if performance demands it.
+   Load order (load-bearing): bootstrap.min.css → tokens.css → site.css.
+   site.css must reference these tokens only — no literal colours there.
+   Web fonts (Plus Jakarta Sans, Open Sans) are linked in base.njk <head>.
 ============================================================================ */
-
-/* Source: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
-/* Optional alternative body face — uncomment the @import + the --font-family-base
-   override below to switch body copy to Work Sans (heading stays Montserrat). */
-/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap'); */
 
 :root {
   /* ---------------------------------------------------------------------------
      COLOR — Brand
-     Verbatim from --e-global-color-* in the kit.
   --------------------------------------------------------------------------- */
-  --color-primary:    #244F95;  /* deep blue   — kit --e-global-color-primary   */
-  --color-secondary:  #1D1D1D;  /* near black  — kit --e-global-color-secondary */
-  --color-accent:     #DDB33D;  /* warm gold   — kit --e-global-color-accent    */
-  --color-info:       #037F8C;  /* teal        — kit --e-global-color-b3ffe9d   */
-  --color-warm:       #D9AE89;  /* taupe       — kit --e-global-color-bc7bb0a   */
-  --color-danger:     #C5260E;  /* deep red    — kit --e-global-color-f48f6b3   */
-  --color-navy:       #0D1C46;  /* dark navy   — kit --e-global-color-c2fc663   */
-
-  /* Primary tint (kit had #244F9512 — primary with ~7% alpha) */
-  --color-primary-tint: rgba(36, 79, 149, 0.08);
+  --color-primary:        #264653;  /* navy-slate: bands, footer, body text     */
+  --color-primary-dark:   #1A333D;  /* ink: headings, navy-button hover         */
+  --color-secondary:      #E76F51;  /* coral: primary CTA fill, accents         */
+  --color-secondary-dark: #C4512F;  /* coral hover / pressed                    */
+  --color-secondary-text: #A84428;  /* coral as TEXT on light surfaces (AA)     */
+  --color-tertiary:       #E9C46A;  /* gold: bars, button on navy, focus on dark*/
+  --color-accent:         #F4A261;  /* orange: decorative only, never text      */
+  --color-teal:           #006B70;  /* logo teal: inline links, eyebrows, focus */
 
   /* ---------------------------------------------------------------------------
-     COLOR — Neutrals (0 = white, 900 = near black)
+     COLOR — Surfaces
   --------------------------------------------------------------------------- */
-  --color-neutral-0:   #FFFFFF;
-  --color-neutral-50:  #FAF9FB;  /* off-white   — kit --e-global-color-bb8eed6 */
-  --color-neutral-100: #F6F6F6;  /* very light  — inline style frequency hit  */
-  --color-neutral-200: #E6E6E6;  /* light gray  — kit --e-global-color-8f06ea4 */
-  --color-neutral-400: #8E8E8E;  /* medium      — kit --e-global-color-32ca078 */
-  --color-neutral-500: #696969;  /* slate       — kit --e-global-color-06d1405 */
-  --color-neutral-700: #424242;  /* body text   — kit --e-global-color-text    */
-  --color-neutral-800: #353535;  /* charcoal    — kit --e-global-color-5301a31 */
-  --color-neutral-900: #1D1D1D;  /* near black  — kit --e-global-color-secondary */
+  --color-bg:            #FBF9F4;  /* cream page background                     */
+  --color-surface:       #FFFFFF;  /* inputs, dropdowns, white cards            */
+  --color-surface-warm:  #F7F2EA;  /* hero / page-title bands, table headers    */
+  --color-tint-coral:    #FCE9DF;
+  --color-tint-orange:   #FDECDA;
+  --color-tint-gold:     #FAF0DC;
+  --color-band-peach:    #F9CEA4;  /* homepage CTA band                         */
+  --color-surface-dark:  var(--color-primary);
 
   /* ---------------------------------------------------------------------------
-     COLOR — Semantic (surface, text, border)
-     Defined by reference so changing a neutral updates downstream tokens.
+     COLOR — Text, lines, focus
   --------------------------------------------------------------------------- */
-  --color-bg:         var(--color-neutral-0);
-  --color-bg-subtle:  var(--color-neutral-50);
-  --color-surface:    var(--color-neutral-100);
-  --color-text:       var(--color-neutral-700);
-  --color-text-muted: var(--color-neutral-500);
-  --color-text-on-primary: var(--color-neutral-0);
-  --color-border:     var(--color-neutral-200);
-  --color-link:       var(--color-primary);
-  --color-link-hover: var(--color-navy);
+  --color-heading:            var(--color-primary-dark);
+  --color-text:               var(--color-primary);
+  --color-text-muted:         #5A6E76;
+  --color-text-inverse:       #FFFFFF;
+  --color-text-inverse-muted: #C9D6DA;
+  --color-border:             #E8E1D6;  /* decorative hairlines               */
+  --color-border-input:       #7F9097;  /* form-field boundary (≥3:1 on white)*/
+  --color-border-inverse:     rgba(255, 255, 255, 0.18);
+  --color-focus:              var(--color-teal);
+  --color-focus-ring:         rgba(0, 107, 112, 0.25);
+  --color-link:               var(--color-teal);
+  --color-link-hover:         var(--color-primary-dark);
+  --color-overlay:            rgba(26, 51, 61, 0.55);  /* modal backdrop       */
 
   /* ---------------------------------------------------------------------------
      BOOTSTRAP overrides — keep --bs-* aligned to project tokens.
+     Coral is the action colour, so it backs --bs-primary.
   --------------------------------------------------------------------------- */
-  --bs-primary:   var(--color-primary);
-  --bs-secondary: var(--color-secondary);
-  --bs-success:   var(--color-info);
-  --bs-info:      var(--color-info);
-  --bs-warning:   var(--color-accent);
-  --bs-danger:    var(--color-danger);
-  --bs-light:     var(--color-neutral-50);
-  --bs-dark:      var(--color-neutral-900);
-  --bs-body-bg:    var(--color-bg);
-  --bs-body-color: var(--color-text);
-  --bs-border-color: var(--color-border);
-  --bs-link-color: var(--color-link);
+  --bs-primary:          var(--color-secondary);
+  --bs-primary-rgb:      231, 111, 81;
+  --bs-secondary:        var(--color-primary);
+  --bs-secondary-rgb:    38, 70, 83;
+  --bs-body-bg:          var(--color-bg);
+  --bs-body-color:       var(--color-text);
+  --bs-emphasis-color:   var(--color-heading);
+  --bs-heading-color:    var(--color-heading);
+  --bs-border-color:     var(--color-border);
+  --bs-link-color:       var(--color-link);
+  --bs-link-color-rgb:   0, 107, 112;
   --bs-link-hover-color: var(--color-link-hover);
+  --bs-link-hover-color-rgb: 26, 51, 61;
 
   /* ---------------------------------------------------------------------------
      TYPOGRAPHY — Families
   --------------------------------------------------------------------------- */
-  --font-family-sans: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont,
-                      'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-family-base:    var(--font-family-sans);
-  --font-family-heading: var(--font-family-sans);
-  --font-family-mono:    ui-monospace, SFMono-Regular, 'SF Mono', Menlo,
-                         Consolas, 'Liberation Mono', monospace;
-
-  /* Alternative body face — uncomment with the @import at top of file. */
-  /* --font-family-base: 'Work Sans', system-ui, sans-serif; */
+  --font-family-heading: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI',
+                         Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-base:    'Open Sans', system-ui, -apple-system, 'Segoe UI',
+                         Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-script:  'Caveat', 'Segoe Print', 'Bradley Hand', cursive;  /* annotation only */
 
   /* ---------------------------------------------------------------------------
-     TYPOGRAPHY — Weights (kit uses 400, 500, 600, 700, 800)
+     TYPOGRAPHY — Weights
   --------------------------------------------------------------------------- */
-  --font-weight-regular:  400;
-  --font-weight-medium:   500;
-  --font-weight-semibold: 600;
-  --font-weight-bold:     700;
-  --font-weight-black:    800;
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+  --font-weight-extrabold: 800;
 
   /* ---------------------------------------------------------------------------
-     TYPOGRAPHY — Sizes
-     Scale derived from kit values (Display 3.8rem, Hero 3.2rem, Heading 1.8rem,
-     Subheading 1.2rem, Primary 1.1rem, Body 0.9rem).
+     TYPOGRAPHY — Sizes (body 18px; headings fluid)
   --------------------------------------------------------------------------- */
-  --font-size-xs:   0.75rem;   /* 12px — captions / fine print          */
-  --font-size-sm:   0.875rem;  /* 14px — small text                     */
-  --font-size-base: 1rem;      /* 16px — body default                   */
-  --font-size-md:   1.1rem;    /* 17.6px — kit "primary" 1.1rem         */
-  --font-size-lg:   1.25rem;   /* 20px — large body / lead              */
-  --font-size-xl:   1.5rem;    /* 24px — h4                             */
-  --font-size-2xl:  1.8rem;    /* 28.8px — kit "heading" 1.8rem         */
-  --font-size-3xl:  2.25rem;   /* 36px — h2                             */
-  --font-size-4xl:  3.2rem;    /* 51.2px — kit "hero" 3.2rem            */
-  --font-size-5xl:  3.8rem;    /* 60.8px — kit "display" 3.8rem         */
+  --font-size-xs:      0.875rem;   /* 14px — fine print                 */
+  --font-size-sm:      1rem;       /* 16px — nav, meta, labels          */
+  --font-size-base:    1.125rem;   /* 18px — body                       */
+  --font-size-md:      1.25rem;    /* 20px — lead, card titles          */
+  --font-size-lg:      1.5rem;     /* 24px — h4                         */
+  --font-size-xl:      1.875rem;   /* 30px — h3                         */
+  --font-size-2xl:     clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem);    /* h2 */
+  --font-size-3xl:     clamp(2rem, 1.4rem + 2.4vw, 3rem);         /* page h1 */
+  --font-size-display: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem);   /* hero h1 */
+  --font-size-stat:    clamp(2.25rem, 1.8rem + 1.6vw, 2.875rem);  /* big numbers */
+  --font-size-button:  1.1875rem;  /* 19px bold = WCAG large text (coral fill) */
 
   /* ---------------------------------------------------------------------------
      TYPOGRAPHY — Line heights & letter spacing
   --------------------------------------------------------------------------- */
-  --line-height-tight:   1.1;   /* kit display / hero / heading        */
-  --line-height-snug:    1.2;   /* kit primary                         */
-  --line-height-normal:  1.4;
-  --line-height-relaxed: 1.6;   /* body copy default                   */
+  --line-height-display: 1.1;
+  --line-height-tight:   1.15;
+  --line-height-snug:    1.35;
+  --line-height-relaxed: 1.65;
 
-  --letter-spacing-tight:  -0.5px;  /* kit hero                        */
-  --letter-spacing-normal: 0;
-  --letter-spacing-wide:   0.2px;   /* kit subheading                  */
+  --letter-spacing-display: -0.02em;
+  --letter-spacing-tight:   -0.01em;
+  --letter-spacing-eyebrow: 0.08em;
 
-  /* Bootstrap typography overrides */
   --bs-body-font-family: var(--font-family-base);
   --bs-body-font-size:   var(--font-size-base);
   --bs-body-font-weight: var(--font-weight-regular);
   --bs-body-line-height: var(--line-height-relaxed);
 
   /* ---------------------------------------------------------------------------
-     SPACING — 4px base, 8 steps
+     SPACING — 4px base
   --------------------------------------------------------------------------- */
   --space-1: 0.25rem;  /*  4px */
   --space-2: 0.5rem;   /*  8px */
@@ -151,13 +134,22 @@
   --space-6: 2rem;     /* 32px */
   --space-7: 3rem;     /* 48px */
   --space-8: 4rem;     /* 64px */
+  --space-9: 6rem;     /* 96px — section padding (desktop) */
+
+  /* ---------------------------------------------------------------------------
+     LAYOUT
+  --------------------------------------------------------------------------- */
+  --header-height: 72px;   /* mobile; raised to 88px at ≥1200px in site.css */
+  --logo-height:   40px;   /* raised to 52px at ≥1200px                     */
+  --tap-target:    44px;
 
   /* ---------------------------------------------------------------------------
      RADII
   --------------------------------------------------------------------------- */
-  --radius-sm:   0.25rem;
-  --radius-md:   0.5rem;
-  --radius-lg:   1rem;
+  --radius-sm:   0.5rem;    /*  8px */
+  --radius-md:   0.75rem;   /* 12px — inputs, small cards  */
+  --radius-lg:   1rem;      /* 16px — cards, bands         */
+  --radius-xl:   1.75rem;   /* 28px — hero image           */
   --radius-full: 9999px;
 
   --bs-border-radius:    var(--radius-md);
@@ -165,13 +157,26 @@
   --bs-border-radius-lg: var(--radius-lg);
 
   /* ---------------------------------------------------------------------------
-     SHADOWS — soft, calm aesthetic
+     SHADOWS — warm and soft; cards are flat at rest
   --------------------------------------------------------------------------- */
-  --shadow-sm: 0 1px 2px rgba(13, 28, 70, 0.06);
-  --shadow-md: 0 4px 12px rgba(13, 28, 70, 0.08);
-  --shadow-lg: 0 12px 32px rgba(13, 28, 70, 0.12);
+  --shadow-sm: 0 1px 2px rgba(38, 70, 83, 0.06);
+  --shadow-md: 0 10px 28px rgba(38, 70, 83, 0.10);
+  --shadow-lg: 0 20px 48px rgba(38, 70, 83, 0.16);
 
   --bs-box-shadow-sm: var(--shadow-sm);
   --bs-box-shadow:    var(--shadow-md);
   --bs-box-shadow-lg: var(--shadow-lg);
+}
+
+/* Desktop header: taller bar, larger logo (matches the mockup proportions). */
+@media (min-width: 1200px) {
+  :root {
+    --header-height: 88px;
+    --logo-height:   52px;
+  }
+}
+
+/* <dialog> backdrop does not inherit :root custom properties in every browser. */
+::backdrop {
+  --color-overlay: rgba(26, 51, 61, 0.55);
 }

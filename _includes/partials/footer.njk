@@ -1,25 +1,25 @@
-<footer id="footer" class="footer light-background">
+<footer id="footer" class="footer on-dark">
   <div class="container py-5">
     <div class="row g-4">
 
       <div class="col-lg-5 col-md-12 footer-about">
         <a href="{{ '/' | url }}" class="logo d-flex align-items-center text-decoration-none mb-3">
-          <span class="sitename fw-bold">{{ site.brand.name }}</span>
+          <img src="{{ '/assets/img/logo-horizontal-light.png' | url }}" alt="{{ site.brand.name }} — {{ site.brand.tagline }}" width="1449" height="368" class="logo-img">
         </a>
         <p class="mb-3">{{ site.footer.tagline }}</p>
-        {% if site.footer.address %}<p class="mb-1"><i class="bi bi-geo-alt me-2"></i>{{ site.footer.address }}</p>{% endif %}
-        {% if site.footer.email %}<p class="mb-1"><i class="bi bi-envelope me-2"></i><a href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a></p>{% endif %}
+        {% if site.footer.address %}<p class="mb-1"><i class="bi bi-geo-alt me-2" aria-hidden="true"></i>{{ site.footer.address }}</p>{% endif %}
+        {% if site.footer.email %}<p class="mb-1"><i class="bi bi-envelope me-2" aria-hidden="true"></i><a href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a></p>{% endif %}
 
         <div class="social-links d-flex gap-2 mt-3">
           {% for s in site.footer.social %}
-            <a href="{{ s.url | url }}" aria-label="{{ s.label }}"><i class="bi {{ s.icon }}"></i></a>
+            <a href="{{ s.url | url }}" aria-label="{{ s.label }}"><i class="bi {{ s.icon }}" aria-hidden="true"></i></a>
           {% endfor %}
         </div>
       </div>
 
       {% for col in site.footer.columns %}
         <div class="col-lg-3 col-md-6 footer-links">
-          <h4>{{ col.title }}</h4>
+          <h2 class="footer-heading">{{ col.title }}</h2>
           <ul class="list-unstyled">
             {% for link in col.links %}
               <li><a href="{{ link.url | url }}">{{ link.label }}</a></li>
@@ -32,7 +32,7 @@
   </div>
 
   <div class="copyright">
-    <div class="container py-3 text-center">
+    <div class="container py-4">
       <p class="mb-0">&copy; {{ "2026" }} {{ site.brand.name }}. Sva prava zadržana.</p>
     </div>
   </div>

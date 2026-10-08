@@ -1,8 +1,9 @@
 {
   "lang": "sr-Latn",
   "brand": {
-    "name": "Platforma za roditelje",
-    "shortName": "Platforma"
+    "name": "Oko deteta",
+    "shortName": "Oko deteta",
+    "tagline": "Platforma za roditelje"
   },
   "nav": [
     {
@@ -52,6 +53,18 @@
           "url": "/kontakt/"
         }
       ]
+    }
+  ],
+  "headerActions": [
+    {
+      "label": "Prijava / Registracija",
+      "url": "/savetovanje/#prijava",
+      "style": "outline"
+    },
+    {
+      "label": "Zakaži savetovanje",
+      "url": "/savetovanje/",
+      "style": "primary"
     }
   ],
   "footer": {

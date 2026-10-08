@@ -1,0 +1,35 @@
+<section id="numbers-steps" class="numbers-steps section">
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+
+      <div class="col-lg-5 numbers">
+        <h2 class="inline-title">{{ stats.title }}</h2>
+        <ul class="stats-grid list-unstyled mb-0">
+          {% for stat in stats.items %}
+            <li class="stats-grid-item">
+              <span class="stats-grid-value">{{ stat.value }}</span>
+              <span class="stats-grid-label">{{ stat.label }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="col-lg-7 steps">
+        <h2 class="inline-title">{{ steps.title }}</h2>
+        <ol class="steps-list list-unstyled mb-0">
+          {% for step in steps.items %}
+            <li class="steps-item">
+              <span class="steps-number" aria-hidden="true">{{ loop.index }}</span>
+              {% if step.url %}
+                <a href="{{ step.url | url }}" class="steps-label">{{ step.label }}</a>
+              {% else %}
+                <span class="steps-label">{{ step.label }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>

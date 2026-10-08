@@ -1,0 +1,10 @@
+{
+  "title": "U brojkama",
+  "note": "Only verifiable figures. Sources: timeline.json (since 2015), savetovanjeForm.json (4 programs), pageGroups.json + the 5 guide pages (13 texts), reagovanje-na-ocenu.md (3-day appeal deadline).",
+  "items": [
+    { "value": "10+", "label": "godina iskustva u podršci porodicama" },
+    { "value": "4", "label": "programa podrške za decu i roditelje" },
+    { "value": "13", "label": "tekstova u vodiču o ocenjivanju" },
+    { "value": "3 dana", "label": "rok za žalbu na ocenu (ZOSOV, čl. 82)" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Kako funkcioniše?",
+  "items": [
+    { "label": "Pronađite temu koja vas zanima", "url": "/#featured-programs" },
+    { "label": "Pročitajte vodič i savete", "url": "/ocenjivanje/" },
+    { "label": "Prijavite se za savetovanje", "url": "/savetovanje/#prijava" },
+    { "label": "Osetite podršku i sigurnost" }
+  ]
+}

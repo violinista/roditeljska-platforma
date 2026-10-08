@@ -1,18 +1,18 @@
 <section id="about" class="about section">
   <div class="container">
 
-    <div class="section-title text-center mb-5">
+    <div class="section-title mb-5">
       <h2>O nama</h2>
       <p>Naš put i vrednosti koje nas vode</p>
     </div>
 
-    <div class="row g-5 align-items-start mb-5">
+    <div class="row g-4 g-lg-5 align-items-start mb-5">
       <div class="col-lg-6">
         <h3 class="mb-4">Naša priča</h3>
         <ul class="timeline list-unstyled">
           {% for item in timeline %}
             <li class="timeline-item d-flex gap-3 mb-4">
-              <span class="timeline-dot flex-shrink-0"></span>
+              <span class="timeline-dot flex-shrink-0" aria-hidden="true"></span>
               <div>
                 <strong class="d-block">{{ item.year }} — {{ item.title }}</strong>
                 <p class="mb-0">{{ item.body }}</p>
@@ -33,7 +33,7 @@
       {% for value in coreValues %}
         <div class="col">
           <div class="value-card h-100">
-            <div class="value-icon mb-3"><i class="bi {{ value.icon }}"></i></div>
+            <div class="value-icon mb-3" aria-hidden="true"><i class="bi {{ value.icon }}"></i></div>
             <h4>{{ value.title }}</h4>
             <p class="mb-0">{{ value.body }}</p>
           </div>

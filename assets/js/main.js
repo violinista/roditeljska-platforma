@@ -8,28 +8,52 @@
 
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
   function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    const open = document.querySelector('body').classList.toggle('mobile-nav-active');
+    const icon = mobileNavToggleBtn.querySelector('i');
+    icon.classList.toggle('bi-list', !open);
+    icon.classList.toggle('bi-x', open);
+    mobileNavToggleBtn.setAttribute('aria-expanded', String(open));
+    mobileNavToggleBtn.setAttribute('aria-label', open ? 'Zatvori meni' : 'Otvori meni');
   }
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
-  document.querySelectorAll('#navmenu a').forEach(link => {
+  // Dropdown parents ("Ocenjivanje", "O nama") link to "#": clicking or
+  // pressing Enter on them expands the submenu (needed on mobile; on desktop
+  // the submenu also opens on hover / keyboard focus).
+  const dropdownParents = document.querySelectorAll('.navmenu .dropdown > a');
+  dropdownParents.forEach(parent => {
+    parent.setAttribute('aria-expanded', 'false');
+    parent.addEventListener('click', function (e) {
+      e.preventDefault();
+      const open = this.nextElementSibling.classList.toggle('dropdown-active');
+      this.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  function closeDropdowns(except) {
+    dropdownParents.forEach(parent => {
+      if (parent === except) return;
+      parent.nextElementSibling.classList.remove('dropdown-active');
+      parent.setAttribute('aria-expanded', 'false');
+    });
+  }
+  document.addEventListener('click', e => {
+    const parent = e.target.closest('.navmenu .dropdown > a');
+    if (!e.target.closest('.navmenu .dropdown')) closeDropdowns();
+    else if (parent) closeDropdowns(parent);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeDropdowns();
+  });
+
+  document.querySelectorAll('#navmenu a, #header-actions a').forEach(link => {
+    if (link.parentNode.classList.contains('dropdown')) return;
     link.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
         mobileNavToogle();
       }
-    });
-  });
-
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(toggle => {
-    toggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
     });
   });
 

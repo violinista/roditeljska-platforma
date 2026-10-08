@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -26 124 196" fill="none">
+  <!-- Decorative leaf sprig (Oko deteta palette). -->
+  <path d="M46 166C44 128 50 88 64 52C72 32 82 18 92 8" stroke="#2A7A6F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M0 0C9-11 29-13 44 0C29 13 9 11 0 0Z" fill="#E76F51" transform="translate(92 8) rotate(-120) scale(0.8)"/>
+  <path d="M0 0C9-11 29-13 44 0C29 13 9 11 0 0Z" fill="#F4A261" transform="translate(70 38) rotate(-25)"/>
+  <path d="M0 0C9-11 29-13 44 0C29 13 9 11 0 0Z" fill="#2A7A6F" transform="translate(64 54) rotate(-160)"/>
+  <path d="M0 0C9-11 29-13 44 0C29 13 9 11 0 0Z" fill="#E76F51" transform="translate(54 86) rotate(-15) scale(1.1)"/>
+  <path d="M0 0C9-11 29-13 44 0C29 13 9 11 0 0Z" fill="#F4A261" transform="translate(51 104) rotate(-170) scale(1.05)"/>
+  <path d="M0 0C9-11 29-13 44 0C29 13 9 11 0 0Z" fill="#E9C46A" transform="translate(46 136) rotate(-20) scale(0.95)"/>
+  <path d="M0 0C9-11 29-13 44 0C29 13 9 11 0 0Z" fill="#2A7A6F" transform="translate(45 148) rotate(-175) scale(0.85)"/>
+</svg>

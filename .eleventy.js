@@ -111,6 +111,45 @@ module.exports = function (eleventyConfig) {
     return (tree && find(tree, null)) || {};
   });
 
+  // Header nav: is this item (or, for a dropdown, one of its children) the
+  // current page or an ancestor of it? Drives the coral "active" underline.
+  eleventyConfig.addFilter("navActive", (item, currentUrl) => {
+    const matches = (url) =>
+      typeof url === "string" && url.startsWith("/") && url !== "/" &&
+      (currentUrl === url || currentUrl.startsWith(url));
+    if (item.children) return item.children.some((child) => matches(child.url));
+    return matches(item.url);
+  });
+
+  // Site search index (_site/search-index.json), built from the final HTML of
+  // every page so it always matches what is published. assets/js/search.js
+  // fetches it on demand. Each entry: { url, title, headings, text }.
+  const decodeEntities = (s) =>
+    s.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"')
+      .replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+      .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)));
+  const htmlToText = (html) =>
+    decodeEntities(html.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+
+  eleventyConfig.on("eleventy.after", async ({ dir, results }) => {
+    const fs = require("node:fs/promises");
+    const pages = results
+      .filter((r) => typeof r.outputPath === "string" && r.outputPath.endsWith(".html"))
+      .filter((r) => r.url && r.url !== "/404/")
+      .map((r) => {
+        const main = (r.content.match(/<main[^>]*>([\s\S]*?)<\/main>/) || [, ""])[1]
+          .replace(/<(script|style)[\s\S]*?<\/\1>/g, " ")
+          .replace(/<nav class="breadcrumbs">[\s\S]*?<\/nav>/g, " ")
+          .replace(/<aside class="table-of-contents[\s\S]*?<\/aside>/g, " ");
+        const h1 = main.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+        const title = h1 ? htmlToText(h1[1]) : htmlToText((r.content.match(/<title>([\s\S]*?)<\/title>/) || [, ""])[1]);
+        const headings = [...main.matchAll(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/g)].map((m) => htmlToText(m[1]));
+        return { url: r.url, title, headings, text: htmlToText(main) };
+      })
+      .sort((a, b) => a.url.localeCompare(b.url));
+    await fs.writeFile(path.join(dir.output, "search-index.json"), JSON.stringify(pages));
+  });
+
   eleventyConfig.addLayoutAlias("home", "layouts/home.njk");
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk");
   eleventyConfig.addLayoutAlias("page-article", "layouts/page-article.njk");

@@ -33,8 +33,8 @@
                 </div>
               {% endif %}
               <div class="post-info">
-                {% if date %}<span><i class="bi bi-calendar4-week"></i> {{ date | dateSr }}</span>{% endif %}
-                {% if readTime %}<span><i class="bi bi-clock"></i> {{ readTime }}</span>{% endif %}
+                {% if date %}<span><i class="bi bi-calendar4-week" aria-hidden="true"></i> {{ date | dateSr }}</span>{% endif %}
+                {% if readTime %}<span><i class="bi bi-clock" aria-hidden="true"></i> {{ readTime }}</span>{% endif %}
               </div>
             </div>
           {% endif %}
@@ -69,18 +69,19 @@
               </nav>
             {% elif groupHit.parent %}
               <p class="group-back">
-                <a href="{{ groupHit.parent.url | url }}"><i class="bi bi-arrow-left"></i> Nazad na: {{ groupHit.parent.label }}</a>
+                <a href="{{ groupHit.parent.url | url }}"><i class="bi bi-arrow-left" aria-hidden="true"></i> Nazad na: {{ groupHit.parent.label }}</a>
               </p>
             {% endif %}
           {% endif %}
 
           {% if cta %}
-            <aside class="article-cta">
-              <div class="cta-icon"><i class="bi bi-chat-heart"></i></div>
+            <aside class="article-cta on-dark">
+              <p class="cta-annotation">Niste sami<br> u ovome.</p>
+              <div class="cta-icon" aria-hidden="true"><i class="bi bi-chat-heart"></i></div>
               <div class="cta-body">
                 <h3>Potrebna vam je dodatna podrška?</h3>
                 <p>Naš tim stručnjaka — psihologa i pedagoga — pomaže roditeljima da pronađu najbolji odgovor na izazove sa kojima se njihova deca suočavaju u školi. Zakažite individualno savetovanje i razgovarajte sa nekim ko razume šta vam je potrebno.</p>
-                <a href="{{ '/savetovanje/' | url }}" class="cta-button">Zakaži savetovanje <i class="bi bi-arrow-right"></i></a>
+                <a href="{{ '/savetovanje/' | url }}" class="cta-button">Zakaži savetovanje <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
               </div>
             </aside>
           {% endif %}
@@ -135,9 +136,9 @@
           <div class="share-article">
             <h4>Podelite članak</h4>
             <div class="share-buttons">
-              <a href="#" class="share-button twitter"><i class="bi bi-twitter-x"></i><span>Podeli na X</span></a>
-              <a href="#" class="share-button facebook"><i class="bi bi-facebook"></i><span>Podeli na Facebook-u</span></a>
-              <a href="#" class="share-button linkedin"><i class="bi bi-linkedin"></i><span>Podeli na LinkedIn-u</span></a>
+              <a href="#" class="share-button twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i><span>Podeli na X</span></a>
+              <a href="#" class="share-button facebook"><i class="bi bi-facebook" aria-hidden="true"></i><span>Podeli na Facebook-u</span></a>
+              <a href="#" class="share-button linkedin"><i class="bi bi-linkedin" aria-hidden="true"></i><span>Podeli na LinkedIn-u</span></a>
             </div>
           </div>
         </div>
