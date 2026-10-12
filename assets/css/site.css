@@ -1236,6 +1236,14 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
 .article-content .read-more > summary .bi,
 .article-content .read-more-toggle .bi { font-size: 0.7em; vertical-align: 0.05em; }
 .article-content .read-more > [tabindex="-1"]:focus { outline: none; }
+/* Revealed text: indented behind a gold-tint rule. On the <details> itself
+   (not each child) so the rule stays continuous across paragraphs. */
+.article-content .read-more[open] {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-tint-gold);
+}
+.article-content .read-more[open] > *:last-child { margin-bottom: 0; }
 
 .article-content .table-responsive {
   overflow-x: auto;
