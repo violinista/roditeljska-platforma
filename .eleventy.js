@@ -81,6 +81,10 @@ module.exports = function (eleventyConfig) {
   // secondary text (light-blue text in the .docx sources). main.js moves the
   // trigger inline to the end of the preceding paragraph. The blank lines let
   // markdown-it render the Markdown between the tags.
+  // Appended as ?v= to our own CSS/JS links so browsers (and the GitHub
+  // Pages CDN cache) pick up new versions after each build.
+  eleventyConfig.addGlobalData("buildId", Date.now().toString(36));
+
   eleventyConfig.addPairedShortcode("readmore", (content) =>
     '<details class="read-more">\n' +
     '<summary>Pročitaj više <i class="bi bi-chevron-right" aria-hidden="true"></i></summary>\n\n' +

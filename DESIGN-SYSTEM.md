@@ -161,7 +161,7 @@ Practical rules for anyone (human or AI agent) changing how the site looks.
 |---|---|
 | Callout | Gold tint, 4px gold left border |
 | Details | White, warm summary row, navy +/− circle |
-| Read more (`.read-more`) | Inline at the end of the preceding sentence: small teal Jakarta 600 text "Pročitaj više" with a chevron-right icon. One-way: a click reveals the text as normal paragraphs and the trigger disappears |
+| Read more (`.read-more`) | Inline at the end of the preceding sentence: a compact pill (hairline border, tight padding, paragraph text size, teal 600) "Pročitaj više" with a chevron-right icon; gold hover. One-way: a click reveals the text as normal paragraphs and the trigger disappears |
 | Tables | White, warm header row, hairlines; scroll on small screens |
 | Blockquote | Coral tint, coral left border |
 | `.guide-map` | Tinted cards; the current item is white with a coral left border |

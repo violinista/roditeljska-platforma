@@ -1217,23 +1217,24 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
 .article-content .read-more > summary,
 .article-content .read-more-toggle {
   display: inline;
-  padding: 0;
-  border: 0;
-  background: none;
+  padding: 0 0.45em;
+  margin-left: 0.15em;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
   color: var(--color-link);
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font: inherit;
   font-style: normal;
-  line-height: inherit;
+  font-weight: var(--font-weight-semibold);
   white-space: nowrap;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+.article-content .read-more > summary { margin-left: 0; }
 .article-content .read-more > summary:hover,
-.article-content .read-more-toggle:hover { color: var(--color-link-hover); text-decoration: underline; text-underline-offset: 3px; }
+.article-content .read-more-toggle:hover { background: var(--color-tint-gold); color: var(--color-link-hover); }
 .article-content .read-more > summary .bi,
-.article-content .read-more-toggle .bi { font-size: 0.75em; }
+.article-content .read-more-toggle .bi { font-size: 0.7em; vertical-align: 0.05em; }
 .article-content .read-more > [tabindex="-1"]:focus { outline: none; }
 
 .article-content .table-responsive {
