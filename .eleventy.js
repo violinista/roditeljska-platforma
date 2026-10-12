@@ -77,6 +77,18 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  // {% readmore %}…{% endreadmore %} — "• • • Pročitaj više" expander for
+  // secondary text (light-blue text in the .docx sources). The blank lines
+  // let markdown-it render the Markdown between the tags.
+  eleventyConfig.addPairedShortcode("readmore", (content) =>
+    '<details class="read-more">\n' +
+    '<summary><span class="read-more-dots" aria-hidden="true">•••</span>' +
+    '<span class="read-more-more">Pročitaj više</span>' +
+    '<span class="read-more-less">Prikaži manje</span></summary>\n\n' +
+    content.trim() +
+    "\n\n</details>\n"
+  );
+
   eleventyConfig.addFilter("extractToc", (html) => {
     if (!html) return [];
     const matches = [...html.matchAll(/<h2[^>]*\sid="([^"]+)"[^>]*>([\s\S]*?)<\/h2>/g)];

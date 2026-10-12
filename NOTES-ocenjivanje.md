@@ -84,8 +84,8 @@ postojeće biblioteke `assets/img/*.webp`.
 
 ## Numerički podaci preuzeti iz izvora
 
-- Izveštaj o budućnosti radnih mesta (Svetski ekonomski forum, 2023): 89 miliona ukinutih
-  i 69 miliona novih radnih mesta u periodu 2023–2027.
+- Izveštaj o budućnosti radnih mesta (Svetski ekonomski forum, 2025): 92 miliona ukinutih
+  i 170 miliona novih radnih mesta u periodu 2025–2030 (ažurirano prema „tekst 2 - updated“).
 - Predviđanje da će do 2050. godine 85% poslova biti nove profesije — fusnota u izvoru
   navodi „Sofi Din, Bright Little Labs, Warner Bros Discovery“ kao izvor.
 - Prosečno postignuće na završnom ispitu iz srpskog jezika 2023/24: 11,57 od 20 poena.

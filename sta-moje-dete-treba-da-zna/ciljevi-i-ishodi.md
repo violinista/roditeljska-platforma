@@ -1,6 +1,6 @@
 ---
 permalink: /ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/
-title: Kako ciljevi i ishodi obrazovanja određuju šta očekujemo da učenici znaju i mogu da urade nakon školovanja?
+title: Ciljevi i ishodi obrazovanja
 breadcrumb: Ciljevi i ishodi obrazovanja
 readTime: 7 min čitanja
 cta: true
@@ -25,6 +25,7 @@ Da bi očekivanja bila jasna i učenicima, nastavnicima i roditeljima, obrazovni
 
 **Šta su standardi postignuća?** Standardi postignuća daju odgovor na pitanje: *„Šta učenik treba da zna i ume da uradi nakon određenog ciklusa obrazovanja?“*
 
+{% readmore %}
 - Oni opisuju znanja, veštine i sposobnosti koje se očekuju od učenika nakon **četvrtog razreda** osnovne škole, po završetku **osnovnog obrazovanja** i po završetku srednje škole.
 - Standardi su definisani kroz tri nivoa postignuća: **osnovni nivo**, **srednji nivo** i **napredni nivo.**
 - Ovi nivoi ne razlikuju se samo po količini usvojenog znanja već i po **složenosti – koliko učenik ima znanja i veština da ta znanja primeni u svakodnevnoj situaciji**.
@@ -32,6 +33,7 @@ Da bi očekivanja bila jasna i učenicima, nastavnicima i roditeljima, obrazovni
 Na primer, u predmetu *Srpski jezik* od učenika na osnovnom nivou se očekuje da može da razume i prenese jednostavne informacije, dok se na višim nivoima očekuje da uspešnije analizira tekstove, argumentuje svoje stavove, kritički promišlja sadržaje i povezuje različite izvore informacija.
 
 [vidi primer Srpski jezik – standardi postignuća na kraju IV razreda osnovne škole (primer)](/ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/primer-srpski-jezik/)
+{% endreadmore %}
 
 Standardi postignuća suštinski predstavljaju svojevrsnu „mapu očekivanja“ koja pokazuje šta učenici treba da znaju i umeju u različitim fazama školovanja.
 
@@ -40,25 +42,31 @@ Standardi postignuća suštinski predstavljaju svojevrsnu „mapu očekivanja“
 - **Ciljevi** opisuju šta nastavom želimo da postignemo i u kom pravcu želimo da razvijamo učenika.
 - **Ishodi** predstavljaju očekivane rezultate učenja i odgovaraju na pitanje: ***„Šta će učenik biti u stanju da uradi nakon što nešto nauči?“***
 
+{% readmore %}
 Drugim rečima, ishodi ne govore samo o tome koje činjenice učenik treba da zapamti, već i kako treba da koristi stečeno znanje. Oni opisuju različite sposobnosti, potrebne veštine, kao što su: primena znanja u novim situacijama, analiza informacija, rešavanje problema, argumentovanje stavova, procena posledica određenih pojava ili donošenje zaključaka na osnovu podataka. Upravo zato ishodi predstavljaju važan orijentir za nastavu i ocenjivanje. Oni pomažu nastavnicima da planiraju učenje i prate napredak učenika, a roditeljima da bolje razumeju šta se od deteta očekuje.
 
 Kako su ciljevi i ishodi definisani u jednom nastavnom predmetu može se videti na primeru biologije.
 
 [(vidi primer predmeta Biologija za V razred)](/ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/primer-biologija/)
+{% endreadmore %}
 
 **Kako nastavnik koristi standarde, ciljeve i ishode?** Standardi postignuća, ciljevi i ishodi učenja predstavljaju okvir na osnovu kojeg nastavnici planiraju nastavu, organizuju aktivnosti učenja i prate napredak učenika.
 
+{% readmore %}
 Nastavnik bi trebalo da planira nastavu polazeći od potreba konkretnog odeljenja i individualnih karakteristika svakog učenika. Takav pristup predstavlja značajan profesionalni izazov, jer učenici ne uče istim tempom, na isti način niti imaju ista interesovanja i predznanja. Upravo zato individualizacija nastave i diferencijacija učenja predstavljaju važne oblasti profesionalnog razvoja nastavnika, u koje se kontinuirano ulaže kako bi bili osnaženi da odgovore na različite potrebe učenika. Koristeći propisane ciljeve i ishode, nastavnik bira sadržaje, metode rada i aktivnosti učenja kako bi svakom učeniku pružio priliku da razvije svoje potencijale i dostigne što viši nivo postignuća.
 
 Programi nastave i učenja, pored ciljeva, ishoda i sadržaja, sadrže i smernice za njihovo ostvarivanje u nastavi. Ove didaktičko-metodičke preporuke pomažu nastavnicima da planiraju aktivnosti učenja, prilagode nastavu potrebama učenika i izaberu odgovarajuće načine praćenja i ocenjivanja njihovog napretka. Na taj način nastavnik dobija jasan okvir za planiranje nastave, organizovanje učenja, praćenje napretka učenika i izbor odgovarajućih metoda ocenjivanja.
 
 [Na sajtu ZUOV-a možete videti primere Programa nastave i učenja](https://zuov.gov.rs/novi-pravilnici-programi-nastave-i-ucenja-za-1-i-5-razred-os-program-nastave-i-ucenja-za-1-razred-gimnazije-izmene-planova-nastave-za-os-izmene-i-dopune-srednje-strucno/)
+{% endreadmore %}
 
 **Kakve veze sve ovo ima sa ocenjivanjem?** Ocenjivanje nije cilj samo po sebi. Njegova svrha je da pokaže u kojoj meri učenik ostvaruje propisane ishode i standarde postignuća.
 
+{% readmore %}
 Kada ocenjuje učenika, nastavnik ne procenjuje samo da li je učenik zapamtio određene informacije, već i kako koristi stečeno znanje. Na primer, nastavnik procenjuje da li učenik ume da primeni naučeno u novoj situaciji, povezuje informacije, upoređuje pojave, argumentuje svoje stavove, analizira uzroke i posledice ili donosi zaključke na osnovu raspoloživih podataka.
 
 Zbog toga ocena predstavlja mnogo više od provere pamćenja činjenica. Ona treba da pruži informaciju o tome koliko učenik napreduje u razvoju različitih znanja, veština i sposobnosti.
+{% endreadmore %}
 
 **Kako se kroz nastavu razvijaju kompetencije?** Kroz sticanje znanja i razvijanje sve složenijih veština, učenik postepeno gradi kompetencije koje su mu potrebne za samostalan život, dalje obrazovanje i svet rada.
 

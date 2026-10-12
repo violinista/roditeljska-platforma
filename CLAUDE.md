@@ -60,7 +60,7 @@ The site is a reusable 11ty/Nunjucks template recreated from the BootstrapMade "
 ## Directory layout
 
 ```
-.eleventy.js                  # passthroughs, layout aliases, markdown-it-anchor + extractToc filter, navActive filter, search-index (eleventy.after), Serbian date filters, cwd guard, relative-urls transform
+.eleventy.js                  # passthroughs, layout aliases, markdown-it-anchor + extractToc filter, readmore shortcode, navActive filter, search-index (eleventy.after), Serbian date filters, cwd guard, relative-urls transform
 DESIGN-SYSTEM.md              # design rules for humans + agents (tokens, contrast, type, components, logo)
 .github/workflows/deploy.yml  # GitHub Actions: build with Node 20 + npm ci + npm run build, deploy _site/ to GitHub Pages on push to main
 package.json                  # 11ty, bootstrap-icons, markdown-it{,-anchor} devDeps; build/start scripts
@@ -205,7 +205,7 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 - Brand (from `resources-colors.png` / `resources-mockup.pdf`): navy-slate `#264653`, coral `#E76F51` (CTA), gold `#E9C46A`, orange `#F4A261` (decor only), logo teal `#006B70`, on a cream `#FBF9F4` page. Coral/gold/orange are never body-size text on light backgrounds (use `--color-secondary-text`).
 - Typography: Plus Jakarta Sans (headings, nav, buttons) + Open Sans (body, 18px), linked from Google Fonts in `base.njk`. Caveat is loaded (glyph-subset) only on `cta: true` pages for the "Niste sami u ovome." annotation.
 - Logo: `assets/img/logo-horizontal.png` (header) / `logo-horizontal-light.png` (footer), generated from `resources-logo.png` by `design-system/make-logo-horizontal.py` (needs Pillow; not part of the build).
-- Article components added for the Ocenjivanje guide (in `assets/css/site.css`, token-driven only): `.article-callout` (highlighted aside), `.article-details` (collapsible `<details>` reference block), `.table-responsive` (horizontally scrolling wide table), `.guide-map` (clickable navigator on `/ocenjivanje/`), and styling for `blockquote`.
+- Article components added for the Ocenjivanje guide (in `assets/css/site.css`, token-driven only): `.article-callout` (highlighted aside), `.article-details` (collapsible `<details>` reference block), `.table-responsive` (horizontally scrolling wide table), `.guide-map` (clickable navigator on `/ocenjivanje/`), `.read-more` (the `{% readmore %}` "• • • Pročitaj više" expander), and styling for `blockquote`.
 - **Never edit `sample-template/` files.** Project styles go in `assets/css/site.css`, which must use only `var(--…)` references (no hex/rgb/font names) — add a token to `tokens.css` first if needed. Decorative SVGs in `assets/img/illustrations/` are the only place with literal palette hex values.
 
 ## Content authoring
@@ -233,6 +233,20 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
   **Table of Contents** is auto-generated for `page-article` pages: every `<h2>` in the rendered HTML gets an `id` (via `markdown-it-anchor`, configured with a Serbian-Latin-aware slugify in `.eleventy.js`), and the layout's `extractToc` filter scans the rendered content and lists those headings as an `<aside class="table-of-contents">`. Pages with fewer than 1 H2 hide the aside and render full-width. To get a TOC, just write `## Heading` in the markdown body — no frontmatter `toc:` array needed (but `toc:` is still honored as an override if explicitly set).
 
   **In-article CTA block** ("Potrebna vam je dodatna podrška?" → button to `/savetovanje/`) appears at the bottom of any page-article page that sets `cta: true` in frontmatter. The copy and styling are hardcoded in `page-article.njk` and `assets/css/site.css` (`.article-cta`). Stubs and `/savetovanje/` itself opt out.
+
+- **"Pročitaj više" expander (`{% readmore %}`)**: secondary text that stays collapsed until the reader clicks a "• • • Pročitaj više" pill (it becomes "Prikaži manje" when open). In the editors' `.docx` sources this is marked as **light-blue text (`#0070C0`)**, usually right after a black sentence ending in "…"/"…." and often with a Word comment about "tri tačke". When converting such a source, keep the black sentences visible and wrap each light-blue run in the paired shortcode (registered in `.eleventy.js`, styled as `.read-more` in `site.css`):
+
+  ```md
+  **Šta su standardi postignuća?** Standardi postignuća daju odgovor na pitanje: …
+
+  {% readmore %}
+  - Bullets, paragraphs, [links](/ocenjivanje/…/) — any Markdown.
+  {% endreadmore %}
+
+  Black closing sentence that stays visible.
+  ```
+
+  Rules: put `{% readmore %}` / `{% endreadmore %}` on their own lines with a blank line before the opening tag; do **not** indent the content (4 spaces = code block); don't put it inside inline HTML like `<p>` or `<aside>`; drop the source's "…" marker (the pill replaces it). It's a native `<details>` — no JS, keyboard-accessible, and the hidden text is still in the search index. Example: `sta-moje-dete-treba-da-zna/ciljevi-i-ishodi.md`. Dark-blue (`#1155CC`) text in the sources is a link, not an expander.
 
 - **`/savetovanje/` registration form**: the page renders a Serbian inquiry form. Submit fires a `mailto:` to `kontakt@platformazaroditelje.rs` (read from `site.json` `footer.email`) via an inline JS handler that builds a `mailto:?subject=…&body=…` URL. The program list shown in the body bullets AND the form's `<select>` is driven by `_data/savetovanjeForm.json` — adding a program there updates both.
 
