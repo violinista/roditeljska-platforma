@@ -77,14 +77,13 @@ module.exports = function (eleventyConfig) {
     );
   });
 
-  // {% readmore %}…{% endreadmore %} — "• • • Pročitaj više" expander for
-  // secondary text (light-blue text in the .docx sources). The blank lines
-  // let markdown-it render the Markdown between the tags.
+  // {% readmore %}…{% endreadmore %} — one-way "Pročitaj više ›" expander for
+  // secondary text (light-blue text in the .docx sources). main.js moves the
+  // trigger inline to the end of the preceding paragraph. The blank lines let
+  // markdown-it render the Markdown between the tags.
   eleventyConfig.addPairedShortcode("readmore", (content) =>
     '<details class="read-more">\n' +
-    '<summary><span class="read-more-dots" aria-hidden="true">•••</span>' +
-    '<span class="read-more-more">Pročitaj više</span>' +
-    '<span class="read-more-less">Prikaži manje</span></summary>\n\n' +
+    '<summary>Pročitaj više <i class="bi bi-chevron-right" aria-hidden="true"></i></summary>\n\n' +
     content.trim() +
     "\n\n</details>\n"
   );

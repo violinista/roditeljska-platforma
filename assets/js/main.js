@@ -57,6 +57,31 @@
     });
   });
 
+  // "Pročitaj više" ({% readmore %}): move the trigger to the end of the
+  // preceding paragraph (or last list item) so it reads inline. One-way: a
+  // click reveals the text and removes the trigger. Without JS, or when there
+  // is no paragraph before it, the native <details> summary is used instead.
+  document.querySelectorAll('.article-content .read-more').forEach(details => {
+    let host = details.previousElementSibling;
+    if (host && /^(UL|OL)$/.test(host.tagName)) host = host.lastElementChild;
+    if (!host || !/^(P|LI)$/.test(host.tagName)) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'read-more-toggle';
+    btn.innerHTML = details.querySelector('summary').innerHTML;
+    host.append(' ', btn);
+    details.classList.add('is-inline');
+    btn.addEventListener('click', () => {
+      details.open = true;
+      btn.remove();
+      const first = details.querySelector('summary').nextElementSibling;
+      if (first) {
+        first.tabIndex = -1;
+        first.focus({ preventScroll: true });
+      }
+    });
+  });
+
   function initSwiper() {
     if (typeof Swiper === 'undefined') return;
     document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
