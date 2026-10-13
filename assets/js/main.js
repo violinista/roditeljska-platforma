@@ -58,13 +58,13 @@
   });
 
   // "Pročitaj više" ({% readmore %}): move the trigger to the end of the
-  // preceding paragraph (or last list item) so it reads inline. One-way: a
+  // preceding paragraph, last list item or h3/h4 heading so it reads inline. One-way: a
   // click reveals the text and removes the trigger. Without JS, or when there
   // is no paragraph before it, the native <details> summary is used instead.
   document.querySelectorAll('.article-content .read-more').forEach(details => {
     let host = details.previousElementSibling;
     if (host && /^(UL|OL)$/.test(host.tagName)) host = host.lastElementChild;
-    if (!host || !/^(P|LI)$/.test(host.tagName)) return;
+    if (!host || !/^(P|LI|H3|H4)$/.test(host.tagName)) return;
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'read-more-toggle';

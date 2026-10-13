@@ -49,5 +49,50 @@
         ]
       }
     ]
+  },
+  "pracenje": {
+    "url": "/ocenjivanje/pracenje-napredovanja-deteta/",
+    "label": "Kako da pratim napredovanje deteta",
+    "title": "Kako da pratim napredovanje deteta (ocene) u školi i pružim adekvatnu podršku?",
+    "children": [
+      {
+        "url": "/ocenjivanje/pracenje-napredovanja-deteta/esdnevnik/",
+        "label": "ES dnevnik",
+        "title": "Elektronski dnevnik (EsDnevnik)"
+      },
+      {
+        "url": "/ocenjivanje/pracenje-napredovanja-deteta/otvorena-vrata/",
+        "label": "Otvorena vrata",
+        "title": "Otvorena vrata ili sastanci sa predmetnim nastavnicima i razrednim starešinom"
+      }
+    ]
+  },
+  "reagovanje": {
+    "url": "/ocenjivanje/reagovanje-na-ocenu/",
+    "label": "Kako da reagujemo na ocenu",
+    "title": "Kako da reagujemo kada procenimo da dete nije dobilo ocenu koju zaslužuje i koji su koraci u postupanju?",
+    "sidebarDepth": 0,
+    "children": [
+      {
+        "url": "/ocenjivanje/reagovanje-na-ocenu/priprema-za-razgovor/",
+        "label": "Priprema za razgovor sa nastavnikom",
+        "title": "Priprema za razgovor sa nastavnikom (koraci 1–3)"
+      },
+      {
+        "url": "/ocenjivanje/reagovanje-na-ocenu/zalba-na-pojedinacnu-ocenu/",
+        "label": "Situacija 1",
+        "title": "Situacija 1. Šta učiniti kada donesete odluku da se žalite na ocenu koju je dete dobilo na pismenom ili usmenom odgovaranju?"
+      },
+      {
+        "url": "/ocenjivanje/reagovanje-na-ocenu/zajednicka-primedba-roditelja/",
+        "label": "Situacija 2",
+        "title": "Situacija 2. Koji su koraci kada se više roditelja zajedno žali na određenu ocenu ili postupanje nastavnika koje pogađa grupu učenika ili celo odeljenje?"
+      },
+      {
+        "url": "/ocenjivanje/reagovanje-na-ocenu/zalba-na-zakljucnu-ocenu/",
+        "label": "Situacija 3",
+        "title": "Situacija 3. Koje korake preduzimate kada se žalite na zaključnu ocenu?"
+      }
+    ]
   }
 }

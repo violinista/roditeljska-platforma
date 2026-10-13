@@ -5,7 +5,6 @@ title: Ocenjivanje u školi
 breadcrumb: Ocenjivanje
 categories: [Vodič, Ocenjivanje]
 readTime: 8 min čitanja
-heroImage: /assets/img/education-4.webp
 tags: [Ocenjivanje, Roditelji, Škola, Komunikacija]
 ---
 *Nastavnica mi je dala 3, a sve sam znala/o.*

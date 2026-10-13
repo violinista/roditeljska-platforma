@@ -1236,6 +1236,12 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
 .article-content .read-more > summary .bi,
 .article-content .read-more-toggle .bi { font-size: 0.7em; vertical-align: 0.05em; }
 .article-content .read-more > [tabindex="-1"]:focus { outline: none; }
+/* Hosted by a visible heading (Tekst 4/5 pattern): body-size pill, not heading-size. */
+.article-content :is(h3, h4) > .read-more-toggle {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  vertical-align: 0.1em;
+}
 /* Revealed text: indented behind a gold-tint rule. On the <details> itself
    (not each child) so the rule stays continuous across paragraphs. */
 .article-content .read-more[open] {
@@ -1244,6 +1250,31 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
   border-left: 3px solid var(--color-tint-gold);
 }
 .article-content .read-more[open] > *:last-child { margin-bottom: 0; }
+
+/* Video placeholder / embed (16:9). Until a video exists it shows a faint
+   play icon; drop a YouTube <iframe> in place of the icon to fill it. */
+.article-content .video-embed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 var(--space-4);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-border);
+  font-size: 3rem;
+  overflow: hidden;
+}
+.article-content .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.article-content .video-embed:has(iframe) { border: 0; }
 
 .article-content .table-responsive {
   overflow-x: auto;

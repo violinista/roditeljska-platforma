@@ -64,7 +64,7 @@
                   {% endfor %}
                 </ul>
               </nav>
-            {% elif groupHit.node and groupHit.node.children %}
+            {% elif groupHit.node and groupHit.node.children and groupLinks !== false %}
               <nav class="guide-map group-children" aria-label="Nastavite čitanje">
                 <ol>
                   {% for child in groupHit.node.children %}
@@ -104,8 +104,9 @@
                   <h3>Sadržaj</h3>
                   <nav aria-label="Sadržaj celine">
                     <ul>
-                      {# Sidebar shows two levels; third-level pages highlight their parent. #}
-                      {% for item in groupTree | groupFlatten(page.url, 1) %}
+                      {# Sidebar shows two levels (or groupTree.sidebarDepth); deeper pages highlight their visible ancestor. #}
+                      {% set sidebarDepth = groupTree.sidebarDepth if groupTree.sidebarDepth is defined else 1 %}
+                      {% for item in groupTree | groupFlatten(page.url, sidebarDepth) %}
                         <li class="depth-{{ item.depth }}{% if item.isCurrent %} is-current{% elif item.isCurrentSection %} is-current-section{% endif %}">
                           {% if item.isCurrent %}
                             <span aria-current="page"><i class="bi bi-arrow-right here-icon" aria-hidden="true" title="Nalazite se ovde"></i><span>{{ item.label }}</span><span class="visually-hidden"> (nalazite se ovde)</span></span>

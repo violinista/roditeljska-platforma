@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/page-article.njk",
+  "group": "pracenje",
+  "categories": ["Vodič", "Ocenjivanje"],
+  "cta": true
+}

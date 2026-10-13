@@ -5,7 +5,6 @@ title: Šta sve treba da znamo o ocenjivanju
 breadcrumb: Šta znamo o ocenjivanju
 categories: [Vodič, Ocenjivanje]
 readTime: 20 min čitanja
-heroImage: /assets/img/education-6.webp
 tags: [Ocenjivanje, Pravilnik, ZOSOV, Formativno ocenjivanje]
 cta: true
 ---

@@ -161,7 +161,8 @@ Practical rules for anyone (human or AI agent) changing how the site looks.
 |---|---|
 | Callout | Gold tint, 4px gold left border |
 | Details | White, warm summary row, navy +/− circle |
-| Read more (`.read-more`) | Inline at the end of the preceding sentence: a compact pill (hairline border, tight padding, paragraph text size, teal 600) "Pročitaj više" with a chevron-right icon; gold hover. One-way: a click removes the trigger and reveals the text, indented behind a continuous 3px gold-tint left rule |
+| Read more (`.read-more`) | Inline at the end of the preceding sentence: a compact pill (hairline border, tight padding, paragraph text size, teal 600) "Pročitaj više" with a chevron-right icon; gold hover. One-way: a click removes the trigger and reveals the text, indented behind a continuous 3px gold-tint left rule. When the block follows an `h3`/`h4` (Tekst 4/5 pattern), the pill sits after the heading text at body font and `--font-size-sm` |
+| Video embed (`.video-embed`) | 16:9 box, 2px dashed `--color-border`, `--radius-lg`, white surface, faint centered play icon as a placeholder; a YouTube `<iframe>` inside fills it and the border disappears |
 | Tables | White, warm header row, hairlines; scroll on small screens |
 | Blockquote | Coral tint, coral left border |
 | `.guide-map` | Tinted cards; the current item is white with a coral left border |

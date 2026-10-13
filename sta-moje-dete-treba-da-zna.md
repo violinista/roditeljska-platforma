@@ -6,7 +6,6 @@ breadcrumb: Šta moje dete treba da zna
 group: sta-moje-dete
 categories: [Vodič, Ocenjivanje]
 readTime: 5 min čitanja
-heroImage: /assets/img/students-5.webp
 tags: [Obrazovanje, Kompetencije, ZOSOV, Ishodi učenja]
 cta: true
 ---

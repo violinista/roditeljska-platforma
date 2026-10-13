@@ -15,8 +15,8 @@ Ovaj dokument beleži odluke i otvorena pitanja nastala prilikom prenošenja izv
 | `Ocenjivanje UVODNI TEKST 1 fin.docx` | `/ocenjivanje/` |
 | `Tekst 2/2 Fin Šta moje dete treba da zna.docx` + 2.1, 2.2, 2.3, 2.3.1, 2.3.1.a, 2.3.2, 2.3.3, 2.3.4 | `/ocenjivanje/sta-moje-dete-treba-da-zna/` i 8 podstranica (vidi ispod) |
 | `Tekst 3/3.1 …` + 3.1.1, 3.1.1.a, 3.2, 3.2.1, 3.2.2, 3.3, 3.3.1, 3.3.2, 3.3.3, 3.3.4 | `/ocenjivanje/sta-znamo-o-ocenjivanju/` |
-| `Tekst 4/4 …` + 4.1, 4.1.1, 4.2 | `/ocenjivanje/pracenje-napredovanja-deteta/` |
-| `Tekst 5/5 …` + 5.1, 5.2, 5.3, 5.4 | `/ocenjivanje/reagovanje-na-ocenu/` |
+| `Tekst 4/4 …` + 4.1, 4.1.1, 4.2 | `/ocenjivanje/pracenje-napredovanja-deteta/` i 2 podstranice (vidi ispod) |
+| `Tekst 5/5 …` + 5.1, 5.2, 5.3, 5.4 | `/ocenjivanje/reagovanje-na-ocenu/` i 4 podstranice (vidi ispod) |
 
 Struktura je preuzeta iz pet dijagrama (`*shema.pdf`), koji prikazuju isti redosled
 i hijerarhiju kao i međusobni linkovi u dokumentima.
@@ -40,6 +40,28 @@ doslovno, bez dodatih podnaslova; ispravljene su samo očigledne slovne greške.
 | 2.3.2 | `ciljevi-i-ishodi/primer-srpski-jezik/` |
 | 2.3.3 | `ciljevi-i-ishodi/primer-biologija/` |
 | 2.3.4 | `ciljevi-i-ishodi/kompetencije/` |
+
+**Izuzeci — Tekst 4 i Tekst 5** (ažurirani izvori od 12. 10.) takođe su grupe stranica,
+po jedna stranica za svaki dokument, prema `tekst 4 shema.pdf` i `Tekst 5 shema.pdf`.
+Tekst je prenet doslovno; ispravljene su samo očigledne slovne greške.
+
+| Dokument | Stranica |
+|---|---|
+| 4 | `/ocenjivanje/pracenje-napredovanja-deteta/` (u bočnom sadržaju: „Kako da pratim napredovanje deteta“) |
+| 4.1 + 4.1.1 | `…/esdnevnik/` („ES dnevnik“); tabela iz 4.1.1 je proširivi blok „EsDnevnik detaljno“ |
+| 4.2 | `…/otvorena-vrata/` („Otvorena vrata“) |
+| 5 | `/ocenjivanje/reagovanje-na-ocenu/` — jedina stavka u bočnom sadržaju (`sidebarDepth: 0`) |
+| 5.1 | `…/priprema-za-razgovor/` |
+| 5.2 / 5.3 / 5.4 | `…/zalba-na-pojedinacnu-ocenu/`, `…/zajednicka-primedba-roditelja/`, `…/zalba-na-zakljucnu-ocenu/` |
+
+Oznake za „Pročitaj više“ u ovim izvorima razlikuju se od Teksta 2: **plavo osenčen
+naslov ostaje vidljiv**, a tekst posle njega (do sledećeg naslova) otvara se klikom
+(komentari: „Tekst se nakon ovog plavog dela ne vidi…“, „U tekstu se vidi samo plavi
+deo, a deo posle tri tačke se otvara…“). Isto važi za zeleno označene „…“ (4.2
+„Ograničenja ili izazovi…“ nema komentar, ali ima zelene tri tačke; 5.1 dve liste).
+
+Grafike iz okvira za tekst (text box) u 4.1, 4.2 i 5 prenete su kao liste, odnosno
+tabela („Stereotipi roditelja i nastavnika“).
 
 ## Uredničke napomene izostavljene sa stranica
 
@@ -70,11 +92,17 @@ Sledeće napomene bile su namenjene autorima, a ne čitaocima, pa nisu prenete:
 3. **Tekst o Savetu roditelja.** `Tekst 5/5.3. Situacija 2.docx` i
    `Tekst 4/4.2 …docx` upućuju na „tekst o učešću roditelja u obrazovanju“ / „ovo je
    link ka novoj temi koju ćemo da spremimo u budućnosti“.
-   → Taj tekst **ne postoji** među izvornim materijalima. Rečenice su zadržane, ali bez
-   linka.
+   → Taj tekst **ne postoji** među izvornim materijalima. Po komentarima u ažuriranim
+   izvorima („za sada bez ove rečenice“) te rečenice su **izostavljene** (4.2, 5.3), kao i
+   crveni deo u dokumentu 4 („više o uključivanju roditelja… na ovom linku“).
 4. **Karijerno informisanje i savetovanje.** `Tekst 3/3.2 …docx` pominje „link — karijerno
    informisanje i savetovanje“ i „kako izabrati srednju školu/fakultet“.
    → Ne postoji među izvornim materijalima; upućeno na `/savetovanje/`.
+5. **Virtuelna tura kroz EsDnevnik** (4.1, shema: „Virtuelna tura“) — video još ne postoji.
+   Na stranici `…/esdnevnik/` stoji prazan okvir `.video-embed` u koji treba ubaciti
+   YouTube `<iframe>` (uputstvo je u HTML komentaru iznad okvira).
+6. **Žuto označene rečenice u 5.1** („Naši saradnici vam stoje na raspolaganju…“)
+   prikazane su kao istaknuti blokovi sa linkom ka `/savetovanje/`.
 
 ## Slike
 
