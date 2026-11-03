@@ -1734,7 +1734,10 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
 .article-content .table-duo th:nth-child(odd) { background: var(--color-salmon); }
 .article-content .table-duo th:nth-child(even) { background: var(--color-tertiary); }
 /* Rounded corners: separate borders (radius is ignored on collapsed ones),
-   with each inner rule drawn once, on the cell's right and bottom edge. */
+   with each inner rule drawn once, on the cell's left and bottom edge. The
+   left edge (not the right) keeps the column rule when a right-hand cell
+   spans rows: the rows it covers hold only a first-column cell. A rowspan
+   cell is assumed to reach the last row, so it drops its bottom rule. */
 .article-content .table-duo table {
   border-collapse: separate;
   border-spacing: 0;
@@ -1745,11 +1748,23 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
 .article-content .table-duo th,
 .article-content .table-duo td {
   border: 0;
-  border-right: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
-.article-content .table-duo tr > :last-child { border-right: 0; }
-.article-content .table-duo tbody tr:last-child > * { border-bottom: 0; }
+.article-content .table-duo tr > :first-child { border-left: 0; }
+.article-content .table-duo tbody tr:last-child > *,
+.article-content .table-duo td[rowspan] { border-bottom: 0; }
+/* Sub-header rows inside the body (raw-HTML tables): gold tint, bold. */
+.article-content .table-duo .duo-subhead > td {
+  background: var(--color-tint-gold);
+  color: var(--color-heading);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+}
+/* Paragraphs and lists inside cells (raw-HTML tables). */
+.article-content .table-responsive td > :is(p, ul, ol) { margin-bottom: var(--space-2); }
+.article-content .table-responsive td > :last-child { margin-bottom: 0; }
+.article-content .table-responsive td > :is(ul, ol) { padding-left: 1.25em; }
 
 .article-content blockquote {
   margin: var(--space-5) 0;

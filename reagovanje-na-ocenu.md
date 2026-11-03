@@ -37,7 +37,7 @@ Ako želimo da ostvarimo dijalog, važno je da razumemo kontekst u kome se odvij
 - **Za pozitivne ishode i konstruktivnu diskusiju nisu odgovorni samo nastavnici.** I roditelji svojim načinom komunikacije, pripremom i spremnošću za razgovor značajno utiču na ishod susreta.
 - **Važno je da roditelj ne ulazi nepripremljen u razgovor sa nastavnikom o oceni koju je dete dobilo.** Ukoliko smatrate da je vaše dete nepravedno ocenjeno, važno je da svoju procenu zasnivate na činjenicama i argumentima, a ne samo na utisku da je učinjena nepravda.
 
-To podrazumeva razumevanje [**svrhe, značaja i uloge ocenjivanja**](/ocenjivanje/sta-znamo-o-ocenjivanju/) u učenju i razvoju deteta, kao i poznavanje [**pravila, procedura i dokumenata koji uređuju proces ocenjivanja i ulogu roditelja u tom procesu**](/ocenjivanje/sta-znamo-o-ocenjivanju/#sazetak-najvaznijih-odredbi). Tek kada razumemo čemu ocenjivanje služi i kako se sprovodi, možemo argumentovano proceniti da li je dete zaista nepravedno ocenjeno i na koji način treba reagovati.
+To podrazumeva razumevanje [**svrhe, značaja i uloge ocenjivanja**](/ocenjivanje/sta-znamo-o-ocenjivanju/) u učenju i razvoju deteta, kao i poznavanje [**pravila, procedura i dokumenata koji uređuju proces ocenjivanja i ulogu roditelja u tom procesu**](/ocenjivanje/sta-znamo-o-ocenjivanju/procedure-ocenjivanja/sazetak-odredbi/). Tek kada razumemo čemu ocenjivanje služi i kako se sprovodi, možemo argumentovano proceniti da li je dete zaista nepravedno ocenjeno i na koji način treba reagovati.
 
 **O tome kako da se pripremite za razgovor sa nastavnikom možete detaljnije pročitati [na sledećem linku](/ocenjivanje/reagovanje-na-ocenu/priprema-za-razgovor/).**
 
@@ -52,4 +52,4 @@ Ukoliko želite da se detaljnije upoznate sa propisima koji uređuju ocenjivanje
 - [Zakon o osnovama sistema obrazovanja i vaspitanja (ZOSOV)](https://www.paragraf.rs/propisi/zakon_o_osnovama_sistema_obrazovanja_i_vaspitanja.html)
 - [Pravilnik o ocenjivanju učenika u osnovnom obrazovanju i vaspitanju (Pravilnik OŠ)](https://www.paragraf.rs/propisi/pravilnik-o-ocenjivanju-ucenika-u-osnovnom-obrazovanju-i-vaspitanju.html)
 - [Pravilnik o ocenjivanju učenika u srednjem obrazovanju i vaspitanju (Pravilnik SS)](https://www.paragraf.rs/propisi/pravilnik-ocenjivanju-ucenika-srednjem-obrazovanju-vaspitanju.html)
-- [Rezime ključnih odredbi koje smo pripremili za vas](/ocenjivanje/sta-znamo-o-ocenjivanju/#sazetak-najvaznijih-odredbi)
+- [Rezime ključnih odredbi koje smo pripremili za vas](/ocenjivanje/sta-znamo-o-ocenjivanju/procedure-ocenjivanja/sazetak-odredbi/)

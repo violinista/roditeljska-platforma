@@ -50,6 +50,43 @@
       }
     ]
   },
+  "sta-znamo": {
+    "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/",
+    "label": "Šta znamo o ocenjivanju",
+    "title": "Šta sve treba da znamo o ocenjivanju u školi?",
+    "children": [
+      {
+        "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/primer-losa-ocena/",
+        "label": "Primer: loša ocena",
+        "title": "Primer – šta nam govori loša ocena",
+        "noBottomLink": true
+      },
+      {
+        "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/poruke-za-roditelje/",
+        "label": "Poruke za roditelje",
+        "title": "Važne poruke za nas roditelje: kako da se odredimo prema ocenjivanju i kako da razumemo ocenu",
+        "children": [
+          {
+            "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/poruke-za-roditelje/situacija-zavrsni-ispit/",
+            "label": "Situacija: završni ispit",
+            "title": "Situacija – završni ispit i upis u srednju školu"
+          }
+        ]
+      },
+      {
+        "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/procedure-ocenjivanja/",
+        "label": "Procedure ocenjivanja učenika",
+        "title": "Procedure koje određuju i definišu ocenjivanje učenika",
+        "children": [
+          {
+            "url": "/ocenjivanje/sta-znamo-o-ocenjivanju/procedure-ocenjivanja/sazetak-odredbi/",
+            "label": "Sažetak najvažnijih odredbi",
+            "title": "Sažetak najvažnijih odredbi ZOSOV-a i pravilnika o ocenjivanju (OŠ i SS)"
+          }
+        ]
+      }
+    ]
+  },
   "pracenje": {
     "url": "/ocenjivanje/pracenje-napredovanja-deteta/",
     "label": "Kako da pratim napredovanje deteta",

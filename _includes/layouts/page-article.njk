@@ -55,21 +55,23 @@
 
           {% if groupTree %}
             {% set groupHit = groupTree | groupNode(page.url) %}
-            {% if groupHit.node and groupHit.node.children and groupLinks === false %}
+            {# Children flagged "noBottomLink" are linked from the body text only. #}
+            {% set bottomChildren = (groupHit.node.children | rejectattr("noBottomLink")) if (groupHit.node and groupHit.node.children) else [] %}
+            {% if bottomChildren | length and groupLinks === false %}
               {# Body already links to the children: no bottom links at all. #}
-            {% elif groupHit.node and groupHit.node.children and groupHit.parent %}
+            {% elif bottomChildren | length and groupHit.parent %}
               {# Third-level pages (not in the sidebar): a plain list of normal links. #}
               <nav class="group-links" aria-label="Nastavite čitanje">
                 <ul>
-                  {% for child in groupHit.node.children %}
+                  {% for child in bottomChildren %}
                     <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>
                   {% endfor %}
                 </ul>
               </nav>
-            {% elif groupHit.node and groupHit.node.children %}
+            {% elif bottomChildren | length %}
               <nav class="guide-map group-children" aria-label="Nastavite čitanje">
                 <ol>
-                  {% for child in groupHit.node.children %}
+                  {% for child in bottomChildren %}
                     <li class="guide-map-item">
                       <a href="{{ child.url | url }}">
                         <span class="guide-map-title">{{ child.title }}</span>
