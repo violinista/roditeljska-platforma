@@ -76,5 +76,3 @@ Drugim rečima, kompetencija nije samo ono što učenik zna, već njegova sposob
 Zato svaki nastavni predmet ne doprinosi samo usvajanju nastavnih sadržaja, već i razvoju kompetencija koje učenicima omogućavaju da stečeno znanje primenjuju u različitim životnim situacijama. Na taj način učenik razvija sposobnost da uči tokom celog života i lakše se prilagođava promenama koje ga očekuju tokom školovanja, profesionalne karijere i života u zajednici.
 
 Obrazovni sistem Srbije razvoj kompetencija usklađuje sa **Evropskim okvirom ključnih kompetencija za celoživotno učenje**, koji predstavlja zajednički okvir za obrazovne sisteme širom Evrope. Cilj je da učenici, bez obzira na predmet koji pohađaju, razvijaju znanja, veštine i stavove potrebne za lični razvoj, aktivno učešće u društvu i uspešno snalaženje u svetu koji se neprestano menja.
-
-[Detaljnije o opštim i međupredmetnim kompetencijama možete da pročitate u ovom tekstu.](/ocenjivanje/sta-moje-dete-treba-da-zna/ciljevi-i-ishodi/kompetencije/)

@@ -145,7 +145,7 @@ Da bi ocenjivanje imalo smisla i bilo korisno za dete, pravilnici jasno propisuj
 
 Prema pravilnicima, posebno je važno da se **ocenjivanje sprovodi redovno** i da **detetu daje jasnu i blagovremenu povratnu informaciju** koliko je savladalo određena znanja. Bez toga dete ne može da razume gde greši i kako da napreduje, a upravo to je osnovna svrha ocenjivanja.
 
-<aside class="article-callout">
+<aside class="article-callout callout-principles">
 
 **Principi na kojima se zasniva ocenjivanje** (Pravilnik o ocenjivanju OŠ/SS, čl. 2)
 
@@ -184,7 +184,7 @@ U praksi se opisno (formativno) ocenjivanje još uvek nedovoljno primenjuje. Me�
 
 **Prema pravilnicima, ocena se ne odnosi samo na znanje, već obuhvata više aspekata razvoja deteta.** U nastavku je prikazano šta sve nastavnik procenjuje, odnosno šta nam ocena govori o detetu.
 
-<div class="table-responsive">
+<div class="table-responsive table-duo">
 
 | Ocenjuje se | Šta to obuhvata |
 |---|---|
@@ -204,7 +204,7 @@ U skladu sa pravilnicima, **nastavnik je obavezan da proverava znanje učenika n
 
 Pravilnici razlikuju dve vrste provera: provere koje služe učenju i pomažu detetu da napreduje, i provere koje se ocenjuju brojčanom ocenom. Drugim rečima, **ne ocenjuje se svaka provera znanja**.
 
-<div class="table-responsive">
+<div class="table-responsive table-duo">
 
 | Provere u svrhu učenja (podrška učenju) | Provere znanja (ocenjivanje znanja) |
 |---|---|

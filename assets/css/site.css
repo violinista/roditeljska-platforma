@@ -1291,6 +1291,73 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
   .article-content .callout-takeaway h3 { padding-left: 0; }
 }
 
+/* Principles callout ("Principi na kojima se zasniva ocenjivanje"): the
+   ordered list gets coral number circles (white bold numbers at button size,
+   the WCAG-large-text minimum for white on coral) and the closing paragraph
+   ("VAŽNO! …") becomes a peach box with an inset coral rule, its leading
+   <strong> set as a heading on its own line. Markup is plain Markdown. */
+.article-content .callout-principles ol {
+  --cp-num: 44px;
+  list-style: none;
+  padding-left: 0;
+  counter-reset: cp;
+}
+/* The circle sits in the left padding, centred on the item's first line
+   (--cp-pt mirrors the li's top padding). The first item gets just enough
+   top padding for its circle to stay inside the list. */
+.article-content .callout-principles ol > li {
+  --cp-pt: var(--space-4);
+  position: relative;
+  padding-top: var(--cp-pt);
+  padding-left: calc(var(--cp-num) + var(--space-4));
+  counter-increment: cp;
+}
+.article-content .callout-principles ol > li:first-child {
+  --cp-pt: max(0px, calc((var(--cp-num) - 1lh) / 2));
+}
+.article-content .callout-principles ol > li::before {
+  content: counter(cp) ".";
+  position: absolute;
+  left: 0;
+  top: calc(var(--cp-pt) + (1lh - var(--cp-num)) / 2);
+  width: var(--cp-num);
+  height: var(--cp-num);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-bold);
+}
+.article-content .callout-principles ol + p {
+  position: relative;
+  margin-top: var(--space-5);
+  padding: var(--space-5) var(--space-5) var(--space-5) calc(var(--space-5) + 4px + var(--space-4));
+  background: var(--color-band-peach);
+  border-radius: var(--radius-lg);
+}
+.article-content .callout-principles ol + p::before {
+  content: "";
+  position: absolute;
+  top: var(--space-5);
+  bottom: var(--space-5);
+  left: var(--space-5);
+  width: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary);
+}
+.article-content .callout-principles ol + p > strong:first-child {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-heading);
+}
+
 /* Infographic callout ("Šta moje dete treba da zna"): icon + text with stat
    pills over an illustration with a transparent background that runs to the
    box edges. Phones: wide crop below the text. ≥576px: tall strip on the
@@ -1661,6 +1728,28 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
   font-weight: var(--font-weight-bold);
 }
 .article-content .table-responsive tbody tr:nth-child(even) { background: var(--color-bg); }
+/* Two-column comparison tables (.table-duo): salmon and gold header cells,
+   after the "Provere u svrhu učenja / Provere znanja" mockup. Ink text is
+   5.5:1 on salmon (coral itself would be too low) and higher on gold. */
+.article-content .table-duo th:nth-child(odd) { background: var(--color-salmon); }
+.article-content .table-duo th:nth-child(even) { background: var(--color-tertiary); }
+/* Rounded corners: separate borders (radius is ignored on collapsed ones),
+   with each inner rule drawn once, on the cell's right and bottom edge. */
+.article-content .table-duo table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.article-content .table-duo th,
+.article-content .table-duo td {
+  border: 0;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.article-content .table-duo tr > :last-child { border-right: 0; }
+.article-content .table-duo tbody tr:last-child > * { border-bottom: 0; }
 
 .article-content blockquote {
   margin: var(--space-5) 0;
