@@ -31,6 +31,8 @@ Practical rules for anyone (human or AI agent) changing how the site looks.
 | `--color-surface-warm` | #F7F2EA | Hero band, page-title band, about section, table headers |
 | `--color-tint-coral` / `-orange` / `-gold` | #FCE9DF / #FDECDA / #FAF0DC | Tinted cards; callout (gold), blockquote (coral) |
 | `--color-band-peach` | #F9CEA4 | Homepage CTA band |
+| `--color-sand` | #EFE2C6 | **Decorative only**: the sand blobs, wave and hairline arcs in callout corners |
+| `--color-salmon` / `--color-sage` | #DE967C / #94B0AB | Mid-tone fills for the question cards (`.callout-questions`), always with `--color-heading` text (5.5:1 / 5.7:1; navy fails on salmon) |
 | `--color-surface-dark` | = primary | Article CTA band, footer |
 
 ### Text and lines
@@ -41,6 +43,7 @@ Practical rules for anyone (human or AI agent) changing how the site looks.
 | `--color-text-muted` | #5A6E76 | Meta, captions, breadcrumbs, card descriptions |
 | `--color-text-inverse` / `-inverse-muted` | #FFFFFF / #C9D6DA | Text on navy |
 | `--color-border` | #E8E1D6 | Decorative hairlines |
+| `--color-border-warm` | #E6CCBC | Peach hairline between list items in callouts |
 | `--color-border-input` | #7F9097 | Form-field edges (≥3:1 on white, WCAG 1.4.11) |
 | `--color-border-inverse` | white 18% | Dividers on navy |
 
@@ -159,7 +162,10 @@ Practical rules for anyone (human or AI agent) changing how the site looks.
 ### Article blocks
 | Block | Treatment |
 |---|---|
-| Callout | Gold tint, 4px gold left border |
+| Callout | Gold tint, 4px coral left border, `--space-6` / `--space-7` padding (`--space-5` on phones); text in `--color-heading`. **Corner decorations** (every callout, after the bottom of the "Najvažnija poruka" mockup): a coral blob (`--color-secondary`) bottom-left, a `--color-sand` wave under a fan of hairline arcs bottom-right, and two differently shaped `--color-sand` blobs (no arcs) top-left and top-right. They are SVG masks on `::before` (all sand shapes) and `::after` (coral), behind the content, sized to the box height up to a cap (blobs 3.5rem, wave 7.5rem; 2.25rem / 4.5rem on phones). The padding keeps text clear of the coral. A variant can drop a sand corner by setting its slot (`--deco-tl` / `-tr` / `-br`) to `none`; to drop the coral blob, hide `::after`. List items: Plus Jakarta Sans 500, never italic (`<em>` renders bold), `--space-4` above and below, `--color-border-warm` 1px rule between items, markers stay `--color-text` |
+| Infographic callout (`.callout-infographic`) | A callout variant with a 56px coral-outline icon circle per block (Bootstrap Icons). Big numbers (`.ig-stat`) are white Open Sans Bold at `--font-size-stat` on coral (navy for `.ig-stat-dark`), `--radius-md`. A highlighted term (`.ig-tag`) is white `--font-size-lg` on navy, `--radius-sm`. The illustration runs to the box edges and fades into the tint. Running text is wrapped in `<span class="ig-copy">`, which puts a `--color-tint-gold-veil` (tint-gold at 85%) backing behind each line so it stays readable where it overlaps the illustration. On phones it's a wide crop below the text. From 576px it's a tall strip in a right-hand column, and from 1200px the icons get their own column to the left of the text. The corner decorations use the small blob and skip the corners the illustration fills (the bottom ones on phones, the right ones from 576px). The icon circles are filled with the tint so the arcs don't show through |
+| Questions callout (`.callout-questions`) | `--color-surface-warm` box, `--radius-lg`, no left border; the corner decorations peek out from behind the cards. A centred statement card (`.cq-statement`: `--color-bg`, hairline border, `--font-size-lg`), a centred Jakarta Bold lead-in in `--color-primary` (`.cq-lead`), then an `<ol class="cq-list">` of cards cycling gold → salmon → sage → gold, each with a 1px white edge and a 32px ink number badge (a CSS counter). From 768px it's a 2×2 grid with `grid-auto-rows: 1fr`, so all cards share the tallest card's height; on phones they stack at natural height |
+| Takeaway callout (`.callout-takeaway`) | A page's key message ("Najvažnija poruka"), the most emphasized callout. `--color-band-peach` fill (ink text 9.1:1), `--radius-lg`, no left border. A coral icon circle with a white `bi-lightbulb` (`.takeaway-icon`, decorative) sits beside a real `<h3>` styled like the article h3s, and the text is `--font-size-md`. From 576px the icon is 56px in its own left column; on phones it's 48px and the heading wraps beside it. Don't use navy for it: the navy `.article-cta` band usually follows |
 | Details | White, warm summary row, navy +/− circle |
 | Read more (`.read-more`) | Inline at the end of the preceding sentence: a compact pill (hairline border, tight padding, paragraph text size, teal 600) "Pročitaj više" with a chevron-right icon; gold hover. One-way: a click removes the trigger and reveals the text, indented behind a continuous 3px gold-tint left rule. When the block follows an `h3`/`h4` (Tekst 4/5 pattern), the pill sits after the heading text at body font and `--font-size-sm` |
 | Video embed (`.video-embed`) | 16:9 box, 2px dashed `--color-border`, `--radius-lg`, white surface, faint centered play icon as a placeholder; a YouTube `<iframe>` inside fills it and the border disappears |

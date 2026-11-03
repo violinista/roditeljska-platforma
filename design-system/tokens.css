@@ -35,7 +35,11 @@
   --color-tint-coral:    #FCE9DF;
   --color-tint-orange:   #FDECDA;
   --color-tint-gold:     #FAF0DC;
+  --color-tint-gold-veil: rgba(250, 240, 220, 0.85);  /* tint-gold at 85%: text backing over illustrations */
   --color-band-peach:    #F9CEA4;  /* homepage CTA band                         */
+  --color-sand:          #EFE2C6;  /* decor only: callout corner waves and arcs */
+  --color-salmon:        #DE967C;  /* question-card fill; ink text 5.5:1        */
+  --color-sage:          #94B0AB;  /* question-card fill, decor; ink text 5.7:1 */
   --color-surface-dark:  var(--color-primary);
 
   /* ---------------------------------------------------------------------------
@@ -47,6 +51,7 @@
   --color-text-inverse:       #FFFFFF;
   --color-text-inverse-muted: #C9D6DA;
   --color-border:             #E8E1D6;  /* decorative hairlines               */
+  --color-border-warm:        #E6CCBC;  /* peach hairline: callout list rules */
   --color-border-input:       #7F9097;  /* form-field boundary (≥3:1 on white)*/
   --color-border-inverse:     rgba(255, 255, 255, 0.18);
   --color-focus:              var(--color-teal);

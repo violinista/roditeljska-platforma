@@ -4,6 +4,7 @@ title: Ciljevi i ishodi obrazovanja
 breadcrumb: Ciljevi i ishodi obrazovanja
 readTime: 7 min čitanja
 cta: true
+groupLinks: false
 ---
 Nakon što definiše **vrednosti i principe obrazovanja**, koji predstavljaju svojevrstan kompas za razvoj obrazovnog sistema, ZOSOV određuje i njegove **ciljeve i ishode**. Oni odgovaraju na dva važna pitanja: *šta želimo da učenici razviju tokom školovanja* i *šta očekujemo da znaju i mogu da urade po završetku određenog obrazovnog ciklusa (na kraju osnovne i srednje škole).*
 

@@ -13,25 +13,41 @@ Verujemo da svi koji prate našu platformu dele uverenje da je obrazovanje jedna
 
 Jedan od najvećih izazova sa kojima se danas suočavaju gotovo sve zemlje sveta, uključujući i Srbiju, jeste sve veći takozvani **„jaz u znanju“ (knowledge gap)**. To je razlika između znanja i veština koje ljudi trenutno poseduju i onih koje su im potrebne da bi uspešno živeli i radili u svetu koji se brzo menja. Tehnološki razvoj ubrzava promene u nauci, privredi i na tržištu rada, pa se potrebe za novim znanjima i veštinama menjaju brže nego ikada ranije. Nastaju nove profesije, dok se postojeće brzo menjaju. Naime, prema *Izveštaju o budućnosti radnih mesta* Svetskog ekonomskog foruma iz 2025. godine, u narednih 5 godina očekuje se gašenje oko 92 miliona radnih mesta, dok će istovremeno nastati približno 170 miliona novih. Ako kao društvo, ali i kao pojedinci, ne prepoznamo važnost kontinuiranog učenja, biće nam sve teže da odgovorimo na izazove koji nas očekuju tokom radnog veka, naročito kada je reč o prilagođavanju nepredvidivom i promenljivom tržištu rada. U takvim uslovima očekuje se da će ljudi tokom života više puta menjati karijeru, pa je zato važno da razviju sposobnost da aktivno upravljaju svojim učenjem, profesionalnim razvojem i karijernim promenama.
 
-<aside class="article-callout">
-
-Prema *Izveštaju o budućnosti radnih mesta za 2025. god* Svetskog ekonomskog foruma, u periodu od 2025. do 2030. godine očekuje se da će biti izgubljeno 92 miliona radnih mesta i istovremeno kreirano 170 miliona novih poslova.
-
-Istraživači predviđaju da će do 2050. godine 85% poslova biti nove profesije koje je sad teško i zamisliti, kao što je na primer profesija *okeanski baštovan*, koji vodi računa o očuvanju, uzgajanju korala i drugih vrsta flore i faune u okeanima.
-
+<!-- Infographic callout (.callout-infographic in site.css). Written as one raw
+     HTML block: no blank lines inside, or markdown-it would split it. -->
+<aside class="article-callout callout-infographic">
+<div class="ig-text">
+<div class="ig-block">
+<span class="ig-icon" aria-hidden="true"><i class="bi bi-calendar3-week"></i></span>
+<p><span class="ig-copy">Prema <em>Izveštaju o budućnosti radnih mesta za 2025. god</em> Svetskog ekonomskog foruma, u periodu od 2025. do 2030. godine očekuje se da će biti izgubljeno</span> <strong class="ig-stat">92 miliona</strong> <span class="ig-copy">radnih mesta i istovremeno kreirano</span> <strong class="ig-stat ig-stat-dark">170 miliona</strong> <span class="ig-copy">novih poslova.</span></p>
+</div>
+<div class="ig-block">
+<span class="ig-icon" aria-hidden="true"><i class="bi bi-flask"></i></span>
+<p><span class="ig-copy">Istraživači predviđaju da će do 2050. godine</span> <strong class="ig-stat">85%</strong> <span class="ig-copy">poslova biti nove profesije koje je sad teško i zamisliti, kao što je na primer profesija</span> <em class="ig-tag">okeanski baštovan,</em> <span class="ig-copy">koji vodi računa o očuvanju, uzgajanju korala i drugih vrsta flore i faune u okeanima.</span></p>
+</div>
+</div>
+<div class="ig-art" aria-hidden="true">
+<picture>
+<source media="(min-width: 576px)" srcset="/assets/img/poslovi-buducnosti-uska.webp" width="448" height="1850">
+<img src="/assets/img/poslovi-buducnosti.webp" alt="" width="1165" height="1344" loading="lazy" decoding="async">
+</picture>
+</div>
 </aside>
 
 Ovakva predviđanja mogu delovati istovremeno zanimljivo i zabrinjavajuće. Oni koji kreiraju obrazovne politike suočavaju se sa velikim izazovom: kako obrazovati i pripremiti današnju decu za svet budućnosti. Pred njima je nimalo lak zadatak da dete koje danas kreće u prvi razred osnovne škole osposobe da stekne znanja i veštine koje će mu omogućiti da za 12 do 16 godina bude spremno za tržište rada koje će izgledati potpuno drugačije nego danas. Još je teže predvideti kakve će kompetencije biti potrebne 2080. godine, kada to dete bude završavalo svoj radni vek.
 
-<aside class="article-callout">
-
-U ovom momentu obrazujemo sedmogodišnjaka za tržište rada na kojem će provesti karijeru sve do 2080. godine. Ključna pitanja su:
-
-- *Kako pripremiti decu za poslove koji danas još ne postoje?*
-- *Kako im pomoći da razviju znanja, veštine i kompetencije koje će im omogućiti da se prilagođavaju promenama tokom narednih decenija i pronađu svoje mesto u svetu rada?*
-- *Kako ih osposobiti da tokom života više puta uspešno menjaju karijeru i upravljaju sopstvenim profesionalnim razvojem?*
-- *I kako obezbediti da sve te promene, prilagođavanja i karijerne tranzicije jačaju njihovo mentalno zdravlje i doprinose ispunjenom, zadovoljnom i ostvarenom životu?*
-
+<!-- Key-questions callout (.callout-questions in site.css). One raw HTML block:
+     no blank lines inside. The numbers are CSS counters on the <ol>; role="list"
+     keeps list semantics in Safari, which drops them with list-style: none. -->
+<aside class="article-callout callout-questions">
+<p class="cq-statement">U ovom momentu obrazujemo sedmogodišnjaka za tržište rada na kojem će provesti karijeru sve do 2080. godine.</p>
+<p class="cq-lead">Ključna pitanja su:</p>
+<ol class="cq-list" role="list">
+<li>Kako pripremiti decu za poslove koji danas još ne postoje?</li>
+<li>Kako im pomoći da razviju znanja, veštine i kompetencije koje će im omogućiti da se prilagođavaju promenama tokom narednih decenija i pronađu svoje mesto u svetu rada?</li>
+<li>Kako ih osposobiti da tokom života više puta uspešno menjaju karijeru i upravljaju sopstvenim profesionalnim razvojem?</li>
+<li>I kako obezbediti da sve te promene, prilagođavanja i karijerne tranzicije jačaju njihovo mentalno zdravlje i doprinose ispunjenom, zadovoljnom i ostvarenom životu?</li>
+</ol>
 </aside>
 
 Ova pitanja zaokupljaju donosioce odluka, nastavnike, istraživače i roditelje širom sveta. Zato se sve veća pažnja posvećuje razvoju ***obrazovanja*** koje **nije usmereno samo na usvajanje činjenica**, ***već na razvoj znanja, veština i kompetencija*** koje su podrška detetu da se snađe u okolnostima koje u ovom momentu ***ne možemo predvideti***.

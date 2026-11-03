@@ -71,10 +71,21 @@ module.exports = function (eleventyConfig) {
     const outputPath = this.page.outputPath;
     if (typeof outputPath !== "string" || !outputPath.endsWith(".html")) return content;
     const fromUrl = this.page.url;
-    return content.replace(
-      /(\s(?:href|src)=)(["'])(\/(?!\/)[^"']*)\2/g,
-      (_, attr, quote, target) => attr + quote + toRelative(fromUrl, target) + quote
-    );
+    return content
+      .replace(
+        /(\s(?:href|src)=)(["'])(\/(?!\/)[^"']*)\2/g,
+        (_, attr, quote, target) => attr + quote + toRelative(fromUrl, target) + quote
+      )
+      // srcset (<picture><source>, <img>) is a comma-separated list of
+      // "url [descriptor]" candidates: rewrite each root-absolute URL.
+      .replace(
+        /(\ssrcset=)(["'])([^"']*)\2/g,
+        (_, attr, quote, list) =>
+          attr + quote +
+          list.replace(/(^|,)(\s*)(\/(?!\/)[^\s,]*)/g,
+            (m, sep, ws, target) => sep + ws + toRelative(fromUrl, target)) +
+          quote
+      );
   });
 
   // {% readmore %}…{% endreadmore %} — one-way "Pročitaj više ›" expander for

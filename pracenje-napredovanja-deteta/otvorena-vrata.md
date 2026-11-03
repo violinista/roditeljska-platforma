@@ -96,9 +96,10 @@ Ukoliko ni nakon uključivanja razrednog starešine i stručne službe škole ne
 *Više o pravima roditelja i procedurama koje vam u takvim situacijama stoje na raspolaganju možete pročitati u [ovom tekstu](/ocenjivanje/reagovanje-na-ocenu/).*
 {% endreadmore %}
 
-<aside class="article-callout">
+<aside class="article-callout callout-takeaway">
+<span class="takeaway-icon" aria-hidden="true"><i class="bi bi-lightbulb"></i></span>
 
-**Najvažnija poruka**
+### Najvažnija poruka
 
 Na otvorena vrata ne treba odlaziti sa ciljem da se utvrdi ko je u pravu, a ko nije. Cilj razgovora nije osporavanje ocene ili dokazivanje određene pozicije, već bolje razumevanje onoga što se sa detetom dešava u školi. Najveća korist od sastanka postiže se kada roditelj i nastavnik razmene informacije, sagledaju situaciju iz različitih perspektiva i dogovore konkretne korake koji će pomoći detetu da uspešnije uči, napreduje i razvija svoje potencijale.
 

@@ -55,7 +55,9 @@
 
           {% if groupTree %}
             {% set groupHit = groupTree | groupNode(page.url) %}
-            {% if groupHit.node and groupHit.node.children and groupHit.parent %}
+            {% if groupHit.node and groupHit.node.children and groupLinks === false %}
+              {# Body already links to the children: no bottom links at all. #}
+            {% elif groupHit.node and groupHit.node.children and groupHit.parent %}
               {# Third-level pages (not in the sidebar): a plain list of normal links. #}
               <nav class="group-links" aria-label="Nastavite čitanje">
                 <ul>
@@ -64,7 +66,7 @@
                   {% endfor %}
                 </ul>
               </nav>
-            {% elif groupHit.node and groupHit.node.children and groupLinks !== false %}
+            {% elif groupHit.node and groupHit.node.children %}
               <nav class="guide-map group-children" aria-label="Nastavite čitanje">
                 <ol>
                   {% for child in groupHit.node.children %}
