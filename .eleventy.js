@@ -83,7 +83,9 @@ module.exports = function (eleventyConfig) {
   // markdown-it render the Markdown between the tags.
   // Appended as ?v= to our own CSS/JS links so browsers (and the GitHub
   // Pages CDN cache) pick up new versions after each build.
-  eleventyConfig.addGlobalData("buildId", Date.now().toString(36));
+  // A function, so it is re-evaluated on every rebuild under `npm start`
+  // (a plain value would stay fixed for the whole dev-server session).
+  eleventyConfig.addGlobalData("buildId", () => Date.now().toString(36));
 
   eleventyConfig.addPairedShortcode("readmore", (content) =>
     '<details class="read-more">\n' +

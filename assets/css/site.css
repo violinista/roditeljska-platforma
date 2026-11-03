@@ -1645,3 +1645,7 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
 @media (max-width: 374.98px) {
   :root { --logo-height: 34px; }
 }
+
+/* Full-width in-text image (inline <figure class="article-figure"> in markdown). */
+.article-figure { margin: var(--space-5) 0; }
+.article-figure img { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); }

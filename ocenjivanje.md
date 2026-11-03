@@ -7,19 +7,6 @@ categories: [Vodič, Ocenjivanje]
 readTime: 8 min čitanja
 tags: [Ocenjivanje, Roditelji, Škola, Komunikacija]
 ---
-*Nastavnica mi je dala 3, a sve sam znala/o.*
-
-*Dobila sam lošu ocenu, pitala me je nešto što nije rekla da će da pita.*
-
-*Kako to da sva deca u odeljenju imaju 2 ili 3? Da li je moguće naučiti za 5 kod tog nastavnika/ce?*
-
-*Znao/la sam više od drugarice, a ona je njoj dala veću ocenu.*
-
-*Učim puno, ali se zbunim kad odgovaram, znam da nastavnica ima nešto protiv mene.*
-
-*Brinem šta će moje dete upisati, od ocena zavisi njegova budućnost, dalje obrazovanje.*
-
-*Roditelji samo brinu o ocenama, njima znanje nije važno.*
 
 ## Zašto je ocenjivanje osetljiva tema
 
