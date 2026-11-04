@@ -1,0 +1,37 @@
+{
+  "label": "Kalkulator bodova za upis",
+  "groups": [
+    {
+      "key": "school",
+      "legend": "Uspeh u školi",
+      "maxPoints": 60,
+      "hint": "Prosečna ocena na kraju razreda, od 2,00 do 5,00 (dve decimale). Svaki prosek se množi sa 4.",
+      "error": "Unesite prosek od 2,00 do 5,00 (npr. 4,57).",
+      "min": 2,
+      "max": 5,
+      "step": 0.01,
+      "placeholder": "2,00–5,00",
+      "rows": [
+        { "id": "pc-r6", "label": "VI razred", "factor": 4 },
+        { "id": "pc-r7", "label": "VII razred", "factor": 4 },
+        { "id": "pc-r8", "label": "VIII razred", "factor": 4 }
+      ]
+    },
+    {
+      "key": "exam",
+      "legend": "Završni ispit",
+      "maxPoints": 40,
+      "hint": "Broj poena na testu, od 0 do 20 (npr. 17 ili 17,5). Poeni iz matematike i srpskog jezika množe se sa 0,7, a iz izbornog predmeta (biologija, geografija, istorija, fizika ili hemija) sa 0,6.",
+      "error": "Unesite broj poena od 0 do 20, ceo ili sa pola poena (npr. 17,5).",
+      "min": 0,
+      "max": 20,
+      "step": 0.5,
+      "placeholder": "0–20",
+      "rows": [
+        { "id": "pc-mat", "label": "Matematika", "factor": 0.7 },
+        { "id": "pc-srp", "label": "Srpski jezik", "factor": 0.7 },
+        { "id": "pc-izb", "label": "Izborni predmet", "factor": 0.6 }
+      ]
+    }
+  ]
+}

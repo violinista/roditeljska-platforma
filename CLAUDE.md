@@ -74,6 +74,7 @@ _includes/
     page-article.njk          # extends base; rich article shell (breadcrumb, auto-TOC, share, tags, optional CTA block)
   partials/
     header.njk, footer.njk, scripts.njk, search-dialog.njk
+    points-calculator.njk     # "Kalkulator bodova za upis" form (included from situacija-zavrsni-ispit.md)
     sections/                 # one partial per homepage section + reusable building blocks
       hero, about, programs, numbers-steps, page-title, cta-banner
 _data/                        # global data, autoloaded by Eleventy
@@ -81,6 +82,7 @@ _data/                        # global data, autoloaded by Eleventy
   hero, timeline, coreValues, programs, stats, steps
   savetovanjeForm             # programs list + intro for the /savetovanje/ registration form
   pageGroups.json             # page-group trees (sidebar TOC + bottom links), see "Page groups"
+  pointsCalculator.json       # labels, ranges, coefficients of the points calculator
 assets/
   css/
     site.css                  # project components (token-driven)
@@ -89,6 +91,7 @@ assets/
   js/
     main.js                   # mobile nav (button + aria-expanded), dropdown toggle, Swiper init
     search.js                 # site search dialog (fetches /search-index.json)
+    points-calculator.js      # live points calculator (loaded only by its partial)
     vendor/                   # bootstrap bundle, swiper, glightbox
                               # (aos.js, purecounter, isotope, imagesloaded
                               #  remain on disk but are NOT loaded)
@@ -258,6 +261,8 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 
 - **`/savetovanje/` registration form**: the page renders a Serbian inquiry form. Submit fires a `mailto:` to `kontakt@platformazaroditelje.rs` (read from `site.json` `footer.email`) via an inline JS handler that builds a `mailto:?subject=…&body=…` URL. The program list shown in the body bullets AND the form's `<select>` is driven by `_data/savetovanjeForm.json` — adding a program there updates both.
 
+- **Points calculator ("Kalkulator bodova za upis")**: at the end of `/ocenjivanje/sta-znamo-o-ocenjivanju/poruke-za-roditelje/situacija-zavrsni-ispit/`, under a `## Kalkulator bodova za upis` heading and the paragraphs that state the formula (VI, VII and VIII grade average × 4 each, max 60; test points × 0,7 for matematika and srpski jezik, × 0,6 for the izborni predmet, max 40; total 100). The markdown pulls it in with `{% include "partials/points-calculator.njk" %}`. Labels, hints, error messages, ranges (`min`/`max`), the allowed `step` (0,01 for averages, 0,5 for test points: some tasks give half a point) and each row's `factor` live in `_data/pointsCalculator.json`. If a coefficient changes, update that file, the group's `maxPoints`, and the formula text in the `.md`. `assets/js/points-calculator.js` recalculates on every keystroke. It accepts a decimal comma or point, counts empty fields as 0 (with a note), blanks the sums while a field is invalid, and sends one polite screen-reader summary per `change`. The form is `hidden` until the script runs; without JS the formula text remains. The partial's output must contain no blank line, or markdown-it ends the HTML block.
+
 - **Ocenjivanje guide pages**: the five `.md` files listed in the directory layout carry the whole topic. They were generated from the `.docx` sources in `dokumenti-ocenjivanje/`; sub-topics became `##` sections and short leaf documents became `.article-callout` / `.article-details` blocks. Wide reference tables are wrapped in `<div class="table-responsive">`. See `NOTES-ocenjivanje.md` for the source-to-page mapping and unresolved items. **Exceptions:** "Šta moje dete treba da zna" (Tekst 2), "Šta sve treba da znamo o ocenjivanju u školi?" (Tekst 3, sources in `../Tekst 3/`), "Kako da pratim napredovanje deteta" (Tekst 4) and "Kako da reagujemo na ocenu" (Tekst 5) are page groups (see below), one page per source document. In Tekst 3 some source documents are not pages of their own but the "Pročitaj više" text of their parent (3.1.1 in 3.1, 3.2.1 in 3.2, 3.3.1–3.3.3 in 3.3); `NOTES-ocenjivanje.md` has the full mapping.
 
 - **Page groups** (`sta-moje-dete`, `sta-znamo`, `pracenje`, `reagovanje`): a set of `page-article` pages that share one sidebar TOC. The tree (`url`, short `label` for the sidebar, full `title` for bottom links, `children`) lives in `_data/pageGroups.json`; a page joins by setting `group: <key>` in frontmatter (the sub-pages get it from `sta-moje-dete-treba-da-zna/sta-moje-dete-treba-da-zna.11tydata.json`). `page-article.njk` then replaces the auto-TOC with the group tree (filter `groupFlatten`, current page marked with `aria-current` and an arrow-right icon, `.here-icon`, whose "Nalazite se ovde" text is visually hidden) and, after the content, lists the page's children as a `.guide-map` or — on leaf pages — a "Nazad na: <parent>" link (filter `groupNode`). To add a page to a group: create the `.md` with a `permalink` matching a new node's `url`, and add the node to the JSON. Optional knobs: `"sidebarDepth": 0` on a group root shows only the root in the sidebar (default 1 = root + children; deeper pages highlight their visible ancestor) — used by `reagovanje`; frontmatter `groupLinks: false` suppresses the bottom child cards when the body already links to the children (the `reagovanje` root); `"noBottomLink": true` on a single node keeps it in the sidebar but out of its parent's bottom links, for a page linked only from the parent's body (`sta-znamo` → `primer-losa-ocena`). Sources for this group: `ciljevi-obrazovanja-source/` (gitignored, like `dokumenti-ocenjivanje/`).
@@ -270,7 +275,7 @@ All user-facing content is in Serbian (Latin script). Preserve diacritics (š, �
 
 ## Planned pages
 
-The site is currently single-topic (Ocenjivanje). Previously stubbed categories (Bezbednost dece, Roditelji i škola, Tranzicija u obrazovanju) and the 16-page College reference kit were removed on the `ocenjivanje-single-topic` branch; they remain in git history on `main` if needed. Topics the sources reference but that do not yet exist: učešće roditelja u obrazovanju / Savet roditelja, karijerno informisanje i savetovanje, and a bodovni kalkulator for the završni ispit.
+The site is currently single-topic (Ocenjivanje). Previously stubbed categories (Bezbednost dece, Roditelji i škola, Tranzicija u obrazovanju) and the 16-page College reference kit were removed on the `ocenjivanje-single-topic` branch; they remain in git history on `main` if needed. Topics the sources reference but that do not yet exist: učešće roditelja u obrazovanju / Savet roditelja, karijerno informisanje i savetovanje.
 
 ## Reference / inspiration directories (NOT in build)
 

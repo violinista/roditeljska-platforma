@@ -1992,7 +1992,7 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
 .share-button:hover { background: var(--color-primary); color: var(--color-text-inverse); }
 
 /* =============================================================================
-   13. Forms (/savetovanje/ registration)
+   13. Forms (/savetovanje/ registration, points calculator)
 ============================================================================ */
 .scheduling-form {
   background: var(--color-surface);
@@ -2011,7 +2011,8 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
   margin-bottom: var(--space-2);
 }
 .scheduling-form .form-control,
-.scheduling-form .form-select {
+.scheduling-form .form-select,
+.points-calculator .form-control {
   width: 100%;
   min-height: 48px;
   border-radius: var(--radius-md);
@@ -2023,7 +2024,8 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
   color: var(--color-text);
 }
 .scheduling-form .form-control:focus,
-.scheduling-form .form-select:focus {
+.scheduling-form .form-select:focus,
+.points-calculator .form-control:focus {
   outline: none;
   border-color: var(--color-teal);
   box-shadow: 0 0 0 3px var(--color-focus-ring);
@@ -2051,6 +2053,202 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
 .scheduling-form button[type="submit"]:hover {
   background: var(--color-secondary-dark);
   box-shadow: var(--shadow-md);
+}
+
+/* Points calculator ("Kalkulator bodova za upis", end of the završni ispit
+   page; partials/points-calculator.njk, _data/pointsCalculator.json,
+   js/points-calculator.js). A white card like the form above: two fieldsets
+   of rows (label · input · "× 4 = 18,28"), then a warm result panel. The
+   total leads; under it a thin two-part bar (school navy, exam coral, as a
+   share of the 100 possible points) and the two parts, whose 4px swatches
+   (the homepage stats bar) double as the bar's legend. The bar is
+   aria-hidden: every number it shows is also text right beside it. */
+.points-calculator {
+  margin: var(--space-5) 0 var(--space-6);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.points-calculator .pc-group + .pc-group { margin-top: var(--space-6); }
+.points-calculator legend {
+  margin-bottom: var(--space-1);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  color: var(--color-heading);
+}
+.points-calculator .pc-legend-max {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+.points-calculator .pc-hint {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+.points-calculator .pc-row {
+  display: grid;
+  grid-template-columns: 10rem 8rem auto;
+  justify-content: start;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+.points-calculator .pc-row + .pc-row { margin-top: var(--space-3); }
+.points-calculator .pc-row label {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-heading);
+}
+/* Numbers right-aligned against the "× 4 =" beside them, aligned down the column. */
+.points-calculator .form-control {
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.points-calculator .form-control::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+.points-calculator .form-control[aria-invalid="true"] {
+  border-color: var(--color-secondary-text);
+  box-shadow: inset 0 0 0 1px var(--color-secondary-text);
+}
+.points-calculator .form-control[aria-invalid="true"]:focus {
+  box-shadow: inset 0 0 0 1px var(--color-secondary-text), 0 0 0 3px var(--color-focus-ring);
+}
+.points-calculator .pc-calc {
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+.points-calculator .pc-calc output {
+  display: inline-block;
+  min-width: 3.25em;
+  text-align: right;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-heading);
+}
+.points-calculator .pc-error {
+  grid-column: 2 / -1;
+  margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
+  color: var(--color-secondary-text);
+}
+
+.points-calculator .pc-result {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-warm);
+}
+.points-calculator .pc-total { margin: 0; }
+.points-calculator .pc-total-label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-heading);
+}
+.points-calculator .pc-total output {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-stat);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-display);
+  color: var(--color-heading);
+}
+.points-calculator .pc-of {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+/* Thin segmented bar: 8px, rounded, a 2px gap between the parts. */
+.points-calculator .pc-bar {
+  display: flex;
+  gap: 2px;
+  height: 8px;
+  margin: var(--space-4) 0 var(--space-5);
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  overflow: hidden;
+}
+.points-calculator .pc-bar > span {
+  flex: 0 1 0%;
+  min-width: 0;
+  border-radius: var(--radius-full);
+  background: var(--pc-swatch);
+}
+.points-calculator .pc-bar-school,
+.points-calculator .pc-part-school { --pc-swatch: var(--color-primary); }
+.points-calculator .pc-bar-exam,
+.points-calculator .pc-part-exam { --pc-swatch: var(--color-secondary); }
+.points-calculator .pc-parts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--space-5);
+  margin: 0;
+}
+.points-calculator .pc-part {
+  position: relative;
+  padding-top: var(--space-3);
+}
+.points-calculator .pc-part::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--pc-swatch);
+}
+.points-calculator .pc-part dt {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+}
+.points-calculator .pc-part dd { margin: 0; }
+.points-calculator .pc-part output {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-heading);
+}
+/* "—" placeholder (nothing entered yet, or an invalid field): muted and
+   light, so it doesn't read as a value next to the swatches. */
+.points-calculator output.is-none {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+}
+.points-calculator .pc-note {
+  margin: var(--space-4) 0 0;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
+  color: var(--color-text-muted);
+}
+.points-calculator .pc-note-error { color: var(--color-secondary-text); }
+.points-calculator .pc-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-5);
+}
+@media (max-width: 575.98px) {
+  /* Label on its own line; input and result share the next one. */
+  .points-calculator { padding: var(--space-5) var(--space-4); }
+  .points-calculator .pc-row { grid-template-columns: 8rem auto; }
+  .points-calculator .pc-row label,
+  .points-calculator .pc-error { grid-column: 1 / -1; }
+  .points-calculator .pc-result { padding: var(--space-4); }
 }
 
 /* =============================================================================

@@ -115,7 +115,16 @@ Sledeće napomene bile su namenjene autorima, a ne čitaocima, pa nisu prenete:
    → Tri situacije prikazane su kao tabela. Grafika/animacija nije izrađena (sajt je
    namerno bez animacija).
 4. **`Tekst 3/3.2.2. SITUACIJA završni ispit.docx`** — „dodati link ka kalkulatoru“
-   → **Otvoreno pitanje.** Kalkulator bodova za upis ne postoji; link nije dodat.
+   (komentar: „ako možemo da napravimo naš kalkulator?“)
+   → Rešeno (11/2026): na kraju stranice je sopstveni „Kalkulator bodova za upis“, prema
+   dostavljenoj formuli: prosek VI, VII i VIII razreda × 4, test × 0,7
+   (matematika, srpski jezik) odnosno × 0,6 (izborni predmet); ukupno 100 bodova. Tekst
+   formule je iznad kalkulatora. Podaci: `_data/pointsCalculator.json`.
+   **Uočeno:** primer u drugom pasusu („uradi bolje svaki od testova za 2 poena … ima šansu
+   da ga stigne i prestigne“) se ne slaže sa formulom: 2 poena bolje na svakom testu donose
+   2 × 0,7 + 2 × 0,7 + 2 × 0,6 = 4 boda, a razlika iz uspeha je 6. Izjednačenje traži 3
+   poena bolje na svakom testu, a prestizanje više od toga. Tekst nije menjan; čeka odluku
+   redakcije.
 5. **`Tekst 3/3.1 …docx`** — uz reč „kompetencija“: „ovde ide zvezdica ili pisano slovo i –
    kada se stavi kursor… izlazi u oblačiću objašnjenje šta su kompetencije“ / „To objašnjenje
    nemamo spremno u ovom trenutku.“ Isto u 3.2 („staviti ⓘ“).

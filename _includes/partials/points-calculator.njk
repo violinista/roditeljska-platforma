@@ -1,0 +1,44 @@
+{#- Kalkulator bodova za upis u srednju školu. Included at the end of
+    sta-znamo-o-ocenjivanju/situacija-zavrsni-ispit.md, under the text that
+    explains the formula. Labels, ranges and coefficients: _data/pointsCalculator.json
+    (each group's maxPoints must equal its rows' max × factor). Behaviour:
+    assets/js/points-calculator.js. Styles: .points-calculator in site.css.
+    Hidden until the script runs; without JS the text above still gives the formula.
+    Keep the output free of blank lines: it is parsed as part of a Markdown
+    file, and a blank line would end the HTML block. -#}
+{%- set pc = pointsCalculator -%}
+{%- set pcTotal = pc.groups | sum("maxPoints") -%}
+<form class="points-calculator" aria-label="{{ pc.label }}" data-max-points="{{ pcTotal }}" autocomplete="off" hidden>
+{%- for g in pc.groups %}
+  <fieldset class="pc-group" data-group="{{ g.key }}" aria-describedby="pc-{{ g.key }}-hint">
+    <legend>{{ g.legend }} <span class="pc-legend-max">(najviše {{ g.maxPoints }} bodova)</span></legend>
+    <p class="pc-hint" id="pc-{{ g.key }}-hint">{{ g.hint }}</p>
+{%- for r in g.rows %}
+    <div class="pc-row">
+      <label for="{{ r.id }}">{{ r.label }}</label>
+      <input class="form-control" id="{{ r.id }}" type="text" inputmode="decimal" placeholder="{{ g.placeholder }}" data-min="{{ g.min }}" data-max="{{ g.max }}" data-step="{{ g.step }}" data-factor="{{ r.factor }}">
+      <span class="pc-calc"><span class="pc-factor">× {{ r.factor | string | replace(".", ",") }} =</span> <output for="{{ r.id }}" aria-live="off">—</output></span>
+      <p class="pc-error" id="{{ r.id }}-error" hidden><i class="bi bi-exclamation-circle" aria-hidden="true"></i> {{ g.error }}</p>
+    </div>
+{%- endfor %}
+  </fieldset>
+{%- endfor %}
+  <div class="pc-result">
+    <p class="pc-total"><span class="pc-total-label">Ukupno bodova</span> <output data-total aria-live="off">—</output> <span class="pc-of">od {{ pcTotal }}</span></p>
+    <div class="pc-bar" aria-hidden="true">
+{%- for g in pc.groups %}<span class="pc-bar-{{ g.key }}" data-bar="{{ g.key }}" hidden></span>{% endfor -%}
+    </div>
+    <dl class="pc-parts">
+{%- for g in pc.groups %}
+      <div class="pc-part pc-part-{{ g.key }}"><dt>{{ g.legend }}</dt><dd><output data-sum="{{ g.key }}" aria-live="off">—</output> <span class="pc-of">od {{ g.maxPoints }}</span></dd></div>
+{%- endfor %}
+    </dl>
+    <p class="pc-note" data-note="empty" hidden>Polja koja niste popunili računaju se kao 0.</p>
+    <p class="pc-note pc-note-error" data-note="invalid" hidden><i class="bi bi-exclamation-circle" aria-hidden="true"></i> Ispravite označena polja da biste videli ukupan broj bodova.</p>
+  </div>
+  <p class="visually-hidden" role="status" data-status></p>
+  <div class="pc-actions">
+    <button type="reset" class="btn-pill btn-pill-outline"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Obriši unos</button>
+  </div>
+</form>
+<script src="/assets/js/points-calculator.js?v={{ buildId }}" defer></script>
