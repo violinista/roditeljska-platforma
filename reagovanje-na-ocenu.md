@@ -27,14 +27,6 @@ Budući da je ovakva dinamika prisutna decenijama, roditelji i nastavnici često
 
 Ne treba ispustiti iz vida ni ličnu dimenziju ovih susreta. Nastavnik osporavanje ocene može doživeti ne samo kao preispitivanje jedne konkretne procene, već i kao preispitivanje svoje stručnosti, profesionalnog suda i integriteta. Kao i većina ljudi, nastavnici situacije u kojima imaju utisak da se dovode u pitanje njihova stručnost, profesionalni sud ili integritet mogu doživeti kao uznemiravajuće. U takvim okolnostima mogu biti skloniji da brane svoje procene i odluke nego da otvoreno saslušaju roditelja, razmotre njegovu perspektivu i zajedno razgovaraju o mogućim načinima podrške detetu. Razumevanje ove perspektive može pomoći roditeljima da pažljivije pristupe razgovoru i povećaju verovatnoću da će on ostati konstruktivan.
 
-<div class="table-responsive">
-
-| Stereotipi iz perspektive roditelja | Stereotipi iz perspektive nastavnika |
-|---|---|
-| Nastavnici su nezainteresovani za decu i nestručni; bave se samo sobom i trude se da rade što je moguće manje. | Roditelj ne poznaje svoje dete i krajnje je subjektivan i ličan; ne poznaje obrazovni sistem i suštinski je nezainteresovan da li će dete nešto naučiti, već svoju pažnju usmerava samo na ocenu. |
-
-</div>
-
 Ako želimo da ostvarimo dijalog, važno je da razumemo kontekst u kome se odvija komunikacija između roditelja i nastavnika i da prepoznamo zamke koje proizlaze iz njihovih različitih uloga i perspektiva. Važno je imati na umu:
 
 - **Za pozitivne ishode i konstruktivnu diskusiju nisu odgovorni samo nastavnici.** I roditelji svojim načinom komunikacije, pripremom i spremnošću za razgovor značajno utiču na ishod susreta.
