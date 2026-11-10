@@ -126,7 +126,7 @@ module.exports = function (eleventyConfig) {
     '<div class="slideshow-nav">\n' +
     '<button type="button" class="btn-pill btn-pill-outline slideshow-btn slideshow-prev" data-slideshow-prev><i class="bi bi-arrow-left" aria-hidden="true"></i> <span>Prethodni</span></button>\n' +
     '<div class="slideshow-progress"><div class="slideshow-dots" data-slideshow-dots></div><p class="slideshow-counter" aria-live="polite" data-slideshow-counter></p></div>\n' +
-    '<button type="button" class="btn-pill btn-pill-navy slideshow-btn slideshow-next" data-slideshow-next><span>Sledeći</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></button>\n' +
+    '<button type="button" class="btn-pill btn-pill-outline slideshow-btn slideshow-next" data-slideshow-next><span>Sledeći</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></button>\n' +
     "</div>\n" +
     "</dialog>\n"
   );
