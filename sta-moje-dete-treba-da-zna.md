@@ -28,7 +28,7 @@ Jedan od najvećih izazova sa kojima se danas suočavaju gotovo sve zemlje sveta
 </div>
 <div class="ig-art" aria-hidden="true">
 <picture>
-<source media="(min-width: 576px)" srcset="/assets/img/poslovi-buducnosti-uska.webp" width="448" height="1850">
+<source media="(min-width: 576px)" srcset="/assets/img/okeanski-bastovan.webp" width="756" height="1397">
 <img src="/assets/img/poslovi-buducnosti.webp" alt="" width="1165" height="1344" loading="lazy" decoding="async">
 </picture>
 </div>

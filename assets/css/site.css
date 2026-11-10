@@ -1659,16 +1659,18 @@ a.steps-label:hover { color: var(--color-secondary-text); text-decoration-color:
     inset: 0;
     height: 100%;
     object-fit: cover;
-    object-position: 0% 20%; /* crop on the right (box edge), keep the left curve */
+    /* The cut-out is wider than the strip: crop mostly on the left, so the
+       bars (top) and the diver (bottom) stay whole at the box edge. */
+    object-position: 75% 0%;
   }
 }
 /* Wide desktop: icon in its own column left of the text (desktop mockup). */
 @media (min-width: 1200px) {
-  /* Narrower strip: the box is shorter here, so a wide strip would crop
-     its top (sun, skyline) away. */
+  /* The box is shorter here: a strip about as wide as the image's own
+     proportion (≈ 0.54 : 1) shows it almost uncropped. */
   .article-content .article-callout.callout-infographic {
-    --ig-art-w: 30%;
-    --ig-text-w: 76%;
+    --ig-art-w: 38%;
+    --ig-text-w: 70%;
   }
   .callout-infographic .ig-block {
     display: grid;
