@@ -64,7 +64,11 @@
       nextLabel.textContent = last ? "Zatvori" : "Sledeći";
       nextIcon.className = last ? "bi bi-x-lg" : "bi bi-arrow-right";
       cta.hidden = !last;
-      counter.textContent = (slides[i].dataset.label || "") + " · " + (i + 1) + " / " + slides.length;
+      // Visible: "6 / 10"; screen readers also hear the slide label.
+      const srLabel = document.createElement("span");
+      srLabel.className = "visually-hidden";
+      srLabel.textContent = (slides[i].dataset.label || "") + ", ";
+      counter.replaceChildren(srLabel, (i + 1) + " / " + slides.length);
       body.scrollTop = 0;
       current = i;
     }
