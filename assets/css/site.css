@@ -605,15 +605,6 @@ html:has(dialog.slideshow[open]) { overflow: hidden; }
 }
 .slideshow-dot:hover::before { background: var(--color-heading); }
 .slideshow-dot[aria-current="step"]::before { background: var(--color-secondary); transform: scale(1.35); }
-.article-content .slideshow-counter,
-.slideshow-counter {
-  margin: 0;
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-muted);
-  white-space: nowrap;
-}
 
 /* Slide change: short slide + fade, only when the user changes slides. */
 @keyframes slide-from-next {
@@ -631,7 +622,7 @@ html:has(dialog.slideshow[open]) { overflow: hidden; }
   .slide.is-from-prev { animation: none; }
 }
 
-/* Phones: full screen; dots and counter on their own row above the buttons. */
+/* Phones: full screen; dots on their own row above the buttons. */
 @media (max-width: 575.98px) {
   .slideshow {
     width: 100vw;

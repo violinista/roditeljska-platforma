@@ -148,7 +148,7 @@ Practical rules for anyone (human or AI agent) changing how the site looks.
 ### Slideshow (`.slideshow`)
 - A native modal `<dialog>` (Situacija 1–3 on `/ocenjivanje/reagovanje-na-ocenu/`): white panel, `--radius-lg`, `--shadow-lg`, `--color-overlay` backdrop; fixed size (max 57.6rem × 44rem) so the nav bar does not move, full screen below 576px.
 - Each slide starts with the gold `.banner-badge` pill top-left ("Korak 1", "Ishod 2", "Situacija 3") and an `h3` title; the body scrolls inside the panel.
-- Nav bar on `--color-surface-warm`: outline pills "Prethodni" and "Sledeći" (becomes "Zatvori" on the last slide, plus a coral "Zakaži savetovanje" pill at the end of the last slide's text), and 24px dot targets (current = coral) with a "4 / 10" counter (the slide label is read only by screen readers). On phones the buttons are icon-only and the dots get their own row.
+- Nav bar on `--color-surface-warm`: outline pills "Prethodni" and "Sledeći" (becomes "Zatvori" on the last slide, plus a coral "Zakaži savetovanje" pill at the end of the last slide's text), and 24px dot targets (current = coral); no visible counter (the slide label and "4 / 10" are announced to screen readers only). On phones the buttons are icon-only and the dots get their own row.
 
 ### Footer
 - Navy background with the light logo, inverse-muted text and uppercase column headings.
