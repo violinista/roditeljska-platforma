@@ -38,9 +38,35 @@ To podrazumeva razumevanje [**svrhe, značaja i uloge ocenjivanja**](/ocenjivanj
 
 Kada roditelj proceni da je dete nepravedno ocenjeno, najčešće se radi o jednoj od situacija koje predstavljamo u nastavku, zajedno sa koracima u postupanju prilikom pripreme žalbe.
 
-- **[Situacija 1.](/ocenjivanje/reagovanje-na-ocenu/zalba-na-pojedinacnu-ocenu/)** Roditelj smatra da ocena koju je dete dobilo na pismenom ili usmenom odgovaranju ne odgovara znanju koje je pokazalo.
-- **[Situacija 2.](/ocenjivanje/reagovanje-na-ocenu/zajednicka-primedba-roditelja/)** Više roditelja istovremeno izražava zabrinutost zbog određene ocene ili postupanja nastavnika koje pogađa grupu učenika ili celo odeljenje.
-- **[Situacija 3.](/ocenjivanje/reagovanje-na-ocenu/zalba-na-zakljucnu-ocenu/)** Roditelj smatra da zaključna ocena na kraju školske godine nije formirana u skladu sa postignućima učenika tokom godine.
+<ul class="situation-cards">
+  <li>
+    <a href="/ocenjivanje/reagovanje-na-ocenu/zalba-na-pojedinacnu-ocenu/" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
+      <span>
+        <strong class="program-item-title">Situacija 1.</strong>
+        <span class="program-item-text">Roditelj smatra da ocena koju je dete dobilo na pismenom ili usmenom odgovaranju ne odgovara znanju koje je pokazalo.</span>
+      </span>
+      <span class="item-arrow flex-shrink-0"><i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+    </a>
+  </li>
+  <li>
+    <a href="/ocenjivanje/reagovanje-na-ocenu/zajednicka-primedba-roditelja/" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
+      <span>
+        <strong class="program-item-title">Situacija 2.</strong>
+        <span class="program-item-text">Više roditelja istovremeno izražava zabrinutost zbog određene ocene ili postupanja nastavnika koje pogađa grupu učenika ili celo odeljenje.</span>
+      </span>
+      <span class="item-arrow flex-shrink-0"><i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+    </a>
+  </li>
+  <li>
+    <a href="/ocenjivanje/reagovanje-na-ocenu/zalba-na-zakljucnu-ocenu/" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
+      <span>
+        <strong class="program-item-title">Situacija 3.</strong>
+        <span class="program-item-text">Roditelj smatra da zaključna ocena na kraju školske godine nije formirana u skladu sa postignućima učenika tokom godine.</span>
+      </span>
+      <span class="item-arrow flex-shrink-0"><i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+    </a>
+  </li>
+</ul>
 
 Ukoliko želite da se detaljnije upoznate sa propisima koji uređuju ocenjivanje, dokumentima možete pristupiti na sledećim linkovima:
 
