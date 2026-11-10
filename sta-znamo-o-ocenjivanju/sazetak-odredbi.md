@@ -91,7 +91,7 @@ Praćenje razvoja, napredovanja i postignuća učenika u toku školske godine os
 >
 > Zbog toga je predviđeno da se učenicima pruži dodatna podrška kroz dopunsku nastavu, a zatim organizuje nova provera znanja. Cilj ovakvog rešenja nije da se učenici ponovo ocenjuju po svaku cenu, već da dobiju priliku da, uz dodatnu pomoć, uspešno savladaju gradivo.
 >
-> I kada nisu ispunjeni uslovi za poništavanje pismene provere, roditelji treba da obrate pažnju ukoliko veći broj učenika u odeljenju duže vreme ima teškoće u savladavanju istog predmeta. U takvim situacijama moguće je pokrenuti razgovor sa školom i zatražiti dodatnu podršku za učenike. Više o tome možete pročitati u tekstu [Situacija 2: zajednička primedba roditelja](/ocenjivanje/reagovanje-na-ocenu/zajednicka-primedba-roditelja/).
+> I kada nisu ispunjeni uslovi za poništavanje pismene provere, roditelji treba da obrate pažnju ukoliko veći broj učenika u odeljenju duže vreme ima teškoće u savladavanju istog predmeta. U takvim situacijama moguće je pokrenuti razgovor sa školom i zatražiti dodatnu podršku za učenike. Više o tome možete pročitati u tekstu [Situacija 2: zajednička primedba roditelja](/ocenjivanje/reagovanje-na-ocenu/#situacija-2).
 
 ## Kako se formira zaključna ocena?
 

@@ -1,6 +1,0 @@
-{
-  "layout": "layouts/page-article.njk",
-  "group": "reagovanje",
-  "categories": ["Vodič", "Ocenjivanje"],
-  "cta": true
-}

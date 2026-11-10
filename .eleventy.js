@@ -105,6 +105,39 @@ module.exports = function (eleventyConfig) {
     "\n\n</details>\n"
   );
 
+  // {% slideshow "id", "Accessible title" %}…{% endslideshow %} wraps
+  // {% slide "Korak 1", "Slide title" %}…{% endslide %} blocks in a modal
+  // <dialog> (the "Situacija 1–3" step-by-step guides on
+  // /ocenjivanje/reagovanje-na-ocenu/). assets/js/slideshow.js shows one slide
+  // at a time and builds the dots; without JS a #id link shows the slides
+  // stacked inline (CSS :target). Same markdown rules as readmore: the blank
+  // lines let markdown-it render the Markdown between the tags, and every
+  // HTML line starts with a block-level tag. No <h2 id>, so extractToc skips it.
+  const escapeHtml = (s) =>
+    String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+  eleventyConfig.addPairedShortcode("slideshow", (content, id, title) =>
+    `<dialog id="${escapeHtml(id)}" class="slideshow" aria-label="${escapeHtml(title)}">\n` +
+    '<div class="slideshow-close-wrap"><button type="button" class="slideshow-close" data-slideshow-close aria-label="Zatvori"><i class="bi bi-x-lg" aria-hidden="true"></i></button></div>\n' +
+    '<div class="slideshow-body">\n\n' +
+    content.trim() +
+    '\n\n<div class="slideshow-end" data-slideshow-cta hidden><a href="/savetovanje/" class="btn-pill btn-pill-primary">Zakaži savetovanje</a></div>\n' +
+    "</div>\n" +
+    '<div class="slideshow-nav">\n' +
+    '<button type="button" class="btn-pill btn-pill-outline slideshow-btn slideshow-prev" data-slideshow-prev><i class="bi bi-arrow-left" aria-hidden="true"></i> <span>Prethodni</span></button>\n' +
+    '<div class="slideshow-progress"><div class="slideshow-dots" data-slideshow-dots></div><p class="slideshow-counter" aria-live="polite" data-slideshow-counter></p></div>\n' +
+    '<button type="button" class="btn-pill btn-pill-navy slideshow-btn slideshow-next" data-slideshow-next><span>Sledeći</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></button>\n' +
+    "</div>\n" +
+    "</dialog>\n"
+  );
+
+  eleventyConfig.addPairedShortcode("slide", (content, label, title) =>
+    `<section class="slide" data-label="${escapeHtml(label)}">\n` +
+    `<div class="slide-head"><span class="banner-badge">${escapeHtml(label)}</span><h3 class="slide-title">${escapeHtml(title)}</h3></div>\n\n` +
+    content.trim() +
+    "\n\n</section>\n"
+  );
+
   eleventyConfig.addFilter("extractToc", (html) => {
     if (!html) return [];
     const matches = [...html.matchAll(/<h2[^>]*\sid="([^"]+)"[^>]*>([\s\S]*?)<\/h2>/g)];
@@ -183,7 +216,8 @@ module.exports = function (eleventyConfig) {
           .replace(/<aside class="table-of-contents[\s\S]*?<\/aside>/g, " ");
         const h1 = main.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
         const title = h1 ? htmlToText(h1[1]) : htmlToText((r.content.match(/<title>([\s\S]*?)<\/title>/) || [, ""])[1]);
-        const headings = [...main.matchAll(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/g)].map((m) => htmlToText(m[1]));
+        // Deduped: the shared slideshow slides (Korak 1–3) repeat on one page.
+        const headings = [...new Set([...main.matchAll(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/g)].map((m) => htmlToText(m[1])))];
         return { url: r.url, title, headings, text: htmlToText(main) };
       })
       .sort((a, b) => a.url.localeCompare(b.url));

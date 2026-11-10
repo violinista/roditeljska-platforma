@@ -60,7 +60,7 @@ The site is a reusable 11ty/Nunjucks template recreated from the BootstrapMade "
 ## Directory layout
 
 ```
-.eleventy.js                  # passthroughs, layout aliases, markdown-it-anchor + extractToc filter, readmore shortcode, navActive filter, search-index (eleventy.after), Serbian date filters, cwd guard, relative-urls transform
+.eleventy.js                  # passthroughs, layout aliases, markdown-it-anchor + extractToc filter, readmore + slideshow/slide shortcodes, navActive filter, search-index (eleventy.after), Serbian date filters, cwd guard, relative-urls transform
 DESIGN-SYSTEM.md              # design rules for humans + agents (tokens, contrast, type, components, logo)
 .github/workflows/deploy.yml  # GitHub Actions: build with Node 20 + npm ci + npm run build, deploy _site/ to GitHub Pages on push to main
 package.json                  # 11ty, bootstrap-icons, markdown-it{,-anchor} devDeps; build/start scripts
@@ -72,6 +72,7 @@ _includes/
     home.njk                  # extends base; hero → programs → about → numbers-steps → CTA banner
     page.njk                  # extends base; generic markdown wrapper (no Serbian content uses this anymore)
     page-article.njk          # extends base; rich article shell (breadcrumb, auto-TOC, share, tags, optional CTA block)
+  reagovanje/                 # Markdown slides for the Situacija 1–3 slideshows: koraci-1-3.md (shared), situacija-1/2/3.md
   partials/
     header.njk, footer.njk, scripts.njk, search-dialog.njk
     points-calculator.njk     # "Kalkulator bodova za upis" form (included from situacija-zavrsni-ispit.md)
@@ -91,6 +92,7 @@ assets/
   js/
     main.js                   # mobile nav (button + aria-expanded), dropdown toggle, Swiper init
     search.js                 # site search dialog (fetches /search-index.json)
+    slideshow.js              # Situacija 1–3 slideshow dialogs (loaded only by reagovanje-na-ocenu.md)
     points-calculator.js      # live points calculator (loaded only by its partial)
     vendor/                   # bootstrap bundle, swiper, glightbox
                               # (aos.js, purecounter, isotope, imagesloaded
@@ -111,8 +113,8 @@ sta-znamo-o-ocenjivanju/           # primer-losa-ocena, poruke-za-roditelje (+ s
                                    #   procedure-ocenjivanja (+ sazetak-odredbi) + shared *.11tydata.json
 pracenje-napredovanja-deteta.md    # /ocenjivanje/pracenje-napredovanja-deteta/  (root of a 3-page group)
 pracenje-napredovanja-deteta/      # esdnevnik.md, otvorena-vrata.md + shared *.11tydata.json
-reagovanje-na-ocenu.md             # /ocenjivanje/reagovanje-na-ocenu/  (root of a 5-page group)
-reagovanje-na-ocenu/               # priprema-za-razgovor.md + 3 situacija pages + shared *.11tydata.json
+reagovanje-na-ocenu.md             # /ocenjivanje/reagovanje-na-ocenu/  (single page; its Situacija 1–3 cards open slideshows
+                                   #   built from _includes/reagovanje/*.md, see "Slideshows")
 
 # Supporting pages
 nas-tim.md                    # team page (stub)
@@ -193,6 +195,8 @@ The site is **intentionally static** — no load or scroll animations:
 
 **One explicit exception**: `html { scroll-behavior: smooth; }` is set in `site.css` to enable smooth scrolling for in-page anchor jumps (Table of Contents links inside `page-article` pages). This is the only intentional scroll animation in the project.
 
+**Second exception**: changing slides in a slideshow (`.slideshow`, see "Slideshows" under Content authoring) plays a 0.22s slide + fade on the new slide. It is triggered only by the user (button, dot, key, swipe) and is switched off under `prefers-reduced-motion: reduce`.
+
 If adding new sections, **do not add `data-aos="…"` attributes** and **do not add `transition:` rules that activate on load or scroll**. Hover/focus transitions are fine.
 
 ## Search engines / robots blocking
@@ -263,7 +267,21 @@ When the site is ready to go public: edit both layers (remove the `robots.txt.nj
 
 - **Points calculator ("Kalkulator bodova za upis")**: at the end of `/ocenjivanje/sta-znamo-o-ocenjivanju/poruke-za-roditelje/situacija-zavrsni-ispit/`, under a `## Kalkulator bodova za upis` heading and the paragraphs that state the formula (VI, VII and VIII grade average × 4 each, max 60; test points × 0,7 for matematika and srpski jezik, × 0,6 for the izborni predmet, max 40; total 100). The markdown pulls it in with `{% include "partials/points-calculator.njk" %}`. Labels, hints, error messages, ranges (`min`/`max`), the allowed `step` (0,01 for averages, 0,5 for test points: some tasks give half a point) and each row's `factor` live in `_data/pointsCalculator.json`. If a coefficient changes, update that file, the group's `maxPoints`, and the formula text in the `.md`. `assets/js/points-calculator.js` recalculates on every keystroke. It accepts a decimal comma or point, counts empty fields as 0 (with a note), blanks the sums while a field is invalid, and sends one polite screen-reader summary per `change`. The form is `hidden` until the script runs; without JS the formula text remains. The partial's output must contain no blank line, or markdown-it ends the HTML block.
 
-- **Ocenjivanje guide pages**: the five `.md` files listed in the directory layout carry the whole topic. They were generated from the `.docx` sources in `dokumenti-ocenjivanje/`; sub-topics became `##` sections and short leaf documents became `.article-callout` / `.article-details` blocks. Wide reference tables are wrapped in `<div class="table-responsive">`. See `NOTES-ocenjivanje.md` for the source-to-page mapping and unresolved items. **Exceptions:** "Šta moje dete treba da zna" (Tekst 2), "Šta sve treba da znamo o ocenjivanju u školi?" (Tekst 3, sources in `../Tekst 3/`), "Kako da pratim napredovanje deteta" (Tekst 4) and "Kako da reagujemo na ocenu" (Tekst 5) are page groups (see below), one page per source document. In Tekst 3 some source documents are not pages of their own but the "Pročitaj više" text of their parent (3.1.1 in 3.1, 3.2.1 in 3.2, 3.3.1–3.3.3 in 3.3); `NOTES-ocenjivanje.md` has the full mapping.
+- **Ocenjivanje guide pages**: the five `.md` files listed in the directory layout carry the whole topic. They were generated from the `.docx` sources in `dokumenti-ocenjivanje/`; sub-topics became `##` sections and short leaf documents became `.article-callout` / `.article-details` blocks. Wide reference tables are wrapped in `<div class="table-responsive">`. See `NOTES-ocenjivanje.md` for the source-to-page mapping and unresolved items. **Exceptions:** "Šta moje dete treba da zna" (Tekst 2), "Šta sve treba da znamo o ocenjivanju u školi?" (Tekst 3, sources in `../Tekst 3/`), "Kako da pratim napredovanje deteta" (Tekst 4) and "Kako da reagujemo na ocenu" (Tekst 5) are page groups (see below), one page per source document — except Tekst 5, whose sub-documents 5.1–5.4 are no longer pages but the three slideshows on `/ocenjivanje/reagovanje-na-ocenu/` (see "Slideshows"). In Tekst 3 some source documents are not pages of their own but the "Pročitaj više" text of their parent (3.1.1 in 3.1, 3.2.1 in 3.2, 3.3.1–3.3.3 in 3.3); `NOTES-ocenjivanje.md` has the full mapping.
+
+- **Slideshows (`{% slideshow %}` / `{% slide %}`)**: the three "Situacija 1–3" cards on `/ocenjivanje/reagovanje-na-ocenu/` are links to `#situacija-1/2/3`; each opens a modal `<dialog class="slideshow">` that shows one slide at a time (badge such as "Korak 4" / "Ishod 1" top-left, title, Markdown body that scrolls inside the panel). Navigation: Prethodni/Sledeći, clickable dots, ←/→ (Home/End), swipe on touch screens; on the last slide "Sledeći" becomes "Zatvori" and a "Zakaži savetovanje" button appears. Only one slideshow is open at a time; the hash is kept in the URL (`…/reagovanje-na-ocenu/#situacija-2` opens it directly — `sta-znamo-o-ocenjivanju/sazetak-odredbi.md` links that way). The slides live in `_includes/reagovanje/`: `koraci-1-3.md` (shared Korak 1–3, included by all three) and `situacija-1/2/3.md` (intro slide, Korak 4–6, Ishod 1–2, Korak 7). The shortcodes are in `.eleventy.js`, the behaviour in `assets/js/slideshow.js` (loaded by a `<script>` line at the end of the page's Markdown, like the points calculator), the styles in section "4b" of `site.css`.
+
+  ```md
+  {% slideshow "situacija-1", "Accessible title of the dialog" %}
+
+  {% slide "Korak 4", "Konsultujte se sa stručnom službom" %}
+  Any Markdown — paragraphs, lists, `{% readmore %}`, `<aside class="article-callout">`.
+  {% endslide %}
+
+  {% endslideshow %}
+  ```
+
+  Rules: the same as readmore — tags on their own lines, a blank line between slides, no indentation; don't use `##` headings inside slides (the slide title is the heading). Without JS a `#situacija-N` link shows that slideshow's slides stacked inline (CSS `:target`).
 
 - **Page groups** (`sta-moje-dete`, `sta-znamo`, `pracenje`, `reagovanje`): a set of `page-article` pages that share one sidebar TOC. The tree (`url`, short `label` for the sidebar, full `title` for bottom links, `children`) lives in `_data/pageGroups.json`; a page joins by setting `group: <key>` in frontmatter (the sub-pages get it from `sta-moje-dete-treba-da-zna/sta-moje-dete-treba-da-zna.11tydata.json`). `page-article.njk` then replaces the auto-TOC with the group tree (filter `groupFlatten`, current page marked with `aria-current` and an arrow-right icon, `.here-icon`, whose "Nalazite se ovde" text is visually hidden) and, after the content, lists the page's children as a `.guide-map` or — on leaf pages — a "Nazad na: <parent>" link (filter `groupNode`). To add a page to a group: create the `.md` with a `permalink` matching a new node's `url`, and add the node to the JSON. Optional knobs: `"sidebarDepth": 0` on a group root shows only the root in the sidebar (default 1 = root + children; deeper pages highlight their visible ancestor) — used by `reagovanje`; frontmatter `groupLinks: false` suppresses the bottom child cards when the body already links to the children (the `reagovanje` root); `"noBottomLink": true` on a single node keeps it in the sidebar but out of its parent's bottom links, for a page linked only from the parent's body (`sta-znamo` → `primer-losa-ocena`). Sources for this group: `ciljevi-obrazovanja-source/` (gitignored, like `dokumenti-ocenjivanje/`).
 

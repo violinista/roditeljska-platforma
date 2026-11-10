@@ -1,12 +1,6 @@
----
-permalink: /ocenjivanje/reagovanje-na-ocenu/priprema-za-razgovor/
-title: Priprema za razgovor sa nastavnikom (koraci 1–3)
-breadcrumb: Priprema za razgovor sa nastavnikom
-readTime: 6 min čitanja
-tags: [Žalba, Komunikacija, Priprema]
----
-## Korak 1. Prikupite informacije o situaciji
-
+{#- Shared slides Korak 1–3 ("Priprema za razgovor sa nastavnikom"), included
+    in all three slideshows (situacija-1/2/3.md). Do not indent the Markdown. -#}
+{% slide "Korak 1", "Prikupite informacije o situaciji" %}
 Pre nego što odlučite da li postoji osnov za primedbu ili žalbu na ocenu, važno je da prikupite što više informacija o situaciji. Cilj nije samo da proverite da li postoje razlozi za žalbu, već i da razumete šta se desilo i da li je potrebno preduzeti neke druge korake kako bi dete napredovalo u određenom predmetu.
 
 Informacije možete prikupiti iz više izvora:
@@ -17,9 +11,9 @@ Informacije možete prikupiti iz više izvora:
 - **Razgovarajte sa razrednim starešinom.** Razredni starešina može pružiti dodatne informacije o postignućima deteta iz tog ili srodnih predmeta i pomoći vam da situaciju sagledate iz šire perspektive. Može vam pomoći da razumete da li je problem nov i prolazan ili traje duže vreme, da li se javlja samo kod vašeg deteta ili i kod drugih učenika, kao i kako škola sagledava datu situaciju. Pored toga, razredni starešina može biti važna podrška u pripremi razgovora sa predmetnim nastavnikom i daljem planiranju podrške za dete.
 - **Po potrebi razgovarajte sa drugim roditeljima.** Ukoliko imate utisak da problem nije vezan samo za vaše dete, već da pogađa veći broj učenika, korisno je proveriti kako situaciju vide i drugi roditelji. Na osnovu tih informacija lakše ćete proceniti da li je reč o pojedinačnom slučaju ili problemu koji se odnosi na grupu učenika ili celo odeljenje.
 {% endreadmore %}
+{% endslide %}
 
-## Korak 2. Razgovarajte sa nastavnikom
-
+{% slide "Korak 2", "Razgovarajte sa nastavnikom" %}
 Najvažnije informacije o tome zašto je dete dobilo određenu ocenu dobićete upravo u razgovoru sa nastavnikom. **Ovaj korak ne bi trebalo preskakati ukoliko želite da primedba ili žalba koju pripremate bude zasnovana na činjenicama i argumentima.** Ako je vaš cilj da razumete zašto je dete dobilo određenu ocenu i kako da mu pomognete da prevaziđe teškoće sa kojima se susreće, potrebno je da razgovarate sa osobom koja je pratila njegov rad i donela procenu o postignućima. Nastavnika možete sresti na [otvorenim vratima](/ocenjivanje/pracenje-napredovanja-deteta/otvorena-vrata/) ili direktno kontaktirati radi zakazivanja sastanka. Podršku u organizovanju sastanka može pružiti i razredni starešina.
 
 <aside class="article-callout">
@@ -50,9 +44,9 @@ Više o tome kako koristiti informacije iz EsDnevnika pročitajte u [**ovom teks
 **Naši saradnici vam takođe stoje na raspolaganju za pripremu ovog sastanka.** Konsultacije možete zakazati [putem ovog linka](/savetovanje/).
 
 </aside>
+{% endslide %}
 
-## Korak 3. Pripremite žalbu koju podnosite direktoru škole
-
+{% slide "Korak 3", "Pripremite žalbu koju podnosite direktoru škole" %}
 Ukoliko nakon prikupljanja informacija i razgovora sa nastavnikom procenite da postoji osnov za žalbu, potrebno je da je što pre podnesete direktoru škole, jer su rokovi kratki. Prema ZOSOV-u, roditelj ima pravo da podnese žalbu u roku od **tri dana od dana saopštavanja ocene** (čl. 82). Procedura jasno definiše da je obaveza nastavnika da informiše dete i roditelja, pojasni ocenu i predloži plan napretka. Ukoliko bilo šta od ovoga izostane, to je dovoljan povod da reagujete na rad nastavnika u školi. Nakon prijema žalbe, direktor je dužan da u roku od tri dana pribavi izjašnjenje nastavnika i donese odluku o žalbi.
 
 Preporuka je da žalbu podnesete nakon razgovora sa razrednim starešinom i predmetnim nastavnikom, jer će vam informacije koje prikupite pomoći da svoju žalbu zasnujete na činjenicama i argumentima. Međutim, ukoliko zbog kratkog roka niste u mogućnosti da obavite sve razgovore pre isteka roka za žalbu, preporučujemo da žalbu podnesete na vreme, a da je potom po potrebi dopunite dodatnim informacijama ili, ukoliko procenite da je ocena formirana u skladu sa propisanim kriterijumima, od nje odustanete.
@@ -62,3 +56,4 @@ Preporuka je da žalbu podnesete nakon razgovora sa razrednim starešinom i pred
 **Naši saradnici vam stoje na raspolaganju da vam pomognu u pripremi primedbe ili žalbe, kao i da vas posavetuju o narednim koracima u postupku.** [Zakažite savetovanje](/savetovanje/).
 
 </aside>
+{% endslide %}

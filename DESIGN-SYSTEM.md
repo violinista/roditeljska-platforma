@@ -145,6 +145,11 @@ Practical rules for anyone (human or AI agent) changing how the site looks.
 - The index is `/search-index.json`, built after every Eleventy build.
 - Matching ignores case and diacritics.
 
+### Slideshow (`.slideshow`)
+- A native modal `<dialog>` (Situacija 1–3 on `/ocenjivanje/reagovanje-na-ocenu/`): white panel, `--radius-lg`, `--shadow-lg`, `--color-overlay` backdrop; fixed size (max 48rem × 44rem) so the nav bar does not move, full screen below 576px.
+- Each slide starts with the gold `.banner-badge` pill top-left ("Korak 1", "Ishod 2", "Situacija 3") and an `h3` title; the body scrolls inside the panel.
+- Nav bar on `--color-surface-warm`: outline pill "Prethodni", navy pill "Sledeći" (becomes "Zatvori" on the last slide, plus a coral "Zakaži savetovanje" pill at the end of the last slide's text), and 24px dot targets (current = coral) with a "Korak 4 · 4 / 10" counter. On phones the buttons are icon-only and the dots get their own row.
+
 ### Footer
 - Navy background with the light logo, inverse-muted text and uppercase column headings.
 - Social icons are 44px outlined circles that turn gold on hover.
@@ -194,7 +199,7 @@ Practical rules for anyone (human or AI agent) changing how the site looks.
 
 - No load- or scroll-triggered animation.
 - Hover and focus transitions of 0.15s on colour, shadow, transform or gap are fine.
-- `scroll-behavior: smooth` for anchor jumps is the single exception.
+- Exceptions: `scroll-behavior: smooth` for anchor jumps, and the 0.22s slide + fade when the user changes slides in a `.slideshow` (off under `prefers-reduced-motion`).
 
 ## Checklist for a new component
 

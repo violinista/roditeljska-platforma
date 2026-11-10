@@ -16,7 +16,7 @@ Ovaj dokument beleži odluke i otvorena pitanja nastala prilikom prenošenja izv
 | `Tekst 2/2 Fin Šta moje dete treba da zna.docx` + 2.1, 2.2, 2.3, 2.3.1, 2.3.1.a, 2.3.2, 2.3.3, 2.3.4 | `/ocenjivanje/sta-moje-dete-treba-da-zna/` i 8 podstranica (vidi ispod) |
 | `Tekst 3/3.1 …` + 3.1.1, 3.1.1.a, 3.2, 3.2.1, 3.2.2, 3.3, 3.3.1, 3.3.2, 3.3.3, 3.3.4 | `/ocenjivanje/sta-znamo-o-ocenjivanju/` i 5 podstranica (vidi ispod) |
 | `Tekst 4/4 …` + 4.1, 4.1.1, 4.2 | `/ocenjivanje/pracenje-napredovanja-deteta/` i 2 podstranice (vidi ispod) |
-| `Tekst 5/5 …` + 5.1, 5.2, 5.3, 5.4 | `/ocenjivanje/reagovanje-na-ocenu/` i 4 podstranice (vidi ispod) |
+| `Tekst 5/5 …` + 5.1, 5.2, 5.3, 5.4 | `/ocenjivanje/reagovanje-na-ocenu/` sa tri slajd-prikaza (vidi ispod) |
 
 Struktura je preuzeta iz pet dijagrama (`*shema.pdf`), koji prikazuju isti redosled
 i hijerarhiju kao i međusobni linkovi u dokumentima.
@@ -51,8 +51,8 @@ Tekst je prenet doslovno; ispravljene su samo očigledne slovne greške.
 | 4.1 + 4.1.1 | `…/esdnevnik/` („ES dnevnik“); tabela iz 4.1.1 je proširivi blok „EsDnevnik detaljno“ |
 | 4.2 | `…/otvorena-vrata/` („Otvorena vrata“) |
 | 5 | `/ocenjivanje/reagovanje-na-ocenu/` — jedina stavka u bočnom sadržaju (`sidebarDepth: 0`) |
-| 5.1 | `…/priprema-za-razgovor/` |
-| 5.2 / 5.3 / 5.4 | `…/zalba-na-pojedinacnu-ocenu/`, `…/zajednicka-primedba-roditelja/`, `…/zalba-na-zakljucnu-ocenu/` |
+| 5.1 | slajdovi „Korak 1–3“, zajednički za sva tri slajd-prikaza: `_includes/reagovanje/koraci-1-3.md` |
+| 5.2 / 5.3 / 5.4 | slajd-prikazi `#situacija-1`, `#situacija-2`, `#situacija-3` na stranici 5: `_includes/reagovanje/situacija-1.md`, `-2.md`, `-3.md` (uvodni slajd, Korak 1–6, Ishod 1, Ishod 2, Korak 7). Ranije zasebne stranice `…/priprema-za-razgovor/`, `…/zalba-na-pojedinacnu-ocenu/`, `…/zajednicka-primedba-roditelja/` i `…/zalba-na-zakljucnu-ocenu/` su uklonjene. |
 
 Oznake za „Pročitaj više“ u ovim izvorima razlikuju se od Teksta 2: **plavo osenčen
 naslov ostaje vidljiv**, a tekst posle njega (do sledećeg naslova) otvara se klikom

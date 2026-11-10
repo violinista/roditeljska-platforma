@@ -6,7 +6,7 @@ breadcrumb: Reagovanje na ocenu
 group: reagovanje
 groupLinks: false
 categories: [Vodič, Ocenjivanje]
-readTime: 5 min čitanja
+readTime: 15 min čitanja
 tags: [Žalba, Prigovor, Prava roditelja, Komunikacija]
 cta: true
 ---
@@ -34,13 +34,13 @@ Ako želimo da ostvarimo dijalog, važno je da razumemo kontekst u kome se odvij
 
 To podrazumeva razumevanje [**svrhe, značaja i uloge ocenjivanja**](/ocenjivanje/sta-znamo-o-ocenjivanju/) u učenju i razvoju deteta, kao i poznavanje [**pravila, procedura i dokumenata koji uređuju proces ocenjivanja i ulogu roditelja u tom procesu**](/ocenjivanje/sta-znamo-o-ocenjivanju/procedure-ocenjivanja/sazetak-odredbi/). Tek kada razumemo čemu ocenjivanje služi i kako se sprovodi, možemo argumentovano proceniti da li je dete zaista nepravedno ocenjeno i na koji način treba reagovati.
 
-**O tome kako da se pripremite za razgovor sa nastavnikom možete detaljnije pročitati [na sledećem linku](/ocenjivanje/reagovanje-na-ocenu/priprema-za-razgovor/).**
+**Koraci pripreme za razgovor sa nastavnikom (koraci 1–3) deo su svake od situacija u nastavku.**
 
 Kada roditelj proceni da je dete nepravedno ocenjeno, najčešće se radi o jednoj od situacija koje predstavljamo u nastavku, zajedno sa koracima u postupanju prilikom pripreme žalbe.
 
 <ul class="situation-cards">
   <li>
-    <a href="/ocenjivanje/reagovanje-na-ocenu/zalba-na-pojedinacnu-ocenu/" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
+    <a href="#situacija-1" aria-haspopup="dialog" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
       <span>
         <strong class="program-item-title">Situacija 1.</strong>
         <span class="program-item-text">Roditelj smatra da ocena koju je dete dobilo na pismenom ili usmenom odgovaranju ne odgovara znanju koje je pokazalo.</span>
@@ -49,7 +49,7 @@ Kada roditelj proceni da je dete nepravedno ocenjeno, najčešće se radi o jedn
     </a>
   </li>
   <li>
-    <a href="/ocenjivanje/reagovanje-na-ocenu/zajednicka-primedba-roditelja/" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
+    <a href="#situacija-2" aria-haspopup="dialog" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
       <span>
         <strong class="program-item-title">Situacija 2.</strong>
         <span class="program-item-text">Više roditelja istovremeno izražava zabrinutost zbog određene ocene ili postupanja nastavnika koje pogađa grupu učenika ili celo odeljenje.</span>
@@ -58,7 +58,7 @@ Kada roditelj proceni da je dete nepravedno ocenjeno, najčešće se radi o jedn
     </a>
   </li>
   <li>
-    <a href="/ocenjivanje/reagovanje-na-ocenu/zalba-na-zakljucnu-ocenu/" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
+    <a href="#situacija-3" aria-haspopup="dialog" class="program-item d-flex align-items-center justify-content-between text-decoration-none">
       <span>
         <strong class="program-item-title">Situacija 3.</strong>
         <span class="program-item-text">Roditelj smatra da zaključna ocena na kraju školske godine nije formirana u skladu sa postignućima učenika tokom godine.</span>
@@ -67,6 +67,14 @@ Kada roditelj proceni da je dete nepravedno ocenjeno, najčešće se radi o jedn
     </a>
   </li>
 </ul>
+
+{% include "reagovanje/situacija-1.md" %}
+
+{% include "reagovanje/situacija-2.md" %}
+
+{% include "reagovanje/situacija-3.md" %}
+
+<script src="/assets/js/slideshow.js?v={{ buildId }}" defer></script>
 
 Ukoliko želite da se detaljnije upoznate sa propisima koji uređuju ocenjivanje, dokumentima možete pristupiti na sledećim linkovima:
 
